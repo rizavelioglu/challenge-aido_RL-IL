@@ -4,3 +4,5 @@ opencv-python
 numpy
 tqdm
 duckietown-gym-daffy>=5.0.7
+torch==1.1.0
+
