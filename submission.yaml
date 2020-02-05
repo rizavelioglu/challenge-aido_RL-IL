@@ -1,0 +1,8 @@
+# challenge name(s); defaults to all compatible challenges
+# challenge: [c1,c2]
+
+protocol: aido2_db18_agent-z2
+user-label: "Baseline solution using reinforcement learning"
+user-payload: {}
+description: |
+    This is a simple baseline solution to do reinforcement learning
