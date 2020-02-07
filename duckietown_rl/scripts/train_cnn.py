@@ -6,12 +6,12 @@ import gym
 import gym_duckietown
 import os
 
-from args import get_ddpg_args_train
-from ddpg import DDPG
-from utils import seed, evaluate_policy, ReplayBuffer
-from wrappers import NormalizeWrapper, ImgWrapper, \
+from duckietown_rl.args import get_ddpg_args_train
+from duckietown_rl.ddpg import DDPG
+from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
+from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
     DtRewardWrapper, ActionWrapper, ResizeWrapper
-from env import launch_env
+from duckietown_rl.env import launch_env
 
 policy_name = "DDPG"
 
