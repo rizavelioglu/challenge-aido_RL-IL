@@ -6,12 +6,12 @@ import gym
 import gym_duckietown
 import os
 
-from duckietown_rl.args import get_ddpg_args_train
-from duckietown_rl.ddpg import DDPG
-from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
-from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
+from args import get_ddpg_args_train
+from ddpg import DDPG
+from utils import seed, evaluate_policy, ReplayBuffer
+from wrappers import NormalizeWrapper, ImgWrapper, \
     DtRewardWrapper, ActionWrapper, ResizeWrapper
-from duckietown_rl.env import launch_env
+from env import launch_env
 
 policy_name = "DDPG"
 
@@ -76,7 +76,7 @@ while total_timesteps < args.max_timesteps:
             evaluations.append(evaluate_policy(env, policy))
 
             if args.save_models:
-                policy.save(file_name, directory="./pytorch_models")
+                policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
             # TODO: add reward as the name of the file
             np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
 
@@ -130,5 +130,5 @@ while total_timesteps < args.max_timesteps:
 evaluations.append(evaluate_policy(env, policy))
 
 if args.save_models:
-    policy.save(file_name, directory="./pytorch_models")
-np.savez("./results/{}.npz".format(file_name), evaluations)
+    policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
+np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
