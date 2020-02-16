@@ -21,10 +21,17 @@ for episode in range(0, EPISODES):
     for steps in range(0, STEPS):
 
         features = env.get_features()
-        action = model.predict(features)
+
+        try:
+            action = model.predict(features)
+        except:
+            env.reset()
 
         obs, reward, done, info = env.step(action.astype(float))
         env.render()
+
+
+        print(reward)
 
         # cv2.imshow("obs", obs)
         # if cv2.waitKey() & 0xFF == ord('q'):

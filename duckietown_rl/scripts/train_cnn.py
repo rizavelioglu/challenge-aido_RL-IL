@@ -14,15 +14,12 @@ from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
 from duckietown_rl.env import launch_env
 
 policy_name = "DDPG"
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
 args = get_ddpg_args_train()
 
 file_name = "{}_{}".format(
     policy_name,
-    str(args.seed),
-)
+    str(args.seed))
 
 if not os.path.exists("./results"):
     os.makedirs("./results")
@@ -30,14 +27,12 @@ if args.save_models and not os.path.exists("./pytorch_models"):
     os.makedirs("./pytorch_models")
 
 env = launch_env()
-
 # Wrappers
 # env = ResizeWrapper(env)
 # env = NormalizeWrapper(env)
 # env = ImgWrapper(env) # to make the images from 160x120x3 into 3x160x120
 env = ActionWrapper(env)
 env = DtRewardWrapper(env)
-
 
 # Set seeds
 seed(args.seed)
@@ -46,10 +41,8 @@ state_dim = env.get_features().shape[0]    # @riza: state_dim = env.observation_
 action_dim = env.action_space.shape[0]
 max_action = float(env.action_space.high[0])
 
-
 # Initialize policy
 policy = DDPG(state_dim, action_dim, max_action, net_type="dense")
-
 replay_buffer = ReplayBuffer(args.replay_buffer_max_size)
 
 # Evaluate untrained policy
@@ -104,10 +97,7 @@ while total_timesteps < args.max_timesteps:
     # Perform action
     new_obs, reward, done, _ = env.step(action)
     new_obs = env.get_features()    # @riza
-
-    # @riza
-    # if new_obs is None:
-    #     done =True
+    env.render()
 
     if episode_timesteps >= args.env_timesteps:
         done = True
@@ -115,8 +105,6 @@ while total_timesteps < args.max_timesteps:
     done_bool = 0 if episode_timesteps + 1 == args.env_timesteps else float(done)
     episode_reward += reward
 
-    # @riza
-    # if obs is not None and new_obs is not None:
     # Store data in replay buffer
     replay_buffer.add(obs, new_obs, action, reward, done_bool)
 

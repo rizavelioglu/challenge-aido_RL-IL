@@ -45,11 +45,12 @@ for episode in range(0, EPISODES):
         env.render()
 
         features = env.draw_features()
-        print(features)
+        # print(features)
+        print("\n", reward, "\n")
         # print(features, sum(features[:,1]))
 
-        cv2.imshow("obs", obs)
-        if cv2.waitKey() & 0xFF == ord('q'):
-            break
+        # cv2.imshow("obs", obs)
+        # if cv2.waitKey() & 0xFF == ord('q'):
+        #     break
 
     env.reset()
