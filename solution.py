@@ -30,7 +30,6 @@ for episode in range(0, EPISODES):
         obs, reward, done, info = env.step(action.astype(float))
         env.render()
 
-
         print(reward)
 
         # cv2.imshow("obs", obs)

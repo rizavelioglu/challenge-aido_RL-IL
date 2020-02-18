@@ -77,33 +77,25 @@ class DDPG(object):
         # assert state.shape[0] == 3
 
         if self.flat:
-
-            try:
-                state = torch.FloatTensor(state).to(device)
-
-            except:
-                print("Except: Lİne 80")
-
+            # TODO: add try, except if error occurs
+            # reshape tensor([14]) to tensor([1,14])
+            state = torch.FloatTensor(state.reshape(1, -1)).to(device)   # @riza: torch.FloatTensor(state).to(device)
         else:
             state = torch.FloatTensor(np.expand_dims(state, axis=0)).to(device)
+
         return self.actor(state).cpu().data.numpy().flatten()
 
     def train(self, replay_buffer, iterations, batch_size=64, discount=0.99, tau=0.001):
 
         for it in range(iterations):
 
-            try:
-                # Sample replay buffer
-                sample = replay_buffer.sample(batch_size, flat=self.flat)
-                state = torch.FloatTensor(sample["state"]).to(device)
-                action = torch.FloatTensor(sample["action"]).to(device)
-                next_state = torch.FloatTensor(sample["next_state"]).to(device)
-                done = torch.FloatTensor(1 - sample["done"]).to(device)
-                reward = torch.FloatTensor(sample["reward"]).to(device)
-
-            except:
-                print("Except")
-
+            # Sample replay buffer
+            sample = replay_buffer.sample(batch_size, flat=self.flat)
+            state = torch.FloatTensor(sample["state"]).to(device)
+            action = torch.FloatTensor(sample["action"]).to(device)
+            next_state = torch.FloatTensor(sample["next_state"]).to(device)
+            done = torch.FloatTensor(1 - sample["done"]).to(device)
+            reward = torch.FloatTensor(sample["reward"]).to(device)
 
             # Compute the target Q value
             target_Q = self.critic_target(next_state, self.actor_target(next_state))

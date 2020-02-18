@@ -22,7 +22,7 @@ class ReplayBuffer(object):
             self.storage.append((state, next_state, action, reward, done))
 
         else:
-            # Remove random element in the memory beforea adding a new one
+            # Remove random element in the memory before adding a new one
             self.storage.pop(random.randrange(len(self.storage)))
             self.storage.append((state, next_state, action, reward, done))
 
@@ -35,13 +35,9 @@ class ReplayBuffer(object):
             state, next_state, action, reward, done = self.storage[i]
 
             if flat:
-
-                try:
-                    states.append(np.array(state, copy=False))              # .flatten())
-                    next_states.append(np.array(next_state, copy=False))    # .flatten())
-                # TODO:
-                except:
-                    print("exception-sample")
+                # TODO: try,except if error occurs OR remove flatten
+                states.append(np.array(state, copy=False).flatten())
+                next_states.append(np.array(next_state, copy=False).flatten())
 
             else:
                 states.append(np.array(state, copy=False))
@@ -64,13 +60,13 @@ def evaluate_policy(env, policy, eval_episodes=10, max_timesteps=500):
     avg_reward = 0.
     for _ in range(eval_episodes):
         env.reset()
-        obs = env.get_features()
+        obs = env.get_features()  # @riza
         done = False
         step = 0
         while not done and step < max_timesteps:
             action = policy.predict(obs)
             obs, reward, done, _ = env.step(action)
-            obs = env.get_features()
+            obs = env.get_features()  # @riza
             avg_reward += reward
             step += 1
 

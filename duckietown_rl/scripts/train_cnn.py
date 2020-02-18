@@ -6,12 +6,18 @@ import gym
 import gym_duckietown
 import os
 
-from duckietown_rl.args import get_ddpg_args_train
-from duckietown_rl.ddpg import DDPG
-from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
-from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
+from args import get_ddpg_args_train
+from ddpg import DDPG
+from utils import seed, evaluate_policy, ReplayBuffer
+from wrappers import NormalizeWrapper, ImgWrapper, \
     DtRewardWrapper, ActionWrapper, ResizeWrapper
-from duckietown_rl.env import launch_env
+from env import launch_env
+# from duckietown_rl.args import get_ddpg_args_train
+# from duckietown_rl.ddpg import DDPG
+# from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
+# from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
+#     DtRewardWrapper, ActionWrapper, ResizeWrapper
+# from duckietown_rl.env import launch_env
 
 policy_name = "DDPG"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -21,6 +27,7 @@ file_name = "{}_{}".format(
     policy_name,
     str(args.seed))
 
+# Create folders within the same folder
 if not os.path.exists("./results"):
     os.makedirs("./results")
 if args.save_models and not os.path.exists("./pytorch_models"):
@@ -97,7 +104,7 @@ while total_timesteps < args.max_timesteps:
     # Perform action
     new_obs, reward, done, _ = env.step(action)
     new_obs = env.get_features()    # @riza
-    env.render()
+    # env.render()   # TODO: remove this
 
     if episode_timesteps >= args.env_timesteps:
         done = True
