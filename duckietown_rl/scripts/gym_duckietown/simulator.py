@@ -329,7 +329,6 @@ class Simulator(gym.Env):
         self.last_action = np.array([0, 0])
         self.wheelVels = np.array([0, 0])
 
-
     def _init_vlists(self):
         import pyglet
         # Create the vertex list for our road quad
@@ -480,7 +479,7 @@ class Simulator(gym.Env):
             if tile is None:
                 msg = 'The tile specified does not exist.'
                 raise Exception(msg)
-            logger.debug('tile: %s' % tile)
+            # logger.debug('tile: %s' % tile)
         else:
             if self.start_tile is not None:
                 tile = self.start_tile
@@ -514,7 +513,7 @@ class Simulator(gym.Env):
                 # Choose a random direction
                 propose_angle = self.np_random.uniform(0, 2 * math.pi)
 
-                # logger.debug('Sampled %s %s angle %s' % (propose_pos[0],
+                # # logger.debug('Sampled %s %s angle %s' % (propose_pos[0],
                 #                                          propose_pos[1],
                 #                                          np.rad2deg(propose_angle)))
 
@@ -583,7 +582,7 @@ class Simulator(gym.Env):
         # Get the full map file path
         self.map_file_path = get_file_path('maps', map_name, 'yaml')
 
-        logger.debug('loading map file "%s"' % self.map_file_path)
+        # logger.debug('loading map file "%s"' % self.map_file_path)
 
         with open(self.map_file_path, 'r') as f:
             self.map_data = yaml.load(f, Loader=yaml.Loader)
@@ -1160,12 +1159,12 @@ class Simulator(gym.Env):
         tile = self._get_tile(*coords)
         if tile is None:
             msg = f'No tile found at {pos} {coords}'
-            logger.debug(msg)
+            # logger.debug(msg)
             return False
 
         if not tile['drivable']:
             msg = f'{pos} corresponds to tile at {coords} which is not drivable: {tile}'
-            logger.debug(msg)
+            # logger.debug(msg)
             return False
 
         return True
@@ -1267,7 +1266,6 @@ class Simulator(gym.Env):
                         self._drivable_pos(r_pos) and
                         self._drivable_pos(f_pos))
 
-
         # Recompute the bounding boxes (BB) for the agent
         agent_corners = get_agent_corners(pos, angle)
         no_collision = not self._collision(agent_corners)
@@ -1276,11 +1274,11 @@ class Simulator(gym.Env):
 
         if not res:
             logger.debug(f'Invalid pose. Collision free: {no_collision} On drivable area: {all_drivable}')
-            logger.debug(f'safety_factor: {safety_factor}')
-            logger.debug(f'pos: {pos}')
-            logger.debug(f'l_pos: {l_pos}')
-            logger.debug(f'r_pos: {r_pos}')
-            logger.debug(f'f_pos: {f_pos}')
+            # logger.debug(f'safety_factor: {safety_factor}')
+            # logger.debug(f'pos: {pos}')
+            # logger.debug(f'l_pos: {l_pos}')
+            # logger.debug(f'r_pos: {r_pos}')
+            # logger.debug(f'f_pos: {f_pos}')
 
         return res
 
@@ -1400,10 +1398,10 @@ class Simulator(gym.Env):
                     # Give more reward if moving ahead with speed
                     +2.0 * sum(self.wheelVels) * lp.dot_dir +
                     # Penalize reward if the car is far away from center line
-                    -2 * abs(lp.dist) +
+                    -10 * abs(lp.dist) +
                     # Penalize reward if the car is steering too much
-                    -0.3 * abs(lp.angle_deg)
-                     )
+                    -0.1 * abs(lp.angle_deg)
+                    )
 
         return reward
 
