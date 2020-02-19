@@ -329,7 +329,6 @@ class Simulator(gym.Env):
         self.last_action = np.array([0, 0])
         self.wheelVels = np.array([0, 0])
 
-
     def _init_vlists(self):
         import pyglet
         # Create the vertex list for our road quad
