@@ -12,12 +12,6 @@ from utils import seed, evaluate_policy, ReplayBuffer
 from wrappers import NormalizeWrapper, ImgWrapper, \
     DtRewardWrapper, ActionWrapper, ResizeWrapper
 from env import launch_env
-# from duckietown_rl.args import get_ddpg_args_train
-# from duckietown_rl.ddpg import DDPG
-# from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
-# from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
-#     DtRewardWrapper, ActionWrapper, ResizeWrapper
-# from duckietown_rl.env import launch_env
 
 policy_name = "DDPG"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -102,9 +96,9 @@ while total_timesteps < args.max_timesteps:
                       ).clip(env.action_space.low, env.action_space.high)
 
     # Perform action
-    new_obs, reward, done, _ = env.step(action)
+    _, reward, done, _ = env.step(action)
     new_obs = env.get_features()    # @riza
-    # env.render()   # TODO: remove this
+    env.render()   # TODO: remove this
 
     if episode_timesteps >= args.env_timesteps:
         done = True

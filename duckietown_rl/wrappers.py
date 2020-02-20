@@ -53,12 +53,12 @@ class DtRewardWrapper(gym.RewardWrapper):
         super(DtRewardWrapper, self).__init__(env)
 
     def reward(self, reward):
-        # if reward == -1000:
-        #     reward = -10
-        # elif reward > 0:
-        #     reward += 10
-        # else:
-        #     reward += 4
+        if reward == -1000:
+            reward = -10
+        elif reward > 0:
+            reward += 10
+        else:
+            reward += 4
 
         return reward
 
@@ -69,7 +69,7 @@ class ActionWrapper(gym.ActionWrapper):
         super(ActionWrapper, self).__init__(env)
 
     def action(self, action):
-        action_ = [action[0] * 0.8, action[1]]
+        action_ = action * 0.9            # @riza  action_ = [action[0] * 0.8, action[1]]
         return action_
 
 
