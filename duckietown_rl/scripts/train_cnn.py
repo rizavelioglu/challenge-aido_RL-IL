@@ -3,7 +3,7 @@ import random
 import numpy as np
 import torch
 import gym
-import gym_duckietown
+from . import gym_duckietown
 import os
 
 from args import get_ddpg_args_train
