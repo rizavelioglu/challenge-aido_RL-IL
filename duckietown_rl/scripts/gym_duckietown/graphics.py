@@ -498,14 +498,20 @@ def compute_dist(cps, points, dir_vec, n=6, debug=False):
 
         # This means there's no intersection
         if len(y_pos) == 0 or len(y_neg) == 0:
-            # For top 3 points, look for points in next_tile
-            if i < 3:
-                # TODO:Transform points
+
+            if np.linalg.norm(p-points[51]) < np.linalg.norm(p-points[101]):
                 transformed_points = rotate_translate(dir_vec, points[50:100], p)
-            # For below 3 points, look for points in prev_tile
             else:
-                # TODO:Transform points
                 transformed_points = rotate_translate(dir_vec, points[100:], p)
+
+            # # For top 3 points, look for points in next_tile
+            # if i < 3:
+            #     # TODO:Transform points
+            #     transformed_points = rotate_translate(dir_vec, points[50:100], p)
+            # # For below 3 points, look for points in prev_tile
+            # else:
+            #     # TODO:Transform points
+            #     transformed_points = rotate_translate(dir_vec, points[100:], p)
 
             # TODO:Find 2 closest points to y=0
             y = transformed_points[:, 2]

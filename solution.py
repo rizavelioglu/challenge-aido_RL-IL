@@ -32,7 +32,7 @@ with torch.no_grad():
             rewards.append(rew)
             env.render()
 
-            print("f: ", np.array(obs))
+            # print("f: ", np.array(obs))
 
             if done:
                 break
