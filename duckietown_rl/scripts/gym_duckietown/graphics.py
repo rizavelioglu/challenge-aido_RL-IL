@@ -498,28 +498,40 @@ def compute_dist(cps, points, dir_vec, n=6, debug=False):
 
         # This means there's no intersection
         if len(y_pos) == 0 or len(y_neg) == 0:
-
-            if np.linalg.norm(p-points[51]) < np.linalg.norm(p-points[101]):
+            # For top 3 points, look for points in next_tile
+            if i < 3:
+                # TODO:Transform points
                 transformed_points = rotate_translate(dir_vec, points[50:100], p)
+            # For below 3 points, look for points in prev_tile
             else:
+                # TODO:Transform points
                 transformed_points = rotate_translate(dir_vec, points[100:], p)
-
-            # # For top 3 points, look for points in next_tile
-            # if i < 3:
-            #     # TODO:Transform points
-            #     transformed_points = rotate_translate(dir_vec, points[50:100], p)
-            # # For below 3 points, look for points in prev_tile
-            # else:
-            #     # TODO:Transform points
-            #     transformed_points = rotate_translate(dir_vec, points[100:], p)
 
             # TODO:Find 2 closest points to y=0
             y = transformed_points[:, 2]
             y_pos = y[y > 0]
             y_neg = y[y < 0]
             if len(y_pos) == 0 or len(y_neg) == 0:
-                features[i] = [0, DIST_NOT_INTERSECT]
-                continue
+
+                # TODO: ************ CHANGE THIS PART ************
+                # For top 3 points, look for points in next_tile
+                if i > 3:
+                    # TODO:Transform points
+                    transformed_points = rotate_translate(dir_vec, points[50:100], p)
+                # For below 3 points, look for points in prev_tile
+                else:
+                    # TODO:Transform points
+                    transformed_points = rotate_translate(dir_vec, points[100:], p)
+                # TODO:Find 2 closest points to y=0
+                y = transformed_points[:, 2]
+                y_pos = y[y > 0]
+                y_neg = y[y < 0]
+                if len(y_pos) == 0 or len(y_neg) == 0:
+                # TODO: ************ CHANGE THIS PART ************
+
+
+                    features[i] = [0, DIST_NOT_INTERSECT]
+                    continue
 
         p1_idx = np.where(y == np.max(y_neg))[0][0]
         p2_idx = np.where(y == np.min(y_pos))[0][0]

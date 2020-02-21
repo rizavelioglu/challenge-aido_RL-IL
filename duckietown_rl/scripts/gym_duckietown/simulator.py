@@ -1103,10 +1103,6 @@ class Simulator(gym.Env):
         point = bezier_point(cps, t)
         tangent = bezier_tangent(cps, t)
 
-        # if self.step_count > 1:
-        #     get_fw_pts(cps, t, self.cur_pos, self.cur_angle)
-        #     get_intersect(cps, self.cur_angle, self.cur_pos)
-
         return point, tangent
 
     def get_lane_pos2(self, pos, angle):
@@ -1608,7 +1604,7 @@ class Simulator(gym.Env):
             gl.glEnd()
 
             # @riza: Uncomment to draw
-            # self.draw_features()
+            self.draw_features()
 
         if top_down:
             gl.glPushMatrix()
@@ -1777,7 +1773,7 @@ class Simulator(gym.Env):
         dot_prods = np.dot(curve_headings, dirVec)
         curve = np.argmax(dot_prods)
 
-        # Curve points: 1->right, 0->left
+        # Curve points: 1->right, 0->left w.r.t car's perspective
         ii = curve # 1
         # Draw points on bezier curve on the current tile
         i, j = self.get_grid_coords(self.cur_pos)
@@ -1787,6 +1783,7 @@ class Simulator(gym.Env):
         # draw points on the upcoming tile
         tile_coords = get_tiles(self.map_name)
         idx = tile_coords.index((i, j))
+        # if we're at the end of the list return to beginning
         if len(tile_coords) - 1 == idx:
             i, j = tile_coords[0]
         else:
