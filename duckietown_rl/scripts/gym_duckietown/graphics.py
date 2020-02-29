@@ -57,7 +57,7 @@ class Texture(object):
 
 def load_texture(tex_path):
     from pyglet import gl
-    logger.debug('loading texture "%s"' % os.path.basename(tex_path))
+    # logger.debug('loading texture "%s"' % os.path.basename(tex_path))
     import pyglet
     img = pyglet.image.load(tex_path)
     tex = img.get_texture()
@@ -336,7 +336,7 @@ def bezier_draw_points_curve(cps, n = 20, red=False):
     gl.glColor3f(1,1,1)
 
 
-def bezier_draw_line(cps, grid_coords=None, get_tile=None, n=6, perpendicular=False):
+def bezier_draw_line(cps, grid_coords=None, get_tile=None, n=6, perpendicular=False, red=False):
     """
     Draw directory vector line
     :param draw_perpendicular:
@@ -346,7 +346,10 @@ def bezier_draw_line(cps, grid_coords=None, get_tile=None, n=6, perpendicular=Fa
     """
     from pyglet import gl
     gl.glBegin(gl.GL_LINES)
-    gl.glColor3f(0, 1, 0)
+    if red:
+        gl.glColor3f(1, 0, 0)
+    else:
+        gl.glColor3f(0, 1, 0)
     gl.glVertex3f(*cps[0])
     gl.glVertex3f(*cps[1])
     gl.glEnd()
@@ -477,7 +480,7 @@ def rotate_translate(dir_vec, points, new_center):
     return new_points
 
 
-def compute_dist(cps, points, dir_vec, n=6, debug=False):
+def compute_dist(cps, points, dir_vec, n=6, debug=False, red=False):
 
     # Sample points from dir_line
     pts = [get_linear_bezier(cps, t) for t in np.linspace(0, 1, n)]
@@ -559,7 +562,7 @@ def compute_dist(cps, points, dir_vec, n=6, debug=False):
         # Inverse rotate x_intersect to get old-frame coords.
         end = inverse_rotate_translate(dir_vec, [x_intersection, 0, 0], p)
         # Draw line from origin the x_intersect
-        bezier_draw_line(np.vstack((start, end)))
+        bezier_draw_line(np.vstack((start, end)), red=red)
 
         # TODO:Draw it (DEBUG)
         if debug:

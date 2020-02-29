@@ -1,0 +1,11 @@
+from duckietown_world.world_duckietown.sampling_poses import sample_good_starting_pose
+import duckietown_world as dw
+import geometry as geo
+
+along_lane = 0.2
+only_straight = True
+m = dw.load_map(map_name)
+q = sample_good_starting_pose(m, only_straight=only_straight, along_lane=along_lane)
+translation, angle = geo.translation_angle_from_SE2(q)
+propose_pos = np.array([translation[0], 0, translation[1]])
+propose_angle = angle

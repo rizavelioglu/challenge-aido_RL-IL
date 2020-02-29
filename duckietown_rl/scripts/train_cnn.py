@@ -1,5 +1,5 @@
 import random
-
+import pandas as pd
 import numpy as np
 import torch
 import gym
@@ -55,6 +55,9 @@ episode_num = 0
 done = True
 episode_reward = None
 env_counter = 0
+# We will store out log here
+data_eval = []*7
+data_test = []*7
 while total_timesteps < args.max_timesteps:
 
     if done:
@@ -71,8 +74,7 @@ while total_timesteps < args.max_timesteps:
 
             if args.save_models:
                 policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
-            # TODO: add reward as the name of the file
-            np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
+            # np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
 
         # Reset environment
         env_counter += 1
@@ -98,7 +100,7 @@ while total_timesteps < args.max_timesteps:
     # Perform action
     _, reward, done, _ = env.step(action)
     new_obs = env.get_features()    # @riza
-    env.render()   # TODO: remove this
+    # env.render()   # TODO: remove this
 
     if episode_timesteps >= args.env_timesteps:
         done = True
@@ -120,4 +122,21 @@ evaluations.append(evaluate_policy(env, policy))
 
 if args.save_models:
     policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
-np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
+# np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
+
+# ******************************************************************************************
+# ******************************************************************************************
+#     """
+#     n_episode : Episode Id
+#     total_step: Global step
+#     reward    : Episode reward
+#     n_step    : #of steps done per episode
+#     meanQ     : mean of Q-value per episode
+#     stdQ      : std of Q-value
+#     """
+# data_eval.append([episode_num, total_timesteps, episode_reward, episode_timesteps])
+# df_eval = pd.DataFrame(data_eval, columns=["n_episode", "total_step", "reward", "n_step"])
+# df_eval.to_csv("./results/df_eval.csv")
+#
+# df_test = pd.DataFrame(data_test, columns=["n_episode", "total_step", "reward", "n_step"])
+# df_test.to_csv("./results/df_test.csv")

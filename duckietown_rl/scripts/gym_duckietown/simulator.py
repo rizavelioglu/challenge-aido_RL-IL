@@ -329,6 +329,9 @@ class Simulator(gym.Env):
         self.last_action = np.array([0, 0])
         self.wheelVels = np.array([0, 0])
 
+        # @riza
+        self.last_state = np.zeros((1, 14))
+
     def _init_vlists(self):
         import pyglet
         # Create the vertex list for our road quad
@@ -506,8 +509,9 @@ class Simulator(gym.Env):
                 i, j = tile['coords']
 
                 # Choose a random position on this tile
-                x = self.np_random.uniform(i, i + 1) * self.road_tile_size
-                z = self.np_random.uniform(j, j + 1) * self.road_tile_size
+                # @riza Don't start at the edges of the tile
+                x = self.np_random.uniform(i+0.2, i + 0.8) * self.road_tile_size  # x = self.np_random.uniform(i, i + 1) * self.road_tile_size
+                z = self.np_random.uniform(j+0.2, j + 0.8) * self.road_tile_size  # z = self.np_random.uniform(j, j + 1) * self.road_tile_size
                 propose_pos = np.array([x, 0, z])
 
                 # Choose a random direction
@@ -545,6 +549,8 @@ class Simulator(gym.Env):
             else:
                 msg = 'Could not find a valid starting pose after %s attempts' % MAX_SPAWN_ATTEMPTS
                 raise Exception(msg)
+
+
 
         self.cur_pos = propose_pos
         self.cur_angle = propose_angle
@@ -1268,8 +1274,8 @@ class Simulator(gym.Env):
 
         res = (no_collision and all_drivable)
 
-        if not res:
-            logger.debug(f'Invalid pose. Collision free: {no_collision} On drivable area: {all_drivable}')
+        # if not res:
+            # logger.debug(f'Invalid pose. Collision free: {no_collision} On drivable area: {all_drivable}')
             # logger.debug(f'safety_factor: {safety_factor}')
             # logger.debug(f'pos: {pos}')
             # logger.debug(f'l_pos: {l_pos}')
@@ -1390,14 +1396,15 @@ class Simulator(gym.Env):
 
             # Compute the reward
             reward = (
-                    # TODO: self.wheelVels[0] + self.wheelVels[1]  -_> instead of self.speed
-                    # Give more reward if moving ahead with speed
-                    +2.0 * sum(self.wheelVels) * lp.dot_dir +
+                    # self.wheelVels[0] + self.wheelVels[1]  -_> instead of self.speed
+                    # Give more reward if moving with speed
+                    +2.0 * sum(self.wheelVels) +
                     # Penalize reward if the car is far away from center line
-                    -10 * abs(lp.dist) +
-                    # Penalize reward if the car is steering too much
-                    -0.1 * abs(lp.angle_deg)
-                    )
+                    # TODO: calculate distance from sensor
+                    -10 * self.dist_centerline_curve())
+        # TODO: check for circular motion: angle>135
+        if abs(self.cur_angle) > 100:
+            reward -= 100
 
         return reward
 
@@ -1603,8 +1610,12 @@ class Simulator(gym.Env):
             gl.glVertex3f(corners[3, 0], 0.01, corners[3, 1])
             gl.glEnd()
 
-            # @riza: Uncomment to draw
+            # @riza: Uncomment to draw features (sensing lines)
             self.draw_features()
+            # @riza: Uncomment to draw the line b/w closest curve point & center of robot
+            # self.get_distance()
+            # @riza: Uncomment to draw the line b/w closest curve point & center of robot (perpendicular line)
+            self.dist_centerline_curve()
 
         if top_down:
             gl.glPushMatrix()
@@ -1817,8 +1828,77 @@ class Simulator(gym.Env):
         dists = np.array(self.draw_features()).flatten()
         wheelVels = np.array([self.wheelVels[0], self.wheelVels[1]])
         # self.last_action
+        # Get state representation
+        state = np.concatenate((dists, wheelVels), axis=None)
+        # Concatenate last state & current state
+        feature = np.concatenate((self.last_state, state), axis=None)
+        # Store last state
+        self.last_state = state
 
-        return np.concatenate((dists, wheelVels), axis=None)
+        return feature
+
+    def get_distance(self):
+        """
+        Distance from center of the robot to the closest curve point
+        """
+        # Get the actual center of car
+        center = _actual_center(self.cur_pos, self.cur_angle)
+        # Get closest curve point w.r.t. current position of car
+        closest, _ = self.closest_curve_point(self.cur_pos, self.cur_angle)
+        # Calculate distance b/w center and closest curve point
+        dist = np.linalg.norm(center - closest)
+        # Set z-dimension to 0.01 -> required for the line to be seen in the top-down view
+        center[1], closest[1] = 0.01, 0.01
+        # Draw the line
+        bezier_draw_line(np.vstack((center, closest)))
+        return dist
+
+    def dist_centerline_curve(self):
+        """
+        Calculate the distance between the middle sensor line(center of robot actually) and the projected point
+        on the curve.
+        """
+        # Get directory line
+        cps = get_dir_line(self.cur_angle, self.cur_pos)
+        # Get the center point of directory line
+        cps_center = (cps[0] + cps[1]) / 2
+        # Get directory vector
+        dir_vec = get_dir_vec(self.cur_angle)
+
+        i, j = self.get_grid_coords(self.cur_pos)
+        curves = self._get_tile(i, j)['curves']
+        curve_headings = curves[:, -1, :] - curves[:, 0, :]
+        curve_headings = curve_headings / np.linalg.norm(curve_headings).reshape(1, -1)
+        dot_prods = np.dot(curve_headings, get_dir_vec(self.cur_angle))
+        # Curve points: 1->right, 0->left w.r.t car's perspective
+        ii = np.argmax(dot_prods)
+
+        # draw points on the upcoming tile
+        tile_coords = get_tiles(self.map_name)
+        idx = tile_coords.index((i, j))
+        # if we're at the end of the list return to beginning
+        i, j = tile_coords[0] if len(tile_coords)-1 == idx else tile_coords[idx + 1]
+        curves_next = self._get_tile(i, j)['curves']
+
+        # draw points on the previous tile
+        i, j = tile_coords[idx - 1]
+        curves_prev = self._get_tile(i, j)['curves']
+
+        # Get bezier points on 3 tiles(current, prev, next) and compute dist
+        n = 50
+        pts = np.vstack((
+            [bezier_point(curves[ii], i / (n - 1)) for i in range(0, n)],
+            [bezier_point(curves_next[ii], i / (n - 1)) for i in range(0, n)],
+            [bezier_point(curves_prev[ii], i / (n - 1)) for i in range(0, n)]))
+
+        # Calculate feature: whether there's an intersection & if so, the distance
+        is_true, dist = compute_dist(np.vstack((cps_center, cps[1])), pts, dir_vec, n=1, red=True)[0]
+
+        if is_true:
+            return dist
+        else:
+            return 5
+
 
 
 def get_dir_vec(cur_angle):
