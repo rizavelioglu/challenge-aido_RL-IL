@@ -3,6 +3,7 @@ from model import DDPG
 from gym_duckietown.simulator import Simulator
 from duckietown_rl.wrappers import ActionWrapper
 import torch
+import cv2
 
 env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_rand=True, camera_width=640,
                 camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
@@ -33,6 +34,10 @@ with torch.no_grad():
             env.render()
 
             # print("f: ", np.array(obs))
+
+            # cv2.imshow("obs", obs)
+            # if cv2.waitKey() & 0xFF == ord('q'):
+            #     break
 
             if done:
                 break
