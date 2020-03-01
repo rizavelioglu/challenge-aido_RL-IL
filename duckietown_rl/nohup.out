@@ -1,0 +1,1636 @@
+INFO:gym-duckietown:gym-duckietown 5.0.14
+
+INFO:dt-world:duckietown-world 5.0.11
+INFO:zuper-typing:zuper-typing 5.1.1
+INFO:zuper-commons:zuper-commons 5.0.9
+/home/citec/miniconda3/envs/aido/lib/python3.6/site-packages/gym/logger.py:30: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  warnings.warn(colorize('%s: %s'%('WARN', msg % args), 'yellow'))
+DEBUG:gym-duckietown:Falling back to non-multisampled frame buffer
+DEBUG:gym-duckietown:Falling back to non-multisampled frame buffer
+DEBUG:gym-duckietown:loading mesh "duckiebot.obj"
+DEBUG:gym-duckietown:loading mesh "bus.obj"
+DEBUG:gym-duckietown:loading mesh "truck.obj"
+DEBUG:gym-duckietown:loading mesh "tree.obj"
+DEBUG:gym-duckietown:loading mesh "sign_blank.obj"
+INFO:gym-duckietown:Starting at [1.03796009 0.         2.48969911] 1.5428273038125697
+INFO:gym-duckietown:Starting at [0.99494889 0.         2.57554214] 1.5227477012261945
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92059148 0.         2.79916964] 4.758478263109835
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02345227 0.         2.53626086] 4.747994929111355
+INFO:gym-duckietown:Starting at [1.02241388 0.         2.48987532] 4.718268915464102
+INFO:gym-duckietown:Starting at [0.72019201 0.         2.76921412] 1.6171332739517956
+INFO:gym-duckietown:Starting at [0.77059428 0.         2.62805892] 4.757377471161065
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73301984 0.         2.6485956 ] 1.5532408940810698
+INFO:gym-duckietown:Starting at [1.04057777 0.         2.69639768] 4.732697764829529
+INFO:gym-duckietown:Starting at [0.73625265 0.         2.72532754] 1.5756062190912778
+INFO:gym-duckietown:Starting at [0.98534295 0.         2.45770601] 1.516045642147493
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.70339557 0.         2.51084189] 4.735278917741783
+INFO:gym-duckietown:Starting at [0.94824485 0.         2.56928114] 4.779645536424133
+INFO:gym-duckietown:Starting at [0.73478551 0.         2.79255652] 1.5234421637726878
+INFO:gym-duckietown:Starting at [0.80880101 0.         2.75594026] 4.667736455776052
+INFO:gym-duckietown:Starting at [0.96891839 0.         2.65904555] 1.509024814012088
+INFO:gym-duckietown:Starting at [0.98944523 0.         2.5301612 ] 1.5624919201873935
+INFO:gym-duckietown:Starting at [0.90886351 0.         2.78395663] 1.564222281873092
+INFO:gym-duckietown:Starting at [0.85823379 0.         2.66845066] 4.691898763129783
+INFO:gym-duckietown:Starting at [0.93772592 0.         2.51515422] 4.685272255289477
+INFO:gym-duckietown:Starting at [0.9398356  0.         2.54483041] 4.741499178642796
+INFO:gym-duckietown:Starting at [1.02412459 0.         2.46630194] 1.6259014350030088
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03159808 0.         2.61040902] 1.5086281686517151
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.93053778 0.         2.67133572] 4.672069034281287
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79205338 0.         2.56073779] 4.665279135394044
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.94475141 0.         2.80586275] 4.779419384161107
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86845587 0.         2.70049491] 1.554302876357476
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80246022 0.         2.59430258] 1.566436750052007
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03755289 0.         2.45994891] 1.5268266384833546
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.85825557 0.         2.79771204] 4.655949498949126
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83934788 0.         2.59093568] 4.654883562981835
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72941451 0.         2.67301363] 4.739532309837576
+INFO:gym-duckietown:Starting at [0.87267098 0.         2.52442797] 4.779306731592657
+INFO:gym-duckietown:Starting at [0.70828914 0.         2.77975947] 1.6211091226452605
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.93143478 0.         2.69498231] 4.676769964066076
+INFO:gym-duckietown:Starting at [1.03688531 0.         2.61786417] 1.62561566926099
+INFO:gym-duckietown:Starting at [0.77744465 0.         2.79328734] 4.6920370276371655
+INFO:gym-duckietown:Starting at [0.87444486 0.         2.66314757] 4.655912801742975
+INFO:gym-duckietown:Starting at [0.72172274 0.         2.5452306 ] 1.5345174869980065
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71310452 0.         2.75854419] 4.774406068580241
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90079874 0.         2.71367756] 4.673902292918194
+INFO:gym-duckietown:Starting at [0.71067552 0.         2.80414246] 4.6496837092953465
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.98766277 0.         2.77812793] 4.770193555240353
+INFO:gym-duckietown:Starting at [0.72404308 0.         2.63822839] 4.751541216845714
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77171322 0.         2.51544871] 1.5464183870474137
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.85452566 0.         2.49040263] 1.6258884815849222
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8797095  0.         2.49754346] 4.734214006639813
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7173393 0.        2.7707801] 1.6118565474399595
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.757831   0.         2.49660793] 4.712593703678851
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.0107565  0.         2.74586781] 4.717365973439499
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.94959998 0.         2.59395182] 1.621163800727689
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.76858235 0.         2.58002174] 4.75838843109446
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.82162281 0.         2.6528296 ] 4.690629866646672
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02990135 0.         2.61711605] 4.779527910636849
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79342525 0.         2.74951231] 4.697080843766589
+INFO:gym-duckietown:Starting at [0.78040208 0.         2.61870112] 4.684417290019925
+INFO:gym-duckietown:Starting at [0.85477993 0.         2.66223762] 1.6209685422284295
+INFO:gym-duckietown:Starting at [0.96525549 0.         2.66784382] 4.6706401372814685
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.84855653 0.         2.73108788] 1.5358428703482703
+INFO:gym-duckietown:Starting at [0.85157302 0.         2.51826494] 4.71775263735461
+INFO:gym-duckietown:Starting at [0.80171982 0.         2.58110832] 1.5947580757774915
+INFO:gym-duckietown:Starting at [0.99472149 0.         2.60669107] 4.653286770471602
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7120419  0.         2.46694973] 4.669168457333281
+INFO:gym-duckietown:Starting at [0.92569028 0.         2.64620025] 1.5672282322079143
+INFO:gym-duckietown:Starting at [0.93921814 0.         2.55965274] 4.761187110337047
+INFO:gym-duckietown:Starting at [0.7043277 0.        2.673067 ] 1.5644880486769441
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90471448 0.         2.57242357] 1.6117793424274
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81981657 0.         2.55756753] 1.611117411297079
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79121964 0.         2.78704537] 4.728946563352085
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.93434432 0.         2.61080226] 1.59281675547052
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89367635 0.         2.70183701] 4.77405676171283
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77798338 0.         2.74256906] 4.710624484320484
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89637601 0.         2.49097772] 4.760126659222138
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77484009 0.         2.78899471] 1.5783521476163214
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.9924044 0.        2.5813902] 1.5991154419053655
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8925657  0.         2.75429098] 4.741278657396001
+INFO:gym-duckietown:Starting at [0.74831502 0.         2.49956234] 1.5804154821397045
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86112136 0.         2.48252898] 1.5904419407161976
+INFO:gym-duckietown:Starting at [0.86495649 0.         2.52303315] 4.709464435028617
+INFO:gym-duckietown:Starting at [1.03358075 0.         2.80571122] 1.6219723943824191
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81221754 0.         2.46246349] 4.694731865072886
+INFO:gym-duckietown:Starting at [0.72080086 0.         2.72095073] 1.5839484218726299
+INFO:gym-duckietown:Starting at [0.92287095 0.         2.51322656] 4.655105767119335
+INFO:gym-duckietown:Starting at [0.88497627 0.         2.70035038] 4.687768051348394
+INFO:gym-duckietown:Starting at [0.82072826 0.         2.57564751] 4.753526187785569
+INFO:gym-duckietown:Starting at [0.92870469 0.         2.50224235] 1.520843481136365
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.9686104  0.         2.58438471] 4.755510112818883
+INFO:gym-duckietown:Starting at [0.9362142  0.         2.50872513] 4.661129053981033
+INFO:gym-duckietown:Starting at [0.73243625 0.         2.45710025] 1.6344831675422282
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.9463679  0.         2.61610609] 4.7294504695563075
+INFO:gym-duckietown:Starting at [0.90143113 0.         2.7827644 ] 1.5954360554912208
+INFO:gym-duckietown:Starting at [0.98510801 0.         2.80545751] 1.5560178794066246
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.88383881 0.         2.70382724] 1.5734160042154988
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89186846 0.         2.73022959] 4.771198242631884
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.78635532 0.         2.66651079] 1.5773773678423568
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.97184946 0.         2.62576059] 4.658864425754116
+INFO:gym-duckietown:Starting at [0.74998988 0.         2.76147843] 1.5695704043774723
+INFO:gym-duckietown:Starting at [1.03496604 0.         2.51734306] 1.6323853174406027
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.78747856 0.         2.67641391] 1.5361837333864166
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.91888023 0.         2.70388549] 1.6300100056082005
+INFO:gym-duckietown:Starting at [0.85743048 0.         2.79568568] 1.5103694795218148
+INFO:gym-duckietown:Starting at [0.85030581 0.         2.57402191] 4.70367045925934
+INFO:gym-duckietown:Starting at [0.93906196 0.         2.72459142] 1.5480823770040686
+INFO:gym-duckietown:Starting at [0.70722023 0.         2.75242173] 4.6694256960065275
+INFO:gym-duckietown:Starting at [0.78290853 0.         2.80453453] 4.740900358897414
+INFO:gym-duckietown:Starting at [0.70223047 0.         2.74976734] 4.744805613466699
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75951707 0.         2.49889779] 4.740342263559175
+INFO:gym-duckietown:Starting at [0.75776368 0.         2.57573401] 1.6032337128226033
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86066648 0.         2.78070526] 4.7081920554604535
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.01840533 0.         2.45789083] 4.730733487688702
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99450193 0.         2.72265602] 1.5674205435621358
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90287369 0.         2.64156532] 4.779984519084462
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.0474239  0.         2.62424568] 4.711768875580543
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03067193 0.         2.47929536] 1.534101397087309
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.94415527 0.         2.56185132] 1.57787411437669
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04473796 0.         2.61157554] 1.5802371618452842
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.74585975 0.         2.57404827] 1.6114393831033536
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71218461 0.         2.67290384] 4.644406036542426
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73684125 0.         2.5173059 ] 1.5388179780430828
+INFO:gym-duckietown:Starting at [0.7964936  0.         2.70743508] 4.755492273923668
+INFO:gym-duckietown:Starting at [0.81610251 0.         2.76887899] 1.5345778986413554
+INFO:gym-duckietown:Starting at [0.97469303 0.         2.66511968] 1.578251806383469
+INFO:gym-duckietown:Starting at [0.76504079 0.         2.5076221 ] 4.720943085359265
+INFO:gym-duckietown:Starting at [0.85735319 0.         2.59179968] 1.5469519941508818
+INFO:gym-duckietown:Starting at [0.98838024 0.         2.48201056] 1.5850128817012636
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04327909 0.         2.62556454] 4.720603224896026
+INFO:gym-duckietown:Starting at [0.87817863 0.         2.46376916] 1.5050474079455847
+INFO:gym-duckietown:Starting at [0.83759076 0.         2.53742347] 4.76530871487261
+INFO:gym-duckietown:Starting at [0.74991648 0.         2.64713531] 4.67420972784665
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75727222 0.         2.59696766] 1.5859377924722442
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99159939 0.         2.72370844] 1.6328866447536188
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73587962 0.         2.52022936] 4.685282218219318
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.9782756  0.         2.65931867] 1.6270448279436007
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.00393684 0.         2.5545768 ] 4.7281665071495285
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03546982 0.         2.69388389] 4.73179447883714
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.94336168 0.         2.63382275] 4.703657214183279
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99801834 0.         2.51206501] 4.751271504160013
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.76683923 0.         2.60526198] 1.5795414464666073
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.97394906 0.         2.55354581] 1.6211829061474237
+INFO:gym-duckietown:Starting at [0.75355292 0.         2.7605424 ] 1.5858940853384342
+INFO:gym-duckietown:Starting at [0.80097807 0.         2.79169839] 1.6154730134955044
+INFO:gym-duckietown:Starting at [0.72754957 0.         2.57079379] 1.5895750129050532
+INFO:gym-duckietown:Starting at [0.74337751 0.         2.77234742] 1.5119188522025624
+INFO:gym-duckietown:Starting at [0.78860385 0.         2.61495314] 4.671623118227019
+INFO:gym-duckietown:Starting at [0.74724009 0.         2.7734059 ] 1.5528423371568598
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80524728 0.         2.70695447] 1.6084357966278784
+INFO:gym-duckietown:Starting at [0.89024418 0.         2.64433487] 1.6105236505991958
+INFO:gym-duckietown:Starting at [0.94412027 0.         2.51908513] 4.672343831635986
+INFO:gym-duckietown:Starting at [0.7284324  0.         2.48884351] 1.5185740168011788
+INFO:gym-duckietown:Starting at [0.82062402 0.         2.63517894] 1.5788421831255819
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.00066502 0.         2.69307645] 4.7057326777252495
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.78252135 0.         2.58102969] 1.6225107167525432
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.98778217 0.         2.78243287] 1.6031483134819111
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.78478096 0.         2.5627377 ] 4.6574429758735905
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.70469002 0.         2.56660551] 1.635302455448153
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.87187301 0.         2.7786762 ] 4.652084205041384
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96399858 0.         2.7517492 ] 1.5189276627642336
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77319711 0.         2.57132724] 4.642829828669867
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.76427049 0.         2.5482078 ] 1.5429470461603372
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90278775 0.         2.55890423] 4.656301236220525
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.98236611 0.         2.80234115] 4.703724012157526
+INFO:gym-duckietown:Starting at [0.83858247 0.         2.50119295] 1.6100851449942053
+INFO:gym-duckietown:Starting at [1.01036279 0.         2.75795109] 1.521604640243267
+INFO:gym-duckietown:Starting at [0.94907474 0.         2.71481292] 1.5711847933770398
+INFO:gym-duckietown:Starting at [0.77566408 0.         2.46111091] 4.719203106077025
+INFO:gym-duckietown:Starting at [0.95885919 0.         2.48667717] 1.514893609359788
+INFO:gym-duckietown:Starting at [0.97494855 0.         2.71429872] 1.5174265554751443
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99934054 0.         2.58406039] 1.589463235711059
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96684004 0.         2.52927884] 4.754499971798818
+INFO:gym-duckietown:Starting at [0.74675974 0.         2.60598664] 4.712018068271101
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.01334538 0.         2.63343206] 1.6286851936718276
+INFO:gym-duckietown:Starting at [0.96568299 0.         2.66874821] 4.755317998110383
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.74729906 0.         2.64189072] 1.6305779297550356
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89885105 0.         2.65961084] 4.75878427989203
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02356682 0.         2.65271035] 1.5443634137277344
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73567436 0.         2.73216602] 1.5031603913336506
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03054313 0.         2.64078127] 1.5875276690098985
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75243223 0.         2.59981829] 1.583922396251121
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79553006 0.         2.51215576] 1.6241428158185218
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99981351 0.         2.69063164] 4.693928892175882
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99333605 0.         2.68458773] 4.643602365233537
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.85723024 0.         2.64618377] 4.744359615448008
+INFO:gym-duckietown:Starting at [0.73774865 0.         2.68996158] 4.765705460515545
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75238784 0.         2.60331381] 1.557545673881557
+INFO:gym-duckietown:Starting at [0.78052087 0.         2.60055094] 4.780011951392759
+INFO:gym-duckietown:Starting at [1.02341992 0.         2.48443114] 1.5435049697567302
+INFO:gym-duckietown:Starting at [0.99950531 0.         2.60920368] 4.6430038739640755
+INFO:gym-duckietown:Starting at [0.8762613  0.         2.71930334] 4.683204096232055
+INFO:gym-duckietown:Starting at [0.90973026 0.         2.55373844] 1.5915907762692223
+INFO:gym-duckietown:Starting at [1.00730239 0.         2.65171978] 1.6000472971921509
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83762978 0.         2.75412443] 4.681527094427604
+INFO:gym-duckietown:Starting at [0.80632982 0.         2.59339805] 1.5693515318477236
+INFO:gym-duckietown:Starting at [0.90500081 0.         2.75996391] 1.612910832151087
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86121538 0.         2.55569596] 4.659228728200491
+INFO:gym-duckietown:Starting at [0.97198428 0.         2.76248686] 1.545665164746421
+INFO:gym-duckietown:Starting at [0.72923038 0.         2.64068076] 1.5692779248838884
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.0128073  0.         2.63176145] 1.6403970924245745
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.97053612 0.         2.66005829] 4.775096360532086
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.91401923 0.         2.68701493] 4.690020442871369
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.78180169 0.         2.52216642] 1.5101980745820593
+INFO:gym-duckietown:Starting at [1.0350618 0.        2.6470673] 4.652812191015711
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71607441 0.         2.65941675] 4.771361156477202
+INFO:gym-duckietown:Starting at [0.93074239 0.         2.78704626] 4.716398460095294
+INFO:gym-duckietown:Starting at [0.97510544 0.         2.52111339] 1.5065292461531639
+INFO:gym-duckietown:Starting at [0.8024933  0.         2.64538141] 1.5806958107075666
+INFO:gym-duckietown:Starting at [1.02743978 0.         2.57511774] 1.639578126155199
+INFO:gym-duckietown:Starting at [0.91013096 0.         2.60140958] 1.5753190752681059
+INFO:gym-duckietown:Starting at [0.76784068 0.         2.74767444] 1.505939470562004
+INFO:gym-duckietown:Starting at [0.81596976 0.         2.64868469] 4.693920696593366
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96154403 0.         2.56252447] 1.6235629233016304
+INFO:gym-duckietown:Starting at [0.97896476 0.         2.4960991 ] 1.639041958738821
+INFO:gym-duckietown:Starting at [0.98762528 0.         2.68046573] 4.768025009320208
+INFO:gym-duckietown:Starting at [0.82468256 0.         2.76457767] 1.536826424507632
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77898058 0.         2.67091105] 1.535597047622354
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7692786  0.         2.61213263] 4.69600963410859
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.97206818 0.         2.48994035] 4.714222077096307
+INFO:gym-duckietown:Starting at [0.80885739 0.         2.47518785] 1.6271958150009063
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.70456522 0.         2.77398403] 1.6175896250239084
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80498812 0.         2.76808331] 4.677440242601387
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99059865 0.         2.76289442] 1.5130612590744572
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89188734 0.         2.53893336] 4.760328207078338
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.0518359  0.         2.58960997] 4.7192440988073106
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80913407 0.         2.55529969] 4.772464827747939
+INFO:gym-duckietown:Starting at [1.01845299 0.         2.56048521] 4.644820794971212
+INFO:gym-duckietown:Starting at [0.86856182 0.         2.65809118] 1.5091857757716736
+INFO:gym-duckietown:Starting at [0.79920997 0.         2.58548585] 4.661653818631301
+INFO:gym-duckietown:Starting at [0.83560162 0.         2.52973482] 1.5935349779522534
+INFO:gym-duckietown:Starting at [0.97368459 0.         2.75200411] 4.68250966487007
+INFO:gym-duckietown:Starting at [0.91439429 0.         2.47503124] 1.5573908422209684
+INFO:gym-duckietown:Starting at [0.83855349 0.         2.64340555] 4.670755532094413
+INFO:gym-duckietown:Starting at [0.96769371 0.         2.60352969] 4.771246072901594
+INFO:gym-duckietown:Starting at [0.88651615 0.         2.73438191] 4.698141676971872
+INFO:gym-duckietown:Starting at [1.01940313 0.         2.51738066] 1.587776347405607
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04355659 0.         2.46160878] 1.564727185002009
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75486145 0.         2.57810606] 1.583931614787306
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86732442 0.         2.58158046] 4.693104832460153
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73315444 0.         2.71344796] 4.650786932147229
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89383403 0.         2.67905684] 1.6142012047658438
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8172022  0.         2.78563135] 4.751197737983049
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73782382 0.         2.65548717] 4.697736329957521
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.78790846 0.         2.52441949] 4.70350756751359
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.00803029 0.         2.71008396] 1.5821429372550226
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.82181698 0.         2.71145065] 4.709719437275133
+INFO:gym-duckietown:Starting at [0.72229602 0.         2.6034506 ] 4.646760406481287
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02417219 0.         2.75129934] 4.660023251792712
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72171564 0.         2.52384896] 4.738706258519304
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+Total T: 501 Episode Num: 1 Episode T: 501 Reward: -2588.653760
+Total T: 1002 Episode Num: 2 Episode T: 501 Reward: -8091.283635
+Total T: 1503 Episode Num: 3 Episode T: 501 Reward: -4549.790874
+Total T: 2004 Episode Num: 4 Episode T: 501 Reward: 440.883309
+Total T: 2505 Episode Num: 5 Episode T: 501 Reward: -2353.153287
+Total T: 3006 Episode Num: 6 Episode T: 501 Reward: -1345.704357
+Total T: 3507 Episode Num: 7 Episode T: 501 Reward: 1118.014780
+Total T: 4008 Episode Num: 8 Episode T: 501 Reward: 465.108832
+Total T: 4509 Episode Num: 9 Episode T: 501 Reward: -887.159953
+Total T: 5010 Episode Num: 10 Episode T: 501 Reward: -45.928285
+Total T: 5511 Episode Num: 11 Episode T: 501 Reward: -206.507328
+Total T: 6012 Episode Num: 12 Episode T: 501 Reward: -7151.365597
+Total T: 6294 Episode Num: 13 Episode T: 282 Reward: -2297.931573
+Total T: 6795 Episode Num: 14 Episode T: 501 Reward: 685.859142
+Total T: 7296 Episode Num: 15 Episode T: 501 Reward: -5713.342657
+Total T: 7797 Episode Num: 16 Episode T: 501 Reward: -1357.354507
+Total T: 8298 Episode Num: 17 Episode T: 501 Reward: -3144.560472
+Total T: 8546 Episode Num: 18 Episode T: 248 Reward: -4269.444536
+Total T: 8628 Episode Num: 19 Episode T: 82 Reward: -212.066888
+Total T: 9129 Episode Num: 20 Episode T: 501 Reward: 107.949619
+Total T: 9489 Episode Num: 21 Episode T: 360 Reward: -504.416275
+Total T: 9990 Episode Num: 22 Episode T: 501 Reward: 626.474789
+Total T: 10319 Episode Num: 23 Episode T: 329 Reward: -6185.196171
+Total T: 10820 Episode Num: 24 Episode T: 501 Reward: -694.800291
+Total T: 11321 Episode Num: 25 Episode T: 501 Reward: -2807.513884
+Total T: 11822 Episode Num: 26 Episode T: 501 Reward: -735.499986
+Total T: 12127 Episode Num: 27 Episode T: 305 Reward: -1578.608825
+Total T: 12628 Episode Num: 28 Episode T: 501 Reward: 1259.600118
+Total T: 13129 Episode Num: 29 Episode T: 501 Reward: 803.697101
+Total T: 13630 Episode Num: 30 Episode T: 501 Reward: 1074.815933
+Total T: 13857 Episode Num: 31 Episode T: 227 Reward: -551.155134
+Total T: 14358 Episode Num: 32 Episode T: 501 Reward: -275.151947
+Total T: 14859 Episode Num: 33 Episode T: 501 Reward: 294.979771
+Total T: 15360 Episode Num: 34 Episode T: 501 Reward: 606.469770
+Total T: 15861 Episode Num: 35 Episode T: 501 Reward: 684.287284
+Total T: 15967 Episode Num: 36 Episode T: 106 Reward: 206.167118
+Total T: 16468 Episode Num: 37 Episode T: 501 Reward: -5769.215288
+Total T: 16969 Episode Num: 38 Episode T: 501 Reward: 635.554617
+Total T: 17178 Episode Num: 39 Episode T: 209 Reward: -217.914035
+Total T: 17679 Episode Num: 40 Episode T: 501 Reward: -1610.866555
+Total T: 18180 Episode Num: 41 Episode T: 501 Reward: -1667.446537
+Total T: 18681 Episode Num: 42 Episode T: 501 Reward: 403.656662
+Total T: 19182 Episode Num: 43 Episode T: 501 Reward: 615.051097
+Total T: 19683 Episode Num: 44 Episode T: 501 Reward: -1377.470711
+Total T: 20066 Episode Num: 45 Episode T: 383 Reward: -1044.048446
+Total T: 20567 Episode Num: 46 Episode T: 501 Reward: 64.764997
+Total T: 20768 Episode Num: 47 Episode T: 201 Reward: -970.027597
+Total T: 21249 Episode Num: 48 Episode T: 481 Reward: -4255.132225
+Total T: 21750 Episode Num: 49 Episode T: 501 Reward: 858.659177
+Total T: 22251 Episode Num: 50 Episode T: 501 Reward: -1421.628501
+Total T: 22752 Episode Num: 51 Episode T: 501 Reward: -1020.256220
+Total T: 23253 Episode Num: 52 Episode T: 501 Reward: 92.206704
+Total T: 23754 Episode Num: 53 Episode T: 501 Reward: -0.320380
+Total T: 24255 Episode Num: 54 Episode T: 501 Reward: 476.903863
+Total T: 24604 Episode Num: 55 Episode T: 349 Reward: -2355.776285
+Total T: 25105 Episode Num: 56 Episode T: 501 Reward: -2603.473124
+Total T: 25301 Episode Num: 57 Episode T: 196 Reward: -1014.987820
+Total T: 25802 Episode Num: 58 Episode T: 501 Reward: -3827.931509
+Total T: 26303 Episode Num: 59 Episode T: 501 Reward: -833.730396
+Total T: 26804 Episode Num: 60 Episode T: 501 Reward: 785.291497
+Total T: 27305 Episode Num: 61 Episode T: 501 Reward: -297.114898
+Total T: 27806 Episode Num: 62 Episode T: 501 Reward: -1049.086576
+Total T: 28307 Episode Num: 63 Episode T: 501 Reward: -1014.597809
+Total T: 28528 Episode Num: 64 Episode T: 221 Reward: -1238.941364
+Total T: 29029 Episode Num: 65 Episode T: 501 Reward: -1729.681344
+Total T: 29530 Episode Num: 66 Episode T: 501 Reward: 1469.665382
+Total T: 30031 Episode Num: 67 Episode T: 501 Reward: -2747.259597
+Total T: 30532 Episode Num: 68 Episode T: 501 Reward: -310.530212
+Total T: 31033 Episode Num: 69 Episode T: 501 Reward: -2662.960027
+Total T: 31534 Episode Num: 70 Episode T: 501 Reward: -816.432695
+Total T: 32035 Episode Num: 71 Episode T: 501 Reward: -1240.486511
+Total T: 32536 Episode Num: 72 Episode T: 501 Reward: 884.253633
+Total T: 33037 Episode Num: 73 Episode T: 501 Reward: 546.655672
+Total T: 33331 Episode Num: 74 Episode T: 294 Reward: 63.487519
+Total T: 33832 Episode Num: 75 Episode T: 501 Reward: 502.654562
+Total T: 34333 Episode Num: 76 Episode T: 501 Reward: -2559.188094
+Total T: 34834 Episode Num: 77 Episode T: 501 Reward: 1141.595880
+Total T: 35335 Episode Num: 78 Episode T: 501 Reward: 1768.066970
+Total T: 35543 Episode Num: 79 Episode T: 208 Reward: -2296.200288
+Total T: 36044 Episode Num: 80 Episode T: 501 Reward: 1078.930846
+Total T: 36545 Episode Num: 81 Episode T: 501 Reward: -829.833506
+Total T: 37046 Episode Num: 82 Episode T: 501 Reward: -401.547028
+Total T: 37547 Episode Num: 83 Episode T: 501 Reward: 313.145595
+Total T: 38048 Episode Num: 84 Episode T: 501 Reward: 271.408842
+Total T: 38549 Episode Num: 85 Episode T: 501 Reward: -4411.209538
+Total T: 38826 Episode Num: 86 Episode T: 277 Reward: -314.852169
+Total T: 39006 Episode Num: 87 Episode T: 180 Reward: -2368.984932
+Total T: 39507 Episode Num: 88 Episode T: 501 Reward: 962.092031
+Total T: 39966 Episode Num: 89 Episode T: 459 Reward: -990.615889
+Total T: 40467 Episode Num: 90 Episode T: 501 Reward: -3476.843345
+Total T: 40968 Episode Num: 91 Episode T: 501 Reward: -2095.710401
+Total T: 41097 Episode Num: 92 Episode T: 129 Reward: -1838.356986
+Total T: 41598 Episode Num: 93 Episode T: 501 Reward: 1113.906511
+Total T: 42099 Episode Num: 94 Episode T: 501 Reward: -278.497015
+Total T: 42600 Episode Num: 95 Episode T: 501 Reward: -4989.533326
+Total T: 43101 Episode Num: 96 Episode T: 501 Reward: 468.689339
+Total T: 43602 Episode Num: 97 Episode T: 501 Reward: 488.750686
+Total T: 44103 Episode Num: 98 Episode T: 501 Reward: -3284.804277
+Total T: 44239 Episode Num: 99 Episode T: 136 Reward: -193.620304
+Total T: 44740 Episode Num: 100 Episode T: 501 Reward: -683.664795
+Total T: 45241 Episode Num: 101 Episode T: 501 Reward: 1455.158669
+Total T: 45742 Episode Num: 102 Episode T: 501 Reward: -1008.144995
+Total T: 46243 Episode Num: 103 Episode T: 501 Reward: 429.793695
+Total T: 46744 Episode Num: 104 Episode T: 501 Reward: -2688.096037
+Total T: 47245 Episode Num: 105 Episode T: 501 Reward: -1558.629552
+Total T: 47746 Episode Num: 106 Episode T: 501 Reward: -3976.712353
+Total T: 48247 Episode Num: 107 Episode T: 501 Reward: -3679.330386
+Total T: 48651 Episode Num: 108 Episode T: 404 Reward: -2661.695661
+Total T: 49152 Episode Num: 109 Episode T: 501 Reward: 396.551782
+Total T: 49653 Episode Num: 110 Episode T: 501 Reward: -511.514341
+Total T: 50154 Episode Num: 111 Episode T: 501 Reward: -1357.682629
+Total T: 50655 Episode Num: 112 Episode T: 501 Reward: -1273.747573
+Total T: 51156 Episode Num: 113 Episode T: 501 Reward: -470.270413
+Total T: 51657 Episode Num: 114 Episode T: 501 Reward: 556.378161
+Total T: 52158 Episode Num: 115 Episode T: 501 Reward: -5665.735637
+Total T: 52659 Episode Num: 116 Episode T: 501 Reward: 816.660334
+Total T: 53160 Episode Num: 117 Episode T: 501 Reward: 228.410694
+Total T: 53661 Episode Num: 118 Episode T: 501 Reward: -295.175879
+Total T: 54162 Episode Num: 119 Episode T: 501 Reward: -607.632518
+Total T: 54663 Episode Num: 120 Episode T: 501 Reward: -359.130272
+Total T: 55164 Episode Num: 121 Episode T: 501 Reward: -3825.036078
+Total T: 55665 Episode Num: 122 Episode T: 501 Reward: 177.810923
+Total T: 56035 Episode Num: 123 Episode T: 370 Reward: -555.064854
+Total T: 56146 Episode Num: 124 Episode T: 111 Reward: -100.344413
+Total T: 56422 Episode Num: 125 Episode T: 276 Reward: -1361.090507INFO:gym-duckietown:Starting at [0.85714451 0.         2.73300397] 4.698199553497617
+INFO:gym-duckietown:Starting at [0.85778485 0.         2.46146335] 4.725506686631364
+INFO:gym-duckietown:Starting at [0.79841303 0.         2.59848789] 4.76220904857494
+INFO:gym-duckietown:Starting at [0.99923705 0.         2.52641724] 4.655093581722686
+INFO:gym-duckietown:Starting at [0.93251389 0.         2.79179421] 1.5203873668410923
+INFO:gym-duckietown:Starting at [0.87569823 0.         2.74334668] 1.5650871415292453
+INFO:gym-duckietown:Starting at [0.81285997 0.         2.6199125 ] 4.685521544991917
+INFO:gym-duckietown:Starting at [0.75921714 0.         2.57344377] 4.7364390982010125
+INFO:gym-duckietown:Starting at [1.04061187 0.         2.58201366] 4.650274584724685
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.84453049 0.         2.69853961] 1.6360328527812436
+INFO:gym-duckietown:Starting at [0.99090416 0.         2.55735073] 1.6133378458974492
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79774166 0.         2.75165737] 1.5745793113686026
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90948617 0.         2.6160934 ] 1.6011435793431879
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.748347   0.         2.52435447] 1.570987017277887
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.82987846 0.         2.61153289] 1.5090777190972349
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72125647 0.         2.80084234] 1.562211343788981
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80104926 0.         2.67657945] 4.7202700582831545
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71514101 0.         2.5107147 ] 1.6313663610264946
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.98594642 0.         2.51035032] 1.5116872536638488
+INFO:gym-duckietown:Starting at [0.71015528 0.         2.64223938] 1.628247422378672
+INFO:gym-duckietown:Starting at [0.83951134 0.         2.73922159] 4.643310222743489
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73302855 0.         2.64419638] 1.560032683940295
+INFO:gym-duckietown:Starting at [0.94382755 0.         2.71143719] 1.5797779125495008
+INFO:gym-duckietown:Starting at [1.03602853 0.         2.67691056] 4.745682733748596
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.88005169 0.         2.58282421] 1.5242082156900645
+INFO:gym-duckietown:Starting at [0.74815363 0.         2.50425748] 1.6005329944347235
+INFO:gym-duckietown:Starting at [0.90604739 0.         2.48160209] 4.653419259065763
+INFO:gym-duckietown:Starting at [0.73512823 0.         2.58851435] 1.5025386071322644
+INFO:gym-duckietown:Starting at [0.97116152 0.         2.68677026] 1.57821981864653
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7212201  0.         2.57997076] 4.715252828133241
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96269251 0.         2.6887876 ] 1.5740048394767934
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81595596 0.         2.65283102] 4.74252365265486
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7090407  0.         2.70589476] 1.5789959047406885
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04799706 0.         2.48297417] 1.54361247481932
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96490154 0.         2.56320505] 4.739406423742469
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04303793 0.         2.74311942] 1.5300970261001174
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79315391 0.         2.70511184] 4.664519049439454
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77453703 0.         2.77501681] 1.570200448736138
+INFO:gym-duckietown:Starting at [0.96509301 0.         2.70593852] 1.5382579824779676
+INFO:gym-duckietown:Starting at [0.72185777 0.         2.61177469] 1.60797644148834
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02829745 0.         2.60826398] 1.621539131342067
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.76787457 0.         2.76405201] 4.720716537737686
+INFO:gym-duckietown:Starting at [1.00012668 0.         2.63577882] 1.5687540234382316
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86596508 0.         2.72645042] 1.5651506361573306
+INFO:gym-duckietown:Starting at [0.72653358 0.         2.6121194 ] 1.593184623387977
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.88395525 0.         2.72394561] 4.697843834951855
+INFO:gym-duckietown:Starting at [0.78256191 0.         2.49515588] 1.5287378799826346
+INFO:gym-duckietown:Starting at [1.00566138 0.         2.61821991] 4.752881926324959
+INFO:gym-duckietown:Starting at [0.83391692 0.         2.65770701] 4.702802274110679
+INFO:gym-duckietown:Starting at [0.75236792 0.         2.63142501] 1.5635156351862232
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8493537  0.         2.54569907] 4.747898031260592
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71032397 0.         2.62624846] 1.5196272378472022
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.76818922 0.         2.61780969] 1.6378121429444494
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7905663  0.         2.61205172] 1.5545190112253036
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.818106   0.         2.79888005] 1.6186255583086784
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86178815 0.         2.61239869] 1.5861869948089475
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89609227 0.         2.59119383] 1.6152042950178964
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.85713446 0.         2.58547771] 1.5700885834187468
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89520066 0.         2.59517253] 4.755652295221442
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75018346 0.         2.59532723] 1.5971528889226132
+INFO:gym-duckietown:Starting at [0.91900441 0.         2.75576833] 1.5754704235425392
+INFO:gym-duckietown:Starting at [0.80518653 0.         2.49565716] 1.5598319820713678
+INFO:gym-duckietown:Starting at [0.94052508 0.         2.64939004] 4.647341482411051
+INFO:gym-duckietown:Starting at [1.01517655 0.         2.63102796] 1.5560474640063406
+INFO:gym-duckietown:Starting at [0.92419131 0.         2.68326272] 4.696517346599714
+INFO:gym-duckietown:Starting at [0.92273131 0.         2.57160263] 4.760870560805046
+INFO:gym-duckietown:Starting at [0.91694799 0.         2.51151058] 1.5357362865739834
+INFO:gym-duckietown:Starting at [0.95388675 0.         2.60494092] 4.73151401458931
+INFO:gym-duckietown:Starting at [0.91697887 0.         2.54751142] 4.781024822347202
+INFO:gym-duckietown:Starting at [0.75352638 0.         2.60107061] 4.724865352182264
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89752888 0.         2.47463717] 4.708997228894022
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.84772419 0.         2.7552489 ] 1.5494190099401621
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75134888 0.         2.78006844] 4.746491930335948
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8597416  0.         2.70794068] 4.769035054463733
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79281312 0.         2.56127329] 1.627747624257773
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.78149218 0.         2.66989637] 1.5791005982737192
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.70258721 0.         2.67827218] 4.67639069634384
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.94537093 0.         2.52987686] 4.776450024819429
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81932474 0.         2.60383554] 4.664624302554212
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86604024 0.         2.50520045] 4.701843850076632
+INFO:gym-duckietown:Starting at [0.81388141 0.         2.55153374] 1.5180954441942074
+INFO:gym-duckietown:Starting at [0.99688952 0.         2.56120031] 4.658232528716506
+INFO:gym-duckietown:Starting at [0.83853797 0.         2.48454753] 1.537228942441153
+INFO:gym-duckietown:Starting at [0.78355608 0.         2.48505835] 4.645283807325213
+INFO:gym-duckietown:Starting at [1.02264489 0.         2.61678702] 1.6131790712180452
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04381341 0.         2.54464276] 1.6124659042908522
+INFO:gym-duckietown:Starting at [0.89776042 0.         2.68300002] 4.752364980916907
+INFO:gym-duckietown:Starting at [0.92139097 0.         2.59029177] 4.647701576395938
+INFO:gym-duckietown:Starting at [0.84575062 0.         2.70341299] 1.6264585399689442
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02301744 0.         2.5484198 ] 1.5791546187172496
+INFO:gym-duckietown:Starting at [0.76604594 0.         2.63230553] 4.659365665195598
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86148352 0.         2.72891449] 4.749691490544765
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83889238 0.         2.80584709] 4.756265061478759
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.05074608 0.         2.51529416] 4.770972841828042
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73699761 0.         2.64572546] 1.5669147109296506
+INFO:gym-duckietown:Starting at [0.78050904 0.         2.6328075 ] 1.5463636970915526
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92028474 0.         2.78223836] 1.5645946511222284
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7409388  0.         2.46700331] 1.601635271883429
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.88147703 0.         2.61707354] 4.769984777336482
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.00055725 0.         2.66369508] 1.5221260974828446
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72300784 0.         2.65097858] 1.5645746592359169
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03978638 0.         2.53973936] 4.6814282554468605
+INFO:gym-duckietown:Starting at [0.82609824 0.         2.51694456] 1.602564425415986
+INFO:gym-duckietown:Starting at [0.94017858 0.         2.7842306 ] 1.5513946768463633
+INFO:gym-duckietown:Starting at [0.92013184 0.         2.57380395] 4.670911879428099
+INFO:gym-duckietown:Starting at [0.96694207 0.         2.68250916] 1.5873733100713523
+INFO:gym-duckietown:Starting at [0.97597049 0.         2.4696626 ] 1.5222426916892242
+INFO:gym-duckietown:Starting at [0.77486835 0.         2.51592006] 1.5997509508071606
+INFO:gym-duckietown:Starting at [1.05217045 0.         2.56575528] 4.710125097590738
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.87104528 0.         2.66160505] 4.668586904690642
+INFO:gym-duckietown:Starting at [0.88311127 0.         2.58629316] 1.5095012448369927
+INFO:gym-duckietown:Starting at [0.99155543 0.         2.64781247] 4.674093731271286
+INFO:gym-duckietown:Starting at [0.85738295 0.         2.68567972] 4.681508970210113
+INFO:gym-duckietown:Starting at [0.8998024  0.         2.70743713] 4.764988890415194
+INFO:gym-duckietown:Starting at [0.94357302 0.         2.57112471] 4.672262302387513
+INFO:gym-duckietown:Starting at [0.79559849 0.         2.76687463] 1.537907800171584
+INFO:gym-duckietown:Starting at [1.00450743 0.         2.57995744] 4.666103019277062
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.87720728 0.         2.75040447] 4.665310697367896
+INFO:gym-duckietown:Starting at [0.73333473 0.         2.56526163] 1.5114818359635176
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.0453236  0.         2.49983529] 4.756136176593977
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.9131263  0.         2.80356389] 4.736363319375665
+INFO:gym-duckietown:Starting at [0.7913163  0.         2.68704835] 4.749213475258628
+INFO:gym-duckietown:Starting at [0.76903284 0.         2.65551068] 4.643840918312631
+INFO:gym-duckietown:Starting at [0.72377288 0.         2.73435529] 4.751927347688798
+INFO:gym-duckietown:Starting at [0.90268367 0.         2.49103335] 4.706120610767735
+INFO:gym-duckietown:Starting at [0.87265506 0.         2.76888383] 1.514893158705455
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79105538 0.         2.50542851] 1.6169888241032961
+INFO:gym-duckietown:Starting at [1.03384652 0.         2.48985095] 4.644459633975495
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79872421 0.         2.71544792] 4.7653403857575904
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89432411 0.         2.54090901] 1.564128937182678
+INFO:gym-duckietown:Starting at [0.95904726 0.         2.77620275] 4.770292089490649
+INFO:gym-duckietown:Starting at [0.97879317 0.         2.48229961] 4.772709398136068
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83008794 0.         2.58162718] 4.6533934713343035
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80710431 0.         2.70909145] 1.5754213524677299
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83595782 0.         2.60497563] 1.544278759623304
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90601669 0.         2.63644973] 4.743027246011259
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.82098935 0.         2.69385807] 1.5834712101785569
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73905229 0.         2.50019414] 1.5171971253360055
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75574478 0.         2.75958407] 1.5228371505695901
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.87141604 0.         2.67163886] 1.6125288411783134
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.82756919 0.         2.66695628] 1.5624975501894105
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.91032314 0.         2.56599291] 4.69324954318459
+INFO:gym-duckietown:Starting at [0.78370373 0.         2.70332721] 4.764373112877047
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.98966983 0.         2.56100033] 1.5860690037555996
+INFO:gym-duckietown:Starting at [0.73640408 0.         2.66347723] 1.6280437294721029
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81851329 0.         2.78166202] 1.503746759307696
+INFO:gym-duckietown:Starting at [0.84506628 0.         2.7109675 ] 4.780431804220564
+INFO:gym-duckietown:Starting at [0.74901539 0.         2.62934484] 1.601802384359999
+INFO:gym-duckietown:Starting at [0.99322298 0.         2.72298157] 1.5438402574066719
+INFO:gym-duckietown:Starting at [0.84565231 0.         2.78125244] 1.5528715773146637
+INFO:gym-duckietown:Starting at [1.0169936 0.        2.5285052] 1.557414102050981
+INFO:gym-duckietown:Starting at [0.7868169  0.         2.73424578] 1.6327329051265131
+INFO:gym-duckietown:Starting at [1.04026374 0.         2.57013489] 1.541476519236055
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.9705584  0.         2.57419014] 1.6356807932652242
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72772271 0.         2.71759513] 4.661948528439854
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.94545284 0.         2.63503372] 4.772776640387875
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.97905296 0.         2.74763422] 1.579348904312367
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92651059 0.         2.50554769] 1.5868732512338894
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96462623 0.         2.60893292] 4.720634439947531
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.93313117 0.         2.79907498] 4.6639786467802535
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.97768125 0.         2.51128834] 4.655867348078916
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.85895541 0.         2.73887176] 1.5636069538118658
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90644688 0.         2.61923392] 4.755729924667892
+INFO:gym-duckietown:Starting at [1.0362358  0.         2.73578821] 1.5440388564022456
+INFO:gym-duckietown:Starting at [0.82099132 0.         2.55098772] 1.5055376952744577
+INFO:gym-duckietown:Starting at [0.86843384 0.         2.65830523] 1.526855291346916
+INFO:gym-duckietown:Starting at [0.72305717 0.         2.67441365] 4.703903232572089
+INFO:gym-duckietown:Starting at [0.99044135 0.         2.6528751 ] 1.5292926472788573
+INFO:gym-duckietown:Starting at [0.81311912 0.         2.61685956] 4.707639367518326
+INFO:gym-duckietown:Starting at [0.99050561 0.         2.5905814 ] 1.6254685031712213
+INFO:gym-duckietown:Starting at [0.98429007 0.         2.71637003] 4.650082289748028
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72085463 0.         2.48190377] 4.7415379653253895
+INFO:gym-duckietown:Starting at [1.03778303 0.         2.72139367] 1.5550853210331776
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75999228 0.         2.62920345] 1.5946126643078835
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.87261533 0.         2.50791973] 1.61739268368961
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73366212 0.         2.62601311] 4.761767223900164
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03147342 0.         2.74206472] 1.5318338496395358
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.93419722 0.         2.80578446] 1.628318958712307
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.82440426 0.         2.66248643] 4.643102293213192
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.76517442 0.         2.62851584] 1.5327894926167054
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89096385 0.         2.54914638] 4.780259219912517
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.0268199  0.         2.53530072] 1.5187213880959183
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.91903169 0.         2.651106  ] 4.658838677103357
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80470062 0.         2.525356  ] 4.743927524421212
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.88559365 0.         2.79341151] 4.709354393894527
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90823024 0.         2.78075726] 4.727753653119981
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75144614 0.         2.66505517] 4.7316699089364125
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.94299048 0.         2.50144772] 4.746484168600425
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72718789 0.         2.62785379] 4.771593292614797
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.94486333 0.         2.51512907] 1.5881273622452377
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71834502 0.         2.51837257] 1.6328442229839222
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.85116182 0.         2.69135017] 4.773921902228046
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92799071 0.         2.46262777] 4.67701374456162
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03701823 0.         2.61925604] 1.6219229884030701
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8120483  0.         2.66675088] 4.74253666870504
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83091475 0.         2.54285908] 1.5919749329811062
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8837174  0.         2.62173609] 1.6284685031912087
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.74459152 0.         2.69322359] 4.712948087442663
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71950299 0.         2.72574205] 4.708446732032095
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99159072 0.         2.72086743] 4.6958876281869255
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99399815 0.         2.60826111] 1.5508193727588842
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03936316 0.         2.46137316] 1.508203308875629
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7852384  0.         2.52848556] 1.5577467167623436
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89702552 0.         2.65954537] 4.719027653351803
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80157731 0.         2.68046442] 4.707355815552648
+INFO:gym-duckietown:Starting at [0.81807264 0.         2.57736345] 1.613652569696156
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83584998 0.         2.74595531] 4.747147824419102
+INFO:gym-duckietown:Starting at [0.71027335 0.         2.78478694] 1.5259770596210396
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8507359  0.         2.75520862] 4.758145641059848
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.9653477  0.         2.72879706] 4.699460366169711
+INFO:gym-duckietown:Starting at [1.04480055 0.         2.75944954] 4.733908120294181
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73867869 0.         2.78395343] 4.65353675820552
+INFO:gym-duckietown:Starting at [0.90615205 0.         2.60077484] 1.5581993218122079
+INFO:gym-duckietown:Starting at [0.8821666  0.         2.65954073] 4.692144455634938
+INFO:gym-duckietown:Starting at [0.78363449 0.         2.63250021] 4.662848282032919
+INFO:gym-duckietown:Starting at [0.96638067 0.         2.78455235] 1.5537756570548713
+INFO:gym-duckietown:Starting at [0.71210314 0.         2.80520447] 1.5649433628344924
+INFO:gym-duckietown:Starting at [1.04955532 0.         2.53580934] 4.715684392451919
+INFO:gym-duckietown:Starting at [0.89788959 0.         2.47328195] 4.708043474503496
+INFO:gym-duckietown:Starting at [0.94033687 0.         2.65425039] 4.7070152013836175
+INFO:gym-duckietown:Starting at [0.73595957 0.         2.68321843] 1.5258091942404015
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7710227  0.         2.70325377] 1.5723686648759059
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+
+Total T: 56923 Episode Num: 126 Episode T: 501 Reward: -776.461841
+Total T: 57424 Episode Num: 127 Episode T: 501 Reward: -3205.904101
+Total T: 57925 Episode Num: 128 Episode T: 501 Reward: 521.852153
+Total T: 58426 Episode Num: 129 Episode T: 501 Reward: -813.695272
+Total T: 58927 Episode Num: 130 Episode T: 501 Reward: 446.238816
+Total T: 59428 Episode Num: 131 Episode T: 501 Reward: 688.770181
+Total T: 59929 Episode Num: 132 Episode T: 501 Reward: 537.230572
+Total T: 60430 Episode Num: 133 Episode T: 501 Reward: -418.894312
+Total T: 60931 Episode Num: 134 Episode T: 501 Reward: -51.603182
+Total T: 61432 Episode Num: 135 Episode T: 501 Reward: -279.263164
+Total T: 61679 Episode Num: 136 Episode T: 247 Reward: 419.329031
+Total T: 62180 Episode Num: 137 Episode T: 501 Reward: -1062.916459
+Total T: 62681 Episode Num: 138 Episode T: 501 Reward: -30.534551
+Total T: 63093 Episode Num: 139 Episode T: 412 Reward: -4990.736794
+Total T: 63594 Episode Num: 140 Episode T: 501 Reward: -835.616683
+Total T: 64095 Episode Num: 141 Episode T: 501 Reward: 1217.791927
+Total T: 64596 Episode Num: 142 Episode T: 501 Reward: 216.072095
+Total T: 65097 Episode Num: 143 Episode T: 501 Reward: 1400.169049
+Total T: 65598 Episode Num: 144 Episode T: 501 Reward: 595.729343
+Total T: 66045 Episode Num: 145 Episode T: 447 Reward: -1836.916848
+Total T: 66388 Episode Num: 146 Episode T: 343 Reward: -1699.347867
+Total T: 66889 Episode Num: 147 Episode T: 501 Reward: 521.387423
+Total T: 67156 Episode Num: 148 Episode T: 267 Reward: -8064.784080
+Total T: 67657 Episode Num: 149 Episode T: 501 Reward: -1624.601088
+Total T: 68128 Episode Num: 150 Episode T: 471 Reward: 1070.984141
+Total T: 68629 Episode Num: 151 Episode T: 501 Reward: 585.203795
+Total T: 69130 Episode Num: 152 Episode T: 501 Reward: 998.837519
+Total T: 69631 Episode Num: 153 Episode T: 501 Reward: -2527.731554
+Total T: 70132 Episode Num: 154 Episode T: 501 Reward: 747.419616
+Total T: 70633 Episode Num: 155 Episode T: 501 Reward: 1251.881918
+Total T: 71134 Episode Num: 156 Episode T: 501 Reward: -177.851352
+Total T: 71635 Episode Num: 157 Episode T: 501 Reward: 293.960235
+Total T: 72136 Episode Num: 158 Episode T: 501 Reward: -1443.875049
+Total T: 72637 Episode Num: 159 Episode T: 501 Reward: -343.686977
+Total T: 73138 Episode Num: 160 Episode T: 501 Reward: 1692.418143
+Total T: 73639 Episode Num: 161 Episode T: 501 Reward: -3631.014367
+Total T: 74140 Episode Num: 162 Episode T: 501 Reward: -4005.882567
+Total T: 74641 Episode Num: 163 Episode T: 501 Reward: -1345.681665
+Total T: 75142 Episode Num: 164 Episode T: 501 Reward: -927.075127
+Total T: 75643 Episode Num: 165 Episode T: 501 Reward: -690.181234
+Total T: 76144 Episode Num: 166 Episode T: 501 Reward: 681.253665
+Total T: 76645 Episode Num: 167 Episode T: 501 Reward: -2957.476872
+Total T: 77146 Episode Num: 168 Episode T: 501 Reward: 593.064674
+Total T: 77647 Episode Num: 169 Episode T: 501 Reward: -264.734760
+Total T: 77963 Episode Num: 170 Episode T: 316 Reward: -1118.036014
+Total T: 78464 Episode Num: 171 Episode T: 501 Reward: -1448.022318
+Total T: 78965 Episode Num: 172 Episode T: 501 Reward: 807.715592
+Total T: 79466 Episode Num: 173 Episode T: 501 Reward: -644.417803
+Total T: 79936 Episode Num: 174 Episode T: 470 Reward: -1370.414865
+Total T: 80437 Episode Num: 175 Episode T: 501 Reward: -322.219987
+Total T: 80893 Episode Num: 176 Episode T: 456 Reward: 1376.937360
+Total T: 81394 Episode Num: 177 Episode T: 501 Reward: 1602.660422
+Total T: 81895 Episode Num: 178 Episode T: 501 Reward: 88.139983
+Total T: 82396 Episode Num: 179 Episode T: 501 Reward: -470.519532
+Total T: 82897 Episode Num: 180 Episode T: 501 Reward: 971.680505
+Total T: 83398 Episode Num: 181 Episode T: 501 Reward: -1459.594428
+Total T: 83899 Episode Num: 182 Episode T: 501 Reward: -1006.006713
+Total T: 84400 Episode Num: 183 Episode T: 501 Reward: -2432.637095
+Total T: 84684 Episode Num: 184 Episode T: 284 Reward: -486.962526
+Total T: 85185 Episode Num: 185 Episode T: 501 Reward: -1621.891799
+Total T: 85686 Episode Num: 186 Episode T: 501 Reward: -407.669879
+Total T: 86187 Episode Num: 187 Episode T: 501 Reward: -344.983161
+Total T: 86688 Episode Num: 188 Episode T: 501 Reward: -1134.995199
+Total T: 87189 Episode Num: 189 Episode T: 501 Reward: 176.579823
+Total T: 87690 Episode Num: 190 Episode T: 501 Reward: -1351.551893
+Total T: 88017 Episode Num: 191 Episode T: 327 Reward: -2265.718521
+Total T: 88518 Episode Num: 192 Episode T: 501 Reward: -93.168934
+Total T: 88995 Episode Num: 193 Episode T: 477 Reward: 1068.273710
+Total T: 89237 Episode Num: 194 Episode T: 242 Reward: -4510.150671
+Total T: 89738 Episode Num: 195 Episode T: 501 Reward: -2758.203783
+Total T: 90239 Episode Num: 196 Episode T: 501 Reward: 533.055378
+Total T: 90740 Episode Num: 197 Episode T: 501 Reward: 1131.000593
+Total T: 90922 Episode Num: 198 Episode T: 182 Reward: -594.011061
+Total T: 91423 Episode Num: 199 Episode T: 501 Reward: 43.714089
+Total T: 91502 Episode Num: 200 Episode T: 79 Reward: -417.072534
+Total T: 92003 Episode Num: 201 Episode T: 501 Reward: -1042.768350
+Total T: 92504 Episode Num: 202 Episode T: 501 Reward: -672.390542
+Total T: 93005 Episode Num: 203 Episode T: 501 Reward: -76.327477
+Total T: 93506 Episode Num: 204 Episode T: 501 Reward: -1421.508212
+Total T: 94007 Episode Num: 205 Episode T: 501 Reward: -978.008818
+Total T: 94508 Episode Num: 206 Episode T: 501 Reward: -754.784672
+Total T: 95009 Episode Num: 207 Episode T: 501 Reward: -5263.044851
+Total T: 95510 Episode Num: 208 Episode T: 501 Reward: -3094.149025
+Total T: 96011 Episode Num: 209 Episode T: 501 Reward: 146.659416
+Total T: 96512 Episode Num: 210 Episode T: 501 Reward: -2001.788926
+Total T: 97013 Episode Num: 211 Episode T: 501 Reward: -959.985896
+Total T: 97514 Episode Num: 212 Episode T: 501 Reward: 450.513324
+Total T: 98015 Episode Num: 213 Episode T: 501 Reward: -311.914866
+Total T: 98516 Episode Num: 214 Episode T: 501 Reward: -2315.108614
+Total T: 99017 Episode Num: 215 Episode T: 501 Reward: -2683.455833
+Total T: 99155 Episode Num: 216 Episode T: 138 Reward: 280.868497
+Total T: 99656 Episode Num: 217 Episode T: 501 Reward: -773.968900
+Total T: 100044 Episode Num: 218 Episode T: 388 Reward: 10.005028
+Total T: 100218 Episode Num: 219 Episode T: 174 Reward: -894.029869
+Total T: 100375 Episode Num: 220 Episode T: 157 Reward: -512.320633
+Total T: 100498 Episode Num: 221 Episode T: 123 Reward: 566.226046
+Total T: 100536 Episode Num: 222 Episode T: 38 Reward: 32.345032
+Total T: 100709 Episode Num: 223 Episode T: 173 Reward: -563.325656
+Total T: 100842 Episode Num: 224 Episode T: 133 Reward: 366.895456
+Total T: 101057 Episode Num: 225 Episode T: 215 Reward: 384.014688
+Total T: 101240 Episode Num: 226 Episode T: 183 Reward: 384.422180
+Total T: 101331 Episode Num: 227 Episode T: 91 Reward: 268.284296
+Total T: 101452 Episode Num: 228 Episode T: 121 Reward: 460.231031
+Total T: 101820 Episode Num: 229 Episode T: 368 Reward: -854.933647
+Total T: 101997 Episode Num: 230 Episode T: 177 Reward: -292.507881
+Total T: 102162 Episode Num: 231 Episode T: 165 Reward: -189.227002
+Total T: 102406 Episode Num: 232 Episode T: 244 Reward: -1573.982811
+Total T: 102581 Episode Num: 233 Episode T: 175 Reward: -1281.533991
+Total T: 102775 Episode Num: 234 Episode T: 194 Reward: -1984.982267
+Total T: 102973 Episode Num: 235 Episode T: 198 Reward: -2001.331513
+Total T: 103122 Episode Num: 236 Episode T: 149 Reward: -273.705356
+Total T: 103370 Episode Num: 237 Episode T: 248 Reward: -1608.102236
+Total T: 103542 Episode Num: 238 Episode T: 172 Reward: 671.143053
+Total T: 103715 Episode Num: 239 Episode T: 173 Reward: -162.219054
+Total T: 104216 Episode Num: 240 Episode T: 501 Reward: -224.257217
+Total T: 104354 Episode Num: 241 Episode T: 138 Reward: -472.620231
+Total T: 104855 Episode Num: 242 Episode T: 501 Reward: -1276.920052
+Total T: 104905 Episode Num: 243 Episode T: 50 Reward: -145.091967
+Total T: 105078 Episode Num: 244 Episode T: 173 Reward: -672.950905
+Total T: 105579 Episode Num: 245 Episode T: 501 Reward: 317.710640
+Total T: 105621 Episode Num: 246 Episode T: 42 Reward: -518.621159
+Total T: 105691 Episode Num: 247 Episode T: 70 Reward: -843.359507INFO:gym-duckietown:Starting at [0.88479187 0.         2.64933607] 1.5329758928148973
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.00094999 0.         2.75345472] 4.6908906404509985
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80488936 0.         2.51899948] 4.736294806295679
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92964317 0.         2.52263872] 4.730759776704498
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7398058  0.         2.66259551] 4.726267699467541
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02822836 0.         2.66628581] 1.5479568408325244
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.85062703 0.         2.5129485 ] 1.6021855388257298
+INFO:gym-duckietown:Starting at [0.90880178 0.         2.64339279] 1.6319572623526446
+INFO:gym-duckietown:Starting at [0.99313725 0.         2.68650123] 1.5123270235345863
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.95187483 0.         2.59826779] 4.757514515157031
+INFO:gym-duckietown:Starting at [0.73760047 0.         2.72290174] 1.5211714209595877
+INFO:gym-duckietown:Starting at [0.87292182 0.         2.76418161] 4.762065158813241
+INFO:gym-duckietown:Starting at [0.81227063 0.         2.633922  ] 1.5517190601518847
+INFO:gym-duckietown:Starting at [0.73722492 0.         2.48058679] 4.686407615758257
+INFO:gym-duckietown:Starting at [0.94914669 0.         2.67555964] 1.5139175488381518
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.88722203 0.         2.4983075 ] 1.613212450826642
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03942533 0.         2.77196737] 4.666052486793747
+INFO:gym-duckietown:Starting at [0.80301495 0.         2.64862523] 4.670013139859346
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.95015653 0.         2.75409407] 1.536131255560741
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81918159 0.         2.66821209] 1.5738719870504663
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.95101917 0.         2.60511186] 1.622881386517396
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02123092 0.         2.77794521] 1.5549745998534052
+INFO:gym-duckietown:Starting at [0.77736621 0.         2.69685303] 1.5809434437306924
+INFO:gym-duckietown:Starting at [0.90508643 0.         2.59084738] 4.727720785063022
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.717559   0.         2.47443944] 4.67482416564321
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02717137 0.         2.7042427 ] 1.586635980527185
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92965319 0.         2.490825  ] 4.70243716254376
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79583162 0.         2.66204772] 1.6209023367708033
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72802736 0.         2.69080265] 1.5167505009494289
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.00367531 0.         2.7337569 ] 1.5028192019218922
+INFO:gym-duckietown:Starting at [1.03857519 0.         2.67475035] 1.6175975896340362
+INFO:gym-duckietown:Starting at [0.95369574 0.         2.63949033] 4.704419553844748
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03915999 0.         2.50322473] 4.661609910097734
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7742511  0.         2.68652927] 4.697785584890428
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92363063 0.         2.5858253 ] 1.5986399984722963
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72314301 0.         2.74283993] 1.6049763470880551
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73123176 0.         2.74993824] 1.5833459087062258
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92262028 0.         2.61361479] 4.655245252234295
+INFO:gym-duckietown:Starting at [1.02721469 0.         2.63420594] 1.6003317958792445
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80076639 0.         2.7482236 ] 4.734716512555398
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71044366 0.         2.58208916] 1.6222812722654694
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79631184 0.         2.68603764] 1.6320387405731014
+INFO:gym-duckietown:Starting at [0.87321325 0.         2.78510938] 4.743385770614304
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.93287435 0.         2.677619  ] 4.777428438307489
+INFO:gym-duckietown:Starting at [1.00418168 0.         2.66117317] 1.576472506342778
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77586739 0.         2.57857602] 4.742694680318785
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86577822 0.         2.65811661] 1.5463887214752963
+INFO:gym-duckietown:Starting at [0.7074778  0.         2.71492587] 4.657164835155241
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04796758 0.         2.59289782] 1.516791275317827
+INFO:gym-duckietown:Starting at [0.76491393 0.         2.60761021] 4.645977694847032
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.99122436 0.         2.55477934] 4.686177821499293
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77830497 0.         2.67487539] 1.6384685575852207
+INFO:gym-duckietown:Starting at [0.91368596 0.         2.6004846 ] 1.6240832837013282
+INFO:gym-duckietown:Starting at [0.76207594 0.         2.58844106] 4.776033068402142
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.93074519 0.         2.71013173] 4.697537543614884
+INFO:gym-duckietown:Starting at [0.80918733 0.         2.65877468] 4.778587406173457
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73211655 0.         2.69342747] 1.5849720546741914
+INFO:gym-duckietown:Starting at [0.86785146 0.         2.70918721] 4.780852127782085
+INFO:gym-duckietown:Starting at [0.78479131 0.         2.58748432] 1.6028991405325765
+INFO:gym-duckietown:Starting at [0.86862454 0.         2.55112373] 1.5577762707033225
+INFO:gym-duckietown:Starting at [0.85903675 0.         2.72827855] 4.76483950049436
+INFO:gym-duckietown:Starting at [0.84660099 0.         2.5994311 ] 1.605014911989782
+INFO:gym-duckietown:Starting at [0.92849676 0.         2.72304529] 4.756142229094304
+INFO:gym-duckietown:Starting at [0.83512097 0.         2.68376255] 1.5726221441136508
+INFO:gym-duckietown:Starting at [0.81991993 0.         2.67688582] 1.5473530645391282
+INFO:gym-duckietown:Starting at [0.78604048 0.         2.70994757] 1.5780520634862105
+INFO:gym-duckietown:Starting at [0.82590746 0.         2.65588946] 4.777041784411243
+INFO:gym-duckietown:Starting at [0.96853901 0.         2.73212205] 1.5227291103525464
+INFO:gym-duckietown:Starting at [0.73240382 0.         2.4920359 ] 1.6082299844589822
+INFO:gym-duckietown:Starting at [0.79669467 0.         2.69107702] 4.671933997277782
+INFO:gym-duckietown:Starting at [0.90073861 0.         2.50053792] 4.717099236498069
+INFO:gym-duckietown:Starting at [0.78169153 0.         2.56614305] 1.503069060352044
+INFO:gym-duckietown:Starting at [1.03542817 0.         2.76581192] 1.5044078926683002
+INFO:gym-duckietown:Starting at [0.85587571 0.         2.66313438] 1.5297006037906056
+INFO:gym-duckietown:Starting at [1.00461513 0.         2.70032369] 4.742263228393414
+INFO:gym-duckietown:Starting at [0.8549828 0.        2.4852406] 1.5552993823203676
+INFO:gym-duckietown:Starting at [0.86602374 0.         2.61910867] 1.6017343033127232
+INFO:gym-duckietown:Starting at [0.99955559 0.         2.51914824] 4.738677482100663
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.98718411 0.         2.78591483] 4.695097976672447
+INFO:gym-duckietown:Starting at [0.94796867 0.         2.72060801] 4.736650497727215
+INFO:gym-duckietown:Starting at [1.01707773 0.         2.59448831] 4.770874764858473
+INFO:gym-duckietown:Starting at [0.72393612 0.         2.50973234] 4.670772049870628
+INFO:gym-duckietown:Starting at [0.90948916 0.         2.46628435] 1.550705293608484
+INFO:gym-duckietown:Starting at [0.81884279 0.         2.70331085] 4.729417250177392
+INFO:gym-duckietown:Starting at [0.86470785 0.         2.60157798] 1.5148703319346186
+INFO:gym-duckietown:Starting at [0.94967222 0.         2.52705778] 4.739267368831557
+INFO:gym-duckietown:Starting at [0.91176677 0.         2.71395693] 1.5274279033149405
+INFO:gym-duckietown:Starting at [0.8660355  0.         2.64139268] 1.5280834265343672
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.78929448 0.         2.70064446] 4.76259152161875
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75484307 0.         2.53363555] 1.5415819593957905
+INFO:gym-duckietown:Starting at [1.0371999  0.         2.77305246] 1.5510268698917946
+INFO:gym-duckietown:Starting at [0.71237688 0.         2.69868523] 1.5506310133848915
+INFO:gym-duckietown:Starting at [0.82942893 0.         2.49382591] 1.5792418147124232
+INFO:gym-duckietown:Starting at [0.99381328 0.         2.65103163] 4.767393474066634
+INFO:gym-duckietown:Starting at [0.79438859 0.         2.63012515] 4.709748033005887
+INFO:gym-duckietown:Starting at [0.9763695  0.         2.64944733] 1.5556512306776484
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83576981 0.         2.79441189] 4.716494764407515
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73296822 0.         2.46133189] 1.5268351679626575
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90858849 0.         2.72926535] 4.644532651901997
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.01843558 0.         2.75765803] 4.663236904552475
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.85589828 0.         2.72426074] 4.699040123276751
+INFO:gym-duckietown:Starting at [0.75137593 0.         2.65348897] 4.66524317633483
+INFO:gym-duckietown:Starting at [0.83022018 0.         2.60381145] 4.7551646458238785
+INFO:gym-duckietown:Starting at [0.94306704 0.         2.70889224] 4.769550603227528
+INFO:gym-duckietown:Starting at [1.03638234 0.         2.69913852] 4.708045034686044
+INFO:gym-duckietown:Starting at [0.90414136 0.         2.55139092] 4.714453438871038
+INFO:gym-duckietown:Starting at [0.92236892 0.         2.6271779 ] 4.68360266548279
+INFO:gym-duckietown:Starting at [0.70480739 0.         2.55168848] 4.711348979283942
+INFO:gym-duckietown:Starting at [0.76596167 0.         2.70597571] 1.5396498431644774
+INFO:gym-duckietown:Starting at [0.7565628  0.         2.68786944] 1.619010237005227
+INFO:gym-duckietown:Starting at [0.7246878 0.        2.4846473] 1.5022024435533634
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7678766  0.         2.50598837] 4.736204037383887
+INFO:gym-duckietown:Starting at [0.95129254 0.         2.4992946 ] 4.686651696099479
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90012995 0.         2.7143462 ] 4.672105458348722
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.94091542 0.         2.49263858] 1.5968503472224502
+INFO:gym-duckietown:Starting at [0.74478672 0.         2.46950991] 4.706667558699516
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96504309 0.         2.51029314] 1.6222677503042846
+INFO:gym-duckietown:Starting at [0.8769123  0.         2.57622799] 4.748396295192845
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81042302 0.         2.47251729] 4.73204283400438
+INFO:gym-duckietown:Starting at [0.98634905 0.         2.57090901] 4.670529095885183
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03555687 0.         2.75940745] 1.5835769864242035
+INFO:gym-duckietown:Starting at [0.97040563 0.         2.67615188] 1.5167278452404096
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86104357 0.         2.72383797] 1.5338218172132587
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89353342 0.         2.72858996] 4.725983509919113
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92866547 0.         2.71428262] 4.7145605676871405
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75176926 0.         2.4979873 ] 4.767545130411189
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8965782  0.         2.62852553] 1.543913775828387
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.95560201 0.         2.7148152 ] 1.6340639164378503
+INFO:gym-duckietown:Starting at [0.7553385  0.         2.51902716] 4.651502733791098
+INFO:gym-duckietown:Starting at [1.03541414 0.         2.74564752] 1.592655133095198
+INFO:gym-duckietown:Starting at [0.95674391 0.         2.59346909] 1.6208904108838798
+INFO:gym-duckietown:Starting at [0.84712268 0.         2.69398722] 4.771864297723404
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96300895 0.         2.58939838] 1.5276215444647032
+INFO:gym-duckietown:Starting at [0.88904644 0.         2.68285613] 4.7123726332102915
+INFO:gym-duckietown:Starting at [1.03789718 0.         2.71143529] 1.521722086149866
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80210609 0.         2.79010137] 4.6519775060320985
+INFO:gym-duckietown:Starting at [0.80566398 0.         2.72893961] 4.71711981987747
+INFO:gym-duckietown:Starting at [0.95539337 0.         2.73618494] 4.763928863311242
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96105776 0.         2.79033991] 1.5302532593160207
+INFO:gym-duckietown:Starting at [0.75659543 0.         2.55769507] 1.5842588245453524
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.9973724  0.         2.49220213] 4.7797754932091046
+INFO:gym-duckietown:Starting at [0.73695639 0.         2.70235533] 4.753979942491669
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.74552828 0.         2.80003295] 1.617250710652824
+INFO:gym-duckietown:Starting at [1.04159027 0.         2.62493253] 4.688765306071574
+INFO:gym-duckietown:Starting at [0.88327854 0.         2.6283508 ] 4.734726886443052
+INFO:gym-duckietown:Starting at [0.82131663 0.         2.6460862 ] 1.56223394535884
+INFO:gym-duckietown:Starting at [1.03485149 0.         2.77335036] 4.70255116554137
+INFO:gym-duckietown:Starting at [0.91134951 0.         2.48792122] 4.683845158692431
+INFO:gym-duckietown:Starting at [1.00375677 0.         2.71082217] 4.71548012235366
+INFO:gym-duckietown:Starting at [0.75432203 0.         2.66488659] 4.649183820557958
+INFO:gym-duckietown:Starting at [0.88600766 0.         2.77752065] 4.704487954665782
+INFO:gym-duckietown:Starting at [0.90451642 0.         2.60784366] 1.5364911258337943
+INFO:gym-duckietown:Starting at [0.80843744 0.         2.52695548] 1.5501248647181987
+INFO:gym-duckietown:Starting at [0.78580477 0.         2.77569585] 1.5707911905884941
+INFO:gym-duckietown:Starting at [0.94448712 0.         2.76941002] 1.5679654112834318
+INFO:gym-duckietown:Starting at [0.79711503 0.         2.62809284] 1.5613605552000707
+INFO:gym-duckietown:Starting at [0.77685378 0.         2.66957294] 4.654664891324293
+INFO:gym-duckietown:Starting at [0.91406859 0.         2.74279721] 1.5529880730965593
+INFO:gym-duckietown:Starting at [1.02423094 0.         2.68798327] 1.6401459308191588
+INFO:gym-duckietown:Starting at [0.94460793 0.         2.8019148 ] 1.5305363164348815
+INFO:gym-duckietown:Starting at [1.00837767 0.         2.50711915] 1.5282104225342388
+INFO:gym-duckietown:Starting at [0.81283471 0.         2.80451181] 4.6608241293241095
+INFO:gym-duckietown:Starting at [0.82192351 0.         2.54892502] 1.6072588940208208
+INFO:gym-duckietown:Starting at [0.9614346  0.         2.58492832] 4.6949793406294
+INFO:gym-duckietown:Starting at [0.84359141 0.         2.68031539] 1.5155956094950689
+INFO:gym-duckietown:Starting at [0.90707107 0.         2.74999049] 1.6127220174056014
+INFO:gym-duckietown:Starting at [0.91991615 0.         2.59442565] 1.5756640398723096
+INFO:gym-duckietown:Starting at [0.95286037 0.         2.66650782] 4.702812653768743
+INFO:gym-duckietown:Starting at [0.74977898 0.         2.49959651] 4.723910907245181
+INFO:gym-duckietown:Starting at [0.85116477 0.         2.65218154] 4.675814224275016
+INFO:gym-duckietown:Starting at [0.90078761 0.         2.51592288] 4.6496145972870835
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71808532 0.         2.69468216] 1.6007285425454019
+INFO:gym-duckietown:Starting at [0.9881912  0.         2.47959523] 1.6304473898709895
+INFO:gym-duckietown:Starting at [0.72989697 0.         2.51436604] 4.66100260179423
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75595996 0.         2.46412354] 4.751256442272756
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.95814611 0.         2.6576556 ] 1.5657183207725573
+INFO:gym-duckietown:Starting at [0.7926621  0.         2.52154196] 1.5834556346514812
+INFO:gym-duckietown:Starting at [0.99400927 0.         2.53689997] 4.71245617302281
+INFO:gym-duckietown:Starting at [0.76540891 0.         2.63909284] 1.621701725920704
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77021088 0.         2.49144711] 4.6800405614487754
+INFO:gym-duckietown:Starting at [0.93124077 0.         2.50094406] 1.6082557412475658
+INFO:gym-duckietown:Starting at [1.02183289 0.         2.68290076] 1.5138251998639631
+INFO:gym-duckietown:Starting at [0.80204462 0.         2.49644381] 1.5593927963297767
+INFO:gym-duckietown:Starting at [1.03770613 0.         2.5810839 ] 4.710288051716569
+INFO:gym-duckietown:Starting at [0.89413632 0.         2.56639166] 1.616991739160359
+INFO:gym-duckietown:Starting at [0.9423306  0.         2.50677857] 4.698948468999956
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.76774631 0.         2.6759318 ] 1.503406180100714
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.7310516  0.         2.49624691] 1.6348883013245263
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71095427 0.         2.66373161] 1.6405399758486625
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.01586933 0.         2.55413701] 4.667490825835618
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04367006 0.         2.57662877] 4.777588590845444
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.01515163 0.         2.58767859] 4.747373618874523
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96991823 0.         2.72270848] 1.5058281311961315
+INFO:gym-duckietown:Starting at [0.94268981 0.         2.71622325] 1.5521662417127395
+INFO:gym-duckietown:Starting at [0.94133511 0.         2.5160074 ] 4.647613788967829
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.86219425 0.         2.47253694] 4.658282526563407
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.74524924 0.         2.6667171 ] 1.6305264635919645
+INFO:gym-duckietown:Starting at [0.85932239 0.         2.63456755] 1.5962876082524755
+INFO:gym-duckietown:Starting at [0.81376262 0.         2.70642448] 4.736685764331829
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.84877784 0.         2.79658132] 4.773162184901478
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92351812 0.         2.6856669 ] 1.515930826785879
+INFO:gym-duckietown:Starting at [0.97124886 0.         2.46959124] 4.6574614809723345
+INFO:gym-duckietown:Starting at [0.85480406 0.         2.80308331] 4.643490955696333
+INFO:gym-duckietown:Starting at [0.96890883 0.         2.55182191] 4.7198051005635
+INFO:gym-duckietown:Starting at [0.84240242 0.         2.77050112] 1.6096274033933733
+INFO:gym-duckietown:Starting at [0.9058919  0.         2.60655862] 1.5910181708839064
+INFO:gym-duckietown:Starting at [0.79050846 0.         2.66866808] 4.7267563786217694
+INFO:gym-duckietown:Starting at [0.75038382 0.         2.70040893] 4.701730570422721
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72373518 0.         2.69357649] 1.5720793804434854
+INFO:gym-duckietown:Starting at [1.05053694 0.         2.79902028] 4.745493641773337
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.00519484 0.         2.60096058] 1.6222787068442335
+INFO:gym-duckietown:Starting at [1.03010399 0.         2.64667111] 1.6277642206662046
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+
+Total T: 105762 Episode Num: 248 Episode T: 71 Reward: -567.150123
+Total T: 105864 Episode Num: 249 Episode T: 102 Reward: -608.536549
+Total T: 105983 Episode Num: 250 Episode T: 119 Reward: -706.204563
+Total T: 106084 Episode Num: 251 Episode T: 101 Reward: -1683.891488
+Total T: 106175 Episode Num: 252 Episode T: 91 Reward: -485.991613
+Total T: 106343 Episode Num: 253 Episode T: 168 Reward: -363.566986
+Total T: 106844 Episode Num: 254 Episode T: 501 Reward: -2087.931576
+Total T: 107345 Episode Num: 255 Episode T: 501 Reward: 281.078518
+Total T: 107593 Episode Num: 256 Episode T: 248 Reward: -691.781773
+Total T: 108094 Episode Num: 257 Episode T: 501 Reward: 2124.345606
+Total T: 108595 Episode Num: 258 Episode T: 501 Reward: -18320.389209
+Total T: 109096 Episode Num: 259 Episode T: 501 Reward: 2106.640984
+Total T: 109597 Episode Num: 260 Episode T: 501 Reward: 1407.710010
+Total T: 110098 Episode Num: 261 Episode T: 501 Reward: -264.311209
+Total T: 110529 Episode Num: 262 Episode T: 431 Reward: 1464.939451
+Total T: 110560 Episode Num: 263 Episode T: 31 Reward: -330.391296
+Total T: 110632 Episode Num: 264 Episode T: 72 Reward: -1250.970887
+Total T: 110691 Episode Num: 265 Episode T: 59 Reward: -694.418996
+Total T: 110933 Episode Num: 266 Episode T: 242 Reward: 246.014641
+Total T: 111434 Episode Num: 267 Episode T: 501 Reward: 1878.876000
+Total T: 111935 Episode Num: 268 Episode T: 501 Reward: 1909.833842
+Total T: 112200 Episode Num: 269 Episode T: 265 Reward: -1328.196439
+Total T: 112700 Episode Num: 270 Episode T: 500 Reward: 1209.868126
+Total T: 112806 Episode Num: 271 Episode T: 106 Reward: -412.485843
+Total T: 113079 Episode Num: 272 Episode T: 273 Reward: -580.473884
+Total T: 113482 Episode Num: 273 Episode T: 403 Reward: -521.893330
+Total T: 113753 Episode Num: 274 Episode T: 271 Reward: -672.659475
+Total T: 114254 Episode Num: 275 Episode T: 501 Reward: -321.275725
+Total T: 114592 Episode Num: 276 Episode T: 338 Reward: -1653.613709
+Total T: 114636 Episode Num: 277 Episode T: 44 Reward: 51.435788
+Total T: 114722 Episode Num: 278 Episode T: 86 Reward: -647.871398
+Total T: 115223 Episode Num: 279 Episode T: 501 Reward: 1679.949719
+Total T: 115724 Episode Num: 280 Episode T: 501 Reward: -1735.719418
+Total T: 115762 Episode Num: 281 Episode T: 38 Reward: 25.411399
+Total T: 116263 Episode Num: 282 Episode T: 501 Reward: 1859.708992
+Total T: 116400 Episode Num: 283 Episode T: 137 Reward: -287.780449
+Total T: 116901 Episode Num: 284 Episode T: 501 Reward: 1288.366766
+Total T: 117402 Episode Num: 285 Episode T: 501 Reward: 1065.729539
+Total T: 117903 Episode Num: 286 Episode T: 501 Reward: 1118.599375
+Total T: 118404 Episode Num: 287 Episode T: 501 Reward: 1672.196135
+Total T: 118905 Episode Num: 288 Episode T: 501 Reward: 1181.886649
+Total T: 119406 Episode Num: 289 Episode T: 501 Reward: 958.355856
+Total T: 119907 Episode Num: 290 Episode T: 501 Reward: -1733.981684
+Total T: 120408 Episode Num: 291 Episode T: 501 Reward: 1484.564167
+Total T: 120909 Episode Num: 292 Episode T: 501 Reward: 1462.043319
+Total T: 121410 Episode Num: 293 Episode T: 501 Reward: 1969.140384
+Total T: 121911 Episode Num: 294 Episode T: 501 Reward: 1728.514018
+Total T: 122012 Episode Num: 295 Episode T: 101 Reward: -509.908436
+Total T: 122513 Episode Num: 296 Episode T: 501 Reward: 1779.982479
+Total T: 123014 Episode Num: 297 Episode T: 501 Reward: 1288.112589
+Total T: 123515 Episode Num: 298 Episode T: 501 Reward: 1759.658042
+Total T: 124016 Episode Num: 299 Episode T: 501 Reward: 64.082762
+Total T: 124517 Episode Num: 300 Episode T: 501 Reward: 1440.372771
+Total T: 125018 Episode Num: 301 Episode T: 501 Reward: 879.608755
+Total T: 125519 Episode Num: 302 Episode T: 501 Reward: -1687.835095
+Total T: 125666 Episode Num: 303 Episode T: 147 Reward: -442.438464
+Total T: 126137 Episode Num: 304 Episode T: 471 Reward: 1824.098649
+Total T: 126173 Episode Num: 305 Episode T: 36 Reward: 75.090314
+Total T: 126563 Episode Num: 306 Episode T: 390 Reward: 1126.649233
+Total T: 126649 Episode Num: 307 Episode T: 86 Reward: 244.452257
+Total T: 127150 Episode Num: 308 Episode T: 501 Reward: -405.246866
+Total T: 127651 Episode Num: 309 Episode T: 501 Reward: 1643.574412
+Total T: 128152 Episode Num: 310 Episode T: 501 Reward: 1384.780725
+Total T: 128653 Episode Num: 311 Episode T: 501 Reward: -741.915018
+Total T: 129154 Episode Num: 312 Episode T: 501 Reward: 1919.664264
+Total T: 129655 Episode Num: 313 Episode T: 501 Reward: -1384.700745
+Total T: 130156 Episode Num: 314 Episode T: 501 Reward: 1997.858895
+Total T: 130533 Episode Num: 315 Episode T: 377 Reward: 419.891003
+Total T: 131034 Episode Num: 316 Episode T: 501 Reward: -643.562035
+Total T: 131107 Episode Num: 317 Episode T: 73 Reward: 252.580659
+Total T: 131608 Episode Num: 318 Episode T: 501 Reward: 1172.706484
+Total T: 131712 Episode Num: 319 Episode T: 104 Reward: 401.277468
+Total T: 131859 Episode Num: 320 Episode T: 147 Reward: 603.773966
+Total T: 132235 Episode Num: 321 Episode T: 376 Reward: -1954.942028
+Total T: 132319 Episode Num: 322 Episode T: 84 Reward: 305.023225
+Total T: 132415 Episode Num: 323 Episode T: 96 Reward: 396.366418
+Total T: 132855 Episode Num: 324 Episode T: 440 Reward: -270.953064
+Total T: 133356 Episode Num: 325 Episode T: 501 Reward: 1393.713198
+Total T: 133857 Episode Num: 326 Episode T: 501 Reward: 2038.214798
+Total T: 134358 Episode Num: 327 Episode T: 501 Reward: 279.069462
+Total T: 134859 Episode Num: 328 Episode T: 501 Reward: -536.194078
+Total T: 135059 Episode Num: 329 Episode T: 200 Reward: -196.799282
+Total T: 135560 Episode Num: 330 Episode T: 501 Reward: 1754.246689
+Total T: 136061 Episode Num: 331 Episode T: 501 Reward: 1483.272439
+Total T: 136562 Episode Num: 332 Episode T: 501 Reward: 255.390024
+Total T: 137063 Episode Num: 333 Episode T: 501 Reward: 12.524011
+Total T: 137564 Episode Num: 334 Episode T: 501 Reward: 1417.578500
+Total T: 138065 Episode Num: 335 Episode T: 501 Reward: 582.200354
+Total T: 138566 Episode Num: 336 Episode T: 501 Reward: 926.857188
+Total T: 139067 Episode Num: 337 Episode T: 501 Reward: 346.479423
+Total T: 139568 Episode Num: 338 Episode T: 501 Reward: 1075.925770
+Total T: 140069 Episode Num: 339 Episode T: 501 Reward: 717.764774
+Total T: 140570 Episode Num: 340 Episode T: 501 Reward: -1173.131123
+Total T: 141071 Episode Num: 341 Episode T: 501 Reward: -578.646647
+Total T: 141572 Episode Num: 342 Episode T: 501 Reward: 825.057480
+Total T: 142073 Episode Num: 343 Episode T: 501 Reward: 1186.999459
+Total T: 142574 Episode Num: 344 Episode T: 501 Reward: -3753.764367
+Total T: 143075 Episode Num: 345 Episode T: 501 Reward: 1604.431939
+Total T: 143576 Episode Num: 346 Episode T: 501 Reward: 877.144403
+Total T: 144077 Episode Num: 347 Episode T: 501 Reward: 718.384501
+Total T: 144439 Episode Num: 348 Episode T: 362 Reward: 763.810397
+Total T: 144940 Episode Num: 349 Episode T: 501 Reward: 1631.734489
+Total T: 145441 Episode Num: 350 Episode T: 501 Reward: -1251.079231
+Total T: 145942 Episode Num: 351 Episode T: 501 Reward: 1497.910456
+Total T: 146443 Episode Num: 352 Episode T: 501 Reward: -320.138062
+Total T: 146793 Episode Num: 353 Episode T: 350 Reward: -728.301816
+Total T: 147046 Episode Num: 354 Episode T: 253 Reward: 937.829314
+Total T: 147131 Episode Num: 355 Episode T: 85 Reward: 435.137295
+Total T: 147356 Episode Num: 356 Episode T: 225 Reward: 688.680421
+Total T: 147479 Episode Num: 357 Episode T: 123 Reward: 427.787780
+Total T: 147577 Episode Num: 358 Episode T: 98 Reward: 566.655180
+Total T: 147667 Episode Num: 359 Episode T: 90 Reward: 489.568423
+Total T: 148168 Episode Num: 360 Episode T: 501 Reward: -3298.060724
+Total T: 148669 Episode Num: 361 Episode T: 501 Reward: 1336.353415
+Total T: 148780 Episode Num: 362 Episode T: 111 Reward: 385.474711
+Total T: 148880 Episode Num: 363 Episode T: 100 Reward: 265.887422
+Total T: 149381 Episode Num: 364 Episode T: 501 Reward: 1769.817734
+Total T: 149882 Episode Num: 365 Episode T: 501 Reward: -1845.103159
+Total T: 149945 Episode Num: 366 Episode T: 63 Reward: 141.185490
+Total T: 150034 Episode Num: 367 Episode T: 89 Reward: 280.812941
+Total T: 150535 Episode Num: 368 Episode T: 501 Reward: 816.889353
+Total T: 150588 Episode Num: 369 Episode T: 53 Reward: 84.353792INFO:gym-duckietown:Starting at [0.71146599 0.         2.48263386] 4.771274121432669
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03459249 0.         2.67942228] 4.708575646747041
+INFO:gym-duckietown:Starting at [0.91905847 0.         2.63312438] 1.5546760615800082
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75007372 0.         2.70729278] 1.5059896545603013
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04650808 0.         2.65702855] 1.5410549536030587
+INFO:gym-duckietown:Starting at [0.91435742 0.         2.75669224] 4.778429503834715
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02779959 0.         2.73386862] 4.649442110240163
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90657897 0.         2.56680504] 1.595936779473277
+INFO:gym-duckietown:Starting at [0.77800766 0.         2.63381522] 4.761594995316542
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.97791468 0.         2.74895843] 4.723825312197919
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.01983462 0.         2.58551026] 4.686299851338993
+INFO:gym-duckietown:Starting at [0.78247202 0.         2.71427705] 4.760006722460594
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.82931152 0.         2.70807175] 4.668540526414397
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.04012221 0.         2.66608629] 1.5841208609257853
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02333408 0.         2.75361432] 1.5586982882460991
+INFO:gym-duckietown:Starting at [0.84641304 0.         2.76053824] 1.5613009337865116
+INFO:gym-duckietown:Starting at [0.77943574 0.         2.64621563] 4.738378306074243
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71850893 0.         2.76776352] 1.5198620339397828
+INFO:gym-duckietown:Starting at [0.98842208 0.         2.5184931 ] 4.7072538913242665
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71743496 0.         2.58836204] 4.688171791096326
+INFO:gym-duckietown:Starting at [0.98288868 0.         2.70180146] 1.614475870520045
+INFO:gym-duckietown:Starting at [0.7852369  0.         2.61877226] 4.705617706525207
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90800747 0.         2.70294546] 1.5964112945093238
+INFO:gym-duckietown:Starting at [0.75528735 0.         2.55440242] 1.5073149666492096
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96872806 0.         2.72468014] 4.776547070056577
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.77787303 0.         2.60431703] 1.6270064504164268
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79084622 0.         2.48059392] 1.6394287558550473
+INFO:gym-duckietown:Starting at [0.86285423 0.         2.45906262] 1.5312271238237352
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.85658578 0.         2.6212074 ] 1.5162319896000078
+INFO:gym-duckietown:Starting at [0.81150119 0.         2.67926146] 4.650762669499569
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.71356687 0.         2.79872167] 1.5377826922541653
+INFO:gym-duckietown:Starting at [0.961521  0.        2.6775768] 1.5213488846940257
+INFO:gym-duckietown:Starting at [1.043626   0.         2.80478762] 4.685671994180652
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.01854696 0.         2.60825701] 4.697096265107108
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.70776384 0.         2.78882693] 1.5628515494444353
+INFO:gym-duckietown:Starting at [0.77772544 0.         2.4595516 ] 1.5357366625242204
+INFO:gym-duckietown:Starting at [0.74749965 0.         2.75688967] 4.70609994499069
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8601869 0.        2.8053788] 4.67017569674598
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.87206186 0.         2.71922613] 4.767058508837563
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73800833 0.         2.61243185] 1.5485597967369678
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.82719622 0.         2.72882981] 1.558327944205333
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8577337  0.         2.57786437] 4.656728080989565
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03668121 0.         2.76073284] 4.747468296787119
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.75798821 0.         2.52612783] 1.5874207474529645
+INFO:gym-duckietown:Starting at [0.72094216 0.         2.77572821] 1.5488435226562434
+INFO:gym-duckietown:Starting at [0.96345554 0.         2.50459905] 1.6260117242237078
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90180329 0.         2.79252616] 1.5272996088041573
+INFO:gym-duckietown:Starting at [0.75587113 0.         2.52809868] 1.5770596604317935
+INFO:gym-duckietown:Starting at [0.80812294 0.         2.59583691] 1.6290129987893112
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.84337931 0.         2.76229085] 4.677411960954057
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.01296259 0.         2.57193667] 4.681612973312061
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.76557441 0.         2.71688015] 4.726773320017685
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02233035 0.         2.70001708] 4.662197778797279
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.0476147  0.         2.77930796] 4.693257059243905
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.88010232 0.         2.70742236] 1.5866474067927478
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92358808 0.         2.65501512] 4.716934704029131
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03279591 0.         2.65038967] 4.694322816304207
+INFO:gym-duckietown:Starting at [0.86942806 0.         2.56914918] 4.779874266910919
+INFO:gym-duckietown:Starting at [0.70666521 0.         2.61769004] 1.555170992839913
+INFO:gym-duckietown:Starting at [0.98570799 0.         2.51968179] 1.5197048195416512
+INFO:gym-duckietown:Starting at [1.02302241 0.         2.63557305] 4.6969333585410995
+INFO:gym-duckietown:Starting at [0.91956246 0.         2.71189729] 1.5596349790475654
+INFO:gym-duckietown:Starting at [0.90440076 0.         2.78231809] 1.5908589532257673
+INFO:gym-duckietown:Starting at [0.89126143 0.         2.64724497] 1.5975873575309922
+INFO:gym-duckietown:Starting at [0.81902003 0.         2.58171436] 1.5418903086116598
+INFO:gym-duckietown:Starting at [0.90044922 0.         2.56879189] 1.5342997329588763
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.82204775 0.         2.58278583] 4.7400303674353195
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.9823476  0.         2.70596904] 4.732025439340583
+INFO:gym-duckietown:Starting at [0.79146698 0.         2.69802972] 1.6089659170663453
+INFO:gym-duckietown:Starting at [1.03352363 0.         2.63245505] 4.7161014852018965
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83256838 0.         2.76749166] 1.5708539568084126
+INFO:gym-duckietown:Starting at [0.72455329 0.         2.6864503 ] 4.770986680494654
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81732809 0.         2.79522124] 1.5529064439609004
+INFO:gym-duckietown:Starting at [0.92628488 0.         2.56290283] 1.5350551273222584
+INFO:gym-duckietown:Starting at [0.96330659 0.         2.69758829] 4.735221038409941
+INFO:gym-duckietown:Starting at [0.92219348 0.         2.62535842] 4.670840313412062
+INFO:gym-duckietown:Starting at [0.99010194 0.         2.5529012 ] 1.5129841214006492
+INFO:gym-duckietown:Starting at [0.925318   0.         2.58697007] 1.5652717894358117
+INFO:gym-duckietown:Starting at [1.03227714 0.         2.46643451] 4.6799235024876
+INFO:gym-duckietown:Starting at [1.02103356 0.         2.66736614] 4.736205550317811
+INFO:gym-duckietown:Starting at [0.93704424 0.         2.57138216] 4.739004801683545
+INFO:gym-duckietown:Starting at [0.77120231 0.         2.50836406] 1.50786802292488
+INFO:gym-duckietown:Starting at [0.94905755 0.         2.64864634] 1.5533967766273675
+INFO:gym-duckietown:Starting at [1.04735148 0.         2.53551459] 1.530129910066434
+INFO:gym-duckietown:Starting at [0.9053697  0.         2.68642219] 1.5206937892817671
+INFO:gym-duckietown:Starting at [0.81861236 0.         2.74936413] 4.731942484314203
+INFO:gym-duckietown:Starting at [0.96619912 0.         2.54431396] 4.6486455966714395
+INFO:gym-duckietown:Starting at [0.85554602 0.         2.70908017] 1.544590651506117
+INFO:gym-duckietown:Starting at [0.74537313 0.         2.51748464] 4.7368963603044785
+INFO:gym-duckietown:Starting at [0.70659218 0.         2.77412054] 4.714078103535986
+INFO:gym-duckietown:Starting at [0.84417213 0.         2.79863735] 4.74334976818982
+INFO:gym-duckietown:Starting at [0.9984842  0.         2.67421992] 4.704565183800995
+INFO:gym-duckietown:Starting at [0.80734848 0.         2.64384467] 1.5589411562371616
+INFO:gym-duckietown:Starting at [0.78446225 0.         2.74817847] 4.6734669733706165
+INFO:gym-duckietown:Starting at [0.91097436 0.         2.57483997] 4.771438709833128
+INFO:gym-duckietown:Starting at [0.84773366 0.         2.63840893] 4.776517403606997
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.8704717  0.         2.76423488] 1.6296577491642044
+INFO:gym-duckietown:Starting at [0.88245011 0.         2.47039452] 4.746140404686116
+INFO:gym-duckietown:Starting at [1.04172261 0.         2.63411299] 4.767485886617267
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.72242085 0.         2.58469787] 4.758970961422576
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.02337082 0.         2.57594356] 1.5933498229910776
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96262816 0.         2.56401142] 4.758455655600286
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.95003227 0.         2.76048007] 4.731686617139305
+INFO:gym-duckietown:Starting at [0.83537265 0.         2.70492119] 4.653541861743656
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89205444 0.         2.52312554] 1.552499373670457
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.98608176 0.         2.55111267] 4.739552076845374
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81286751 0.         2.62924973] 1.614328790225275
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83077717 0.         2.46899816] 1.53693306144627
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92646894 0.         2.52713191] 4.702255928177471
+INFO:gym-duckietown:Starting at [0.88032767 0.         2.53150538] 4.659139407517991
+INFO:gym-duckietown:Starting at [0.84193937 0.         2.73825601] 1.6113217146197776
+INFO:gym-duckietown:Starting at [0.94509652 0.         2.58766035] 4.646777220806726
+INFO:gym-duckietown:Starting at [0.94160475 0.         2.80045413] 1.6301814045946785
+INFO:gym-duckietown:Starting at [0.97892928 0.         2.54516134] 4.7070513988458185
+INFO:gym-duckietown:Starting at [0.7176609  0.         2.53721074] 1.5679376890135408
+INFO:gym-duckietown:Starting at [0.74748885 0.         2.77074938] 1.5384592908947075
+INFO:gym-duckietown:Starting at [0.78282103 0.         2.51329483] 4.661685571378862
+INFO:gym-duckietown:Starting at [0.88165325 0.         2.4998779 ] 1.5471002244372416
+INFO:gym-duckietown:Starting at [1.00645306 0.         2.65187097] 1.5535013922284346
+INFO:gym-duckietown:Starting at [0.97049235 0.         2.58252084] 4.658766661164161
+INFO:gym-duckietown:Starting at [0.94808414 0.         2.7858904 ] 1.50166293388041
+INFO:gym-duckietown:Starting at [0.85304776 0.         2.56506008] 1.501932106143839
+INFO:gym-duckietown:Starting at [1.0215245  0.         2.76513512] 4.7102967328174
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.84563158 0.         2.77770671] 4.730030355768123
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.93628406 0.         2.5684446 ] 4.776778879705017
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.88946206 0.         2.63350608] 4.688668565458667
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.79514575 0.         2.78683618] 4.726877556767625
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.88287303 0.         2.741076  ] 4.722794497580759
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.73248735 0.         2.4878179 ] 4.708054622020965
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80691648 0.         2.69019375] 4.705488221078408
+INFO:gym-duckietown:Starting at [0.96714806 0.         2.51791612] 1.5773232642619732
+INFO:gym-duckietown:Starting at [0.9336449  0.         2.67008185] 1.5445839827228038
+INFO:gym-duckietown:Starting at [0.8130399  0.         2.59015531] 1.5539366298139627
+INFO:gym-duckietown:Starting at [0.73956985 0.         2.63719991] 1.601970584924435
+INFO:gym-duckietown:Starting at [0.91977389 0.         2.51011635] 1.5060363300208177
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.83609211 0.         2.67630198] 4.731894815314552
+INFO:gym-duckietown:Starting at [0.97971998 0.         2.65074051] 4.660738424285762
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.80158559 0.         2.62810108] 4.677425948462397
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.87234345 0.         2.80683127] 1.5446142522122837
+INFO:gym-duckietown:Starting at [0.71800149 0.         2.73235994] 4.730620839565718
+INFO:gym-duckietown:Starting at [0.94345001 0.         2.56140449] 4.736760697570745
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.0224003  0.         2.78516528] 4.65024551171478
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.90532531 0.         2.64141281] 1.5550734277096452
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.81841666 0.         2.69124324] 1.5711568279932175
+INFO:gym-duckietown:Starting at [0.90138764 0.         2.73792345] 1.50210338096336
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.92490308 0.         2.45745001] 4.690021046865602
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.01839458 0.         2.7902907 ] 1.6338732437121921
+INFO:gym-duckietown:Starting at [1.04834656 0.         2.45792394] 4.7777375553653
+INFO:gym-duckietown:Starting at [0.92392194 0.         2.5071488 ] 1.6267825444991895
+INFO:gym-duckietown:Starting at [0.83504839 0.         2.60498207] 1.6195760088809474
+INFO:gym-duckietown:Starting at [1.00335265 0.         2.61521054] 1.5753553355041308
+INFO:gym-duckietown:Starting at [1.00424912 0.         2.78180531] 4.694282143418237
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.89524779 0.         2.74906501] 1.611736612406744
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [1.03381253 0.         2.75913049] 1.5065232010815026
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.96572428 0.         2.63926356] 4.768908562364638
+INFO:gym-duckietown:Starting at [0.74981432 0.         2.69991773] 1.523577143151972
+INFO:gym-duckietown:Starting at [0.93667833 0.         2.71807321] 4.692881420005733
+INFO:gym-duckietown:Starting at [1.03110179 0.         2.78220561] 1.6309685783115155
+INFO:gym-duckietown:Starting at [0.9509635  0.         2.62362284] 1.6368347947111537
+INFO:gym-duckietown:Starting at [1.04796121 0.         2.66911516] 4.704465329052134
+INFO:gym-duckietown:Starting at [0.70524624 0.         2.72660536] 4.689156818362264
+INFO:gym-duckietown:Stopping the simulator because we are at an invalid pose.
+INFO:gym-duckietown:Starting at [0.84653969 0.         2.80175881] 4.731535271097487
+INFO:gym-duckietown:Starting at [0.72146952 0.         2.73103052] 4.751915141796314
+INFO:gym-duckietown:Starting at [0.93354177 0.         2.57765264] 4.729900599166138
+INFO:gym-duckietown:Starting at [0.90295109 0.         2.48673864] 4.692091413417941
+INFO:gym-duckietown:Starting at [0.76455186 0.         2.46278404] 1.5351956681358296
+INFO:gym-duckietown:Starting at [0.85592434 0.         2.47452626] 1.574246860934676
+INFO:gym-duckietown:Starting at [0.79597648 0.         2.5409965 ] 4.66757843017146
+INFO:gym-duckietown:Starting at [0.96101289 0.         2.57815711] 1.5216235403841156
+INFO:gym-duckietown:Starting at [1.03701043 0.         2.78922169] 1.6331232179143242
+INFO:gym-duckietown:Starting at [0.71051309 0.         2.66642003] 1.539365475268553
+INFO:gym-duckietown:Starting at [0.72394338 0.         2.73415832] 4.6697022955894525
