@@ -66,7 +66,7 @@ class ActionWrapper(gym.ActionWrapper):
         super(ActionWrapper, self).__init__(env)
 
     def action(self, action):
-        action_ = action * 0.9            # @riza  action_ = [action[0] * 0.8, action[1]]
+        action_ = [action[0] * 0.9, action[1]]          # @riza: action_ = [action[0] * 0.8, action[1]]
         return action_
 
 
