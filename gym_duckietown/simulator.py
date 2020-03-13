@@ -1404,9 +1404,9 @@ class Simulator(gym.Env):
                     # Penalize reward if the car is far away from center line
                     # TODO: calculate distance from sensor
                     -10 * self.dist_centerline_curve())
-        # TODO: check for circular motion: angle>135
-        if abs(self.cur_angle) > 100:
-            reward = -100
+        # # TODO: check for circular motion: angle>135
+        # if abs(self.cur_angle) > 100:
+        #     reward = -100
 
         return reward
 
@@ -1442,7 +1442,7 @@ class Simulator(gym.Env):
             reward = 0
             done_code = 'max-steps-reached'
         # @riza :If duckie is turning around, doing circular motion
-        elif abs(self.cur_angle) > 100:
+        elif abs(self.get_lane_pos2(self.cur_pos, self.cur_angle).angle_deg) > 100:
             msg = 'Stopping the simulator because duckie is turning around!'
             logger.info(msg)
             done = True
