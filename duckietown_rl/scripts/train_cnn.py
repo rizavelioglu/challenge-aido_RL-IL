@@ -6,12 +6,12 @@ import gym
 import gym_duckietown
 import os
 
-from args import get_ddpg_args_train
-from ddpg import DDPG
-from utils import seed, evaluate_policy, ReplayBuffer
-from wrappers import NormalizeWrapper, ImgWrapper, \
-    DtRewardWrapper, ActionWrapper, ResizeWrapper
-from env import launch_env
+from duckietown_rl.args import get_ddpg_args_train
+from duckietown_rl.ddpg import DDPG
+from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
+from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
+    DtRewardWrapper, ActionWrapper, ResizeWrapper, SteeringToWheelVelWrapper
+from duckietown_rl.env import launch_env
 
 policy_name = "DDPG"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -32,7 +32,7 @@ env = launch_env()
 # env = ResizeWrapper(env)
 # env = NormalizeWrapper(env)
 # env = ImgWrapper(env) # to make the images from 160x120x3 into 3x160x120
-env = ActionWrapper(env)
+# env = ActionWrapper(env)
 env = DtRewardWrapper(env)
 
 # Set seeds
@@ -128,7 +128,6 @@ if args.save_models:
 df_eval = pd.DataFrame(data_eval, columns=["n_episode", "total_step", "reward", "n_step"])
 df_eval.to_csv("./results/df_eval.csv")
 
-
 # ******************************************************************************************
 # ******************************************************************************************
 #     """
@@ -139,9 +138,5 @@ df_eval.to_csv("./results/df_eval.csv")
 #     meanQ     : mean of Q-value per episode
 #     stdQ      : std of Q-value
 #     """
-# data_eval.append([episode_num, total_timesteps, episode_reward, episode_timesteps])
-# df_eval = pd.DataFrame(data_eval, columns=["n_episode", "total_step", "reward", "n_step"])
-# df_eval.to_csv("./results/df_eval.csv")
-#
 # df_test = pd.DataFrame(data_test, columns=["n_episode", "total_step", "reward", "n_step"])
 # df_test.to_csv("./results/df_test.csv")
