@@ -101,7 +101,7 @@ while total_timesteps < args.max_timesteps:
     # Perform action
     _, reward, done, _ = env.step(action)
     new_obs = env.get_features()    # @riza
-    # env.render()   # TODO: remove this
+    env.render()   # TODO: remove this
 
     if episode_timesteps >= args.env_timesteps:
         done = True
