@@ -1402,7 +1402,7 @@ class Simulator(gym.Env):
                     # Give more reward if moving with speed
                     +2.0 * sum(self.wheelVels) +
                     # Penalize reward if the car is far away from center line
-                    # TODO: calculate distance from sensor
+                    # calculate distance from the middle-sensor line
                     -10 * self.dist_centerline_curve())
         # # TODO: check for circular motion: angle>135
         # if abs(self.cur_angle) > 100:
@@ -1867,6 +1867,7 @@ class Simulator(gym.Env):
         Calculate the distance between the middle sensor line(center of robot actually) and the projected point
         on the curve.
         """
+        DIST_NOT_INTERSECT = 0
         # Get directory line
         cps = get_dir_line(self.cur_angle, self.cur_pos)
         # Get the center point of directory line
@@ -1904,9 +1905,9 @@ class Simulator(gym.Env):
         is_true, dist = compute_dist(np.vstack((cps_center, cps[1])), pts, dir_vec, n=1, red=True)[0]
 
         if is_true:
-            return dist
+            return abs(dist)
         else:
-            return 5
+            return DIST_NOT_INTERSECT
 
 
 

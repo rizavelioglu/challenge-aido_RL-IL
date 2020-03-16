@@ -1,17 +1,14 @@
-import random
 import pandas as pd
 import numpy as np
 import torch
-import gym
-import gym_duckietown
 import os
 
-from args import get_ddpg_args_train
-from ddpg import DDPG
-from utils import seed, evaluate_policy, ReplayBuffer
-from wrappers import NormalizeWrapper, ImgWrapper, \
+from duckietown_rl.args import get_ddpg_args_train
+from duckietown_rl.ddpg import DDPG
+from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
+from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
     DtRewardWrapper, ActionWrapper, ResizeWrapper, SteeringToWheelVelWrapper
-from env import launch_env
+from duckietown_rl.env import launch_env
 
 policy_name = "DDPG"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -47,7 +44,7 @@ policy = DDPG(state_dim, action_dim, max_action, net_type="dense")
 replay_buffer = ReplayBuffer(args.replay_buffer_max_size)
 
 # Evaluate untrained policy
-evaluations = [evaluate_policy(env, policy)]
+rew_eval = [evaluate_policy(env, policy)]
 
 total_timesteps = 0
 timesteps_since_eval = 0
@@ -55,9 +52,12 @@ episode_num = 0
 done = True
 episode_reward = None
 env_counter = 0
-# We will store out log here
-data_eval = []*7
-data_test = []*7
+
+# Crate our variables for logging
+# while evaluating the exploration value = 0
+evaluations_test = [episode_num, total_timesteps, rew_eval, 0]
+evaluations_eval = []
+
 while total_timesteps < args.max_timesteps:
 
     if done:
@@ -66,16 +66,18 @@ while total_timesteps < args.max_timesteps:
             print(("Total T: %d Episode Num: %d Episode T: %d Reward: %f") % (
                 total_timesteps, episode_num, episode_timesteps, episode_reward))
             policy.train(replay_buffer, episode_timesteps, args.batch_size, args.discount, args.tau)
+            evaluations_test.append([episode_num, total_timesteps, episode_reward, episode_timesteps])
 
         # Evaluate episode
         if timesteps_since_eval >= args.eval_freq:
             timesteps_since_eval %= args.eval_freq
-            evaluations.append(evaluate_policy(env, policy))
+            rew_eval = evaluate_policy(env, policy)
+            # Append logs
+            evaluations_eval.append([total_timesteps, rew_eval])
 
             if args.save_models:
                 policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
             # np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
-            data_eval.append([episode_num, total_timesteps, episode_reward, episode_timesteps])
 
         # Reset environment
         env_counter += 1
@@ -88,7 +90,7 @@ while total_timesteps < args.max_timesteps:
 
     # Select action randomly or according to policy
     if total_timesteps < args.start_timesteps:
-        action = env.action_space.sample()
+        action = abs(env.action_space.sample())
     else:
         action = policy.predict(np.array(obs))
         if args.expl_noise != 0:
@@ -119,24 +121,25 @@ while total_timesteps < args.max_timesteps:
     timesteps_since_eval += 1
 
 # Final evaluation
-evaluations.append(evaluate_policy(env, policy))
-data_eval.append([episode_num, total_timesteps, episode_reward, episode_timesteps])
+rew_eval = evaluate_policy(env, policy)
+evaluations_eval.append([total_timesteps, rew_eval])
 
 if args.save_models:
     policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
 # np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
-df_eval = pd.DataFrame(data_eval, columns=["n_episode", "total_step", "reward", "n_step"])
+
+"""
+total_step: Global step
+avg_reward: Average reward 
+"""
+df_eval = pd.DataFrame(evaluations_eval, columns=["total_step", "avg_reward"])
 df_eval.to_csv("./results/df_eval.csv")
 
-# ******************************************************************************************
-# ******************************************************************************************
-#     """
-#     n_episode : Episode Id
-#     total_step: Global step
-#     reward    : Episode reward
-#     n_step    : #of steps done per episode
-#     meanQ     : mean of Q-value per episode
-#     stdQ      : std of Q-value
-#     """
-# df_test = pd.DataFrame(data_test, columns=["n_episode", "total_step", "reward", "n_step"])
-# df_test.to_csv("./results/df_test.csv")
+"""
+n_episode : Episode Id
+total_step: Global step
+reward    : Episode reward
+n_step    : #of steps done per episode
+"""
+df_test = pd.DataFrame(evaluations_test, columns=["n_episode", "total_step", "e_reward", "n_step"])
+df_test.to_csv("./results/df_test.csv")
