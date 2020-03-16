@@ -29,8 +29,8 @@ env = launch_env()
 # env = ResizeWrapper(env)
 # env = NormalizeWrapper(env)
 # env = ImgWrapper(env) # to make the images from 160x120x3 into 3x160x120
-# env = ActionWrapper(env)
-env = DtRewardWrapper(env)
+env = ActionWrapper(env)
+# env = DtRewardWrapper(env)
 
 # Set seeds
 seed(args.seed)
@@ -109,7 +109,12 @@ while total_timesteps < args.max_timesteps:
         done = True
 
     done_bool = 0 if episode_timesteps + 1 == args.env_timesteps else float(done)
-    episode_reward += reward
+
+    # @riza
+    if reward == -1000:
+        episode_reward = -500
+    else:
+        episode_reward += reward
 
     # Store data in replay buffer
     replay_buffer.add(obs, new_obs, action, reward, done_bool)

@@ -55,7 +55,7 @@ class DtRewardWrapper(gym.RewardWrapper):
     def reward(self, reward):
         # @riza
         if reward == -1000:
-            reward = -100
+            reward = -500
 
         return reward
 

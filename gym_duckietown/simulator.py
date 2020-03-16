@@ -1448,6 +1448,13 @@ class Simulator(gym.Env):
             done = True
             reward = REWARD_INVALID_POSE
             done_code = 'doing a circular action'
+        # @riza :If duckie is too far from center line (on the other lane, etc.)
+        elif abs(self.get_lane_pos2(self.cur_pos, self.cur_angle).dist) > 0.12:
+            msg = 'Stopping the simulator because duckie is too far from center-line!'
+            logger.info(msg)
+            done = True
+            reward = REWARD_INVALID_POSE
+            done_code = 'far from center line'
         else:
             done = False
             reward = self.compute_reward(self.cur_pos, self.cur_angle, self.robot_speed)
@@ -1867,7 +1874,7 @@ class Simulator(gym.Env):
         Calculate the distance between the middle sensor line(center of robot actually) and the projected point
         on the curve.
         """
-        DIST_NOT_INTERSECT = 0
+        DIST_NOT_INTERSECT = 50
         # Get directory line
         cps = get_dir_line(self.cur_angle, self.cur_pos)
         # Get the center point of directory line
