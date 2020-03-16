@@ -77,7 +77,6 @@ class DDPG(object):
         # assert state.shape[0] == 3
 
         if self.flat:
-            # TODO: add try, except if error occurs
             # reshape tensor([14]) to tensor([1,14])
             state = torch.FloatTensor(state.reshape(1, -1)).to(device)   # @riza: torch.FloatTensor(state).to(device)
         else:
