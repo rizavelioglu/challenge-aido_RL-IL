@@ -44,7 +44,7 @@ policy = DDPG(state_dim, action_dim, max_action, net_type="dense")
 replay_buffer = ReplayBuffer(args.replay_buffer_max_size)
 
 # Evaluate untrained policy
-rew_eval = [evaluate_policy(env, policy)]
+rew_eval = evaluate_policy(env, policy)
 
 total_timesteps = 0
 timesteps_since_eval = 0
@@ -78,8 +78,7 @@ while total_timesteps < args.max_timesteps:
             evaluations_eval.append([total_timesteps, rew_eval])
 
             if args.save_models:
-                policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
-            # np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
+                policy.save("{}-episode:{}-reward:{}".format(file_name, episode_num, rew_eval), directory="./pytorch_models")
 
         # Reset environment
         env_counter += 1
