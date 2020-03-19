@@ -24,12 +24,12 @@ class ActorDense(nn.Module):
         self.max_action = max_action
 
         # @riza: decrease action space from [-1,1] to [0,1]
-        self.tanh = nn.Sigmoid()          #  self.tanh = nn.Tanh()
+        self.sgd = nn.Sigmoid()          #  self.tanh = nn.Tanh()
 
     def forward(self, x):
         x = F.relu(self.l1(x))
         x = F.relu(self.l2(x))
-        x = self.max_action * self.tanh(self.l3(x))
+        x = self.max_action * self.sgd(self.l3(x))
         return x
 
 
