@@ -55,8 +55,10 @@ env_counter = 0
 
 # Crate our variables for logging
 # while evaluating the exploration value = 0
-evaluations_test = [episode_num, total_timesteps, rew_eval, 0]
+evaluations_test = []
 evaluations_eval = []
+
+evaluations_test.append([episode_num, total_timesteps, rew_eval, 0])
 
 while total_timesteps < args.max_timesteps:
 
@@ -143,7 +145,7 @@ df_eval.to_csv("./results/df_eval.csv")
 """
 n_episode : Episode Id
 total_step: Global step
-reward    : Episode reward
+e_reward    : Episode reward
 n_step    : #of steps done per episode
 """
 df_test = pd.DataFrame(evaluations_test, columns=["n_episode", "total_step", "e_reward", "n_step"])
