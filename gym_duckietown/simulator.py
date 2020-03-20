@@ -1992,8 +1992,9 @@ def get_dir_line(angle, pos):
     # This pos is the geometric center of robot(same as: _actual_center())
     pos = pos + (CAMERA_FORWARD_DIST - (ROBOT_LENGTH / 2)) * get_dir_vec(angle)
 
-    dir_start = [pos[0] + 0.15 * x_, 0.01, pos[2] + 0.15 * y_]
-    dir_end   = [pos[0] - 0.15 * x_, 0.01, pos[2] - 0.15 * y_]
+    dir_start = [pos[0] + 0.25 * x_, 0.01, pos[2] + 0.25 * y_]
+    dir_end   = [pos[0] - 0.25 * x_, 0.01, pos[2] - 0.25 * y_]
+
 
     return np.vstack((dir_start, dir_end))
 
