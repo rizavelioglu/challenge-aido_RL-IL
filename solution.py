@@ -1,5 +1,5 @@
 import numpy as np
-from model import DDPG
+from duckietown_rl.ddpg import DDPG
 from gym_duckietown.simulator import Simulator
 from duckietown_rl.wrappers import ActionWrapper
 import torch
