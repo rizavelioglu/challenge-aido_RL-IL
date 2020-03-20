@@ -503,6 +503,11 @@ class Simulator(gym.Env):
 
             logger.info('Using map pose start. \n Pose: %s, Angle: %s' %(propose_pos, propose_angle) )
 
+        elif self.map_name == "zigzag_dists":
+            # @riza: Start at a fixed position and angle (a very good-aligned pose)
+            propose_angle = 1.5
+            propose_pos = np.array([1., 0., 2.7])
+
         else:
             # Keep trying to find a valid spawn position on this tile
             for _ in range(MAX_SPAWN_ATTEMPTS):
@@ -549,10 +554,6 @@ class Simulator(gym.Env):
             else:
                 msg = 'Could not find a valid starting pose after %s attempts' % MAX_SPAWN_ATTEMPTS
                 raise Exception(msg)
-
-        # @riza: Start at a fixed position and angle (a very good-aligned pose)
-        propose_angle = 1.5
-        propose_pos = np.array([1., 0., 2.7])
 
         self.cur_pos = propose_pos
         self.cur_angle = propose_angle
@@ -1401,12 +1402,8 @@ class Simulator(gym.Env):
                     # self.wheelVels[0] + self.wheelVels[1]  -_> instead of self.speed
                     # Give more reward if moving with speed
                     +2.0 * sum(self.wheelVels) +
-                    # Penalize reward if the car is far away from center line
-                    # calculate distance from the middle-sensor line
+                    # Penalize if it's far away from center line: calculate distance from the middle-sensor line
                     -10 * self.dist_centerline_curve())
-        # # TODO: check for circular motion: angle>135
-        # if abs(self.cur_angle) > 100:
-        #     reward = -100
 
         return reward
 
