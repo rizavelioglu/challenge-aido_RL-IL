@@ -23,12 +23,13 @@ class ActorDense(nn.Module):
 
         self.max_action = max_action
 
-        self.tanh = nn.Tanh()
+        # @riza: decrease action space from [-1,1] to [0,1]
+        self.sgd = nn.Sigmoid()          #  self.tanh = nn.Tanh()
 
     def forward(self, x):
         x = F.relu(self.l1(x))
         x = F.relu(self.l2(x))
-        x = self.max_action * self.tanh(self.l3(x))
+        x = self.max_action * self.sgd(self.l3(x))
         return x
 
 
@@ -77,7 +78,6 @@ class DDPG(object):
         # assert state.shape[0] == 3
 
         if self.flat:
-            # TODO: add try, except if error occurs
             # reshape tensor([14]) to tensor([1,14])
             state = torch.FloatTensor(state.reshape(1, -1)).to(device)   # @riza: torch.FloatTensor(state).to(device)
         else:

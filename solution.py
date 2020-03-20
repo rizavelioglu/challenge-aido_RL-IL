@@ -18,7 +18,7 @@ max_action = float(env.action_space.high[0])
 
 # Initialize policy
 policy = DDPG(state_dim, action_dim, max_action, net_type="dense")
-policy.load("model", directory="models")
+policy.load("model", directory="models", for_inference=True)
 
 with torch.no_grad():
     while True:
