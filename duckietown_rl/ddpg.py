@@ -131,6 +131,12 @@ class DDPG(object):
         torch.save(self.actor.state_dict(), '{}/{}_actor.pth'.format(directory, filename))
         torch.save(self.critic.state_dict(), '{}/{}_critic.pth'.format(directory, filename))
 
-    def load(self, filename, directory):
+    def load(self, filename, directory, for_inference=False):
         self.actor.load_state_dict(torch.load('{}/{}_actor.pth'.format(directory, filename), map_location=device))
         self.critic.load_state_dict(torch.load('{}/{}_critic.pth'.format(directory, filename), map_location=device))
+        if for_inference:
+            # If we're not learning anymore, set model layers to
+            # test mode (this disables dropout and changes batchnorm).
+            # This does NOT affect autograd.
+            self.actor.eval()
+            self.critic.eval()
