@@ -1995,7 +1995,6 @@ def get_dir_line(angle, pos):
     dir_start = [pos[0] + 0.25 * x_, 0.01, pos[2] + 0.25 * y_]
     dir_end   = [pos[0] - 0.25 * x_, 0.01, pos[2] - 0.25 * y_]
 
-
     return np.vstack((dir_start, dir_end))
 
 
