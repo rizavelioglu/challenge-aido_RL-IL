@@ -10,7 +10,7 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
 
 obs = env.reset()
 env.render()
-EPISODES, STEPS = 100, 2000
+EPISODES, STEPS = 100, 500
 
 for episode in range(0, EPISODES):
     prev_angles = [0] * 10
@@ -21,21 +21,7 @@ for episode in range(0, EPISODES):
         distance_to_road_center = lane_pose.dist
         angle_from_straight_in_rads = lane_pose.angle_rad
 
-        # k_p, k_d, k_i = 17, 9, 0.1
-        # if -0.5 < lane_pose.angle_deg < 0.5:
-        #     speed = 1
-        # elif -1 < lane_pose.angle_deg < 1:
-        #     speed = 0.9
-        # elif -2 < lane_pose.angle_deg < 2:
-        #     speed = 0.8
-        # elif -10 < lane_pose.angle_deg < 10:
-        #     k_p, k_d = 33, 8
-        #     speed = 0.5
-        # else:
-        #     k_p, k_d, k_i = 33, 8, 0.05
-        #     speed = 0.3
-
-        k_p, k_d, k_i = 17, 20, 0.1
+        k_p, k_d, k_i = 17, 9, 0.1
         if -0.5 < lane_pose.angle_deg < 0.5:
             speed = 1
         elif -1 < lane_pose.angle_deg < 1:
@@ -43,10 +29,11 @@ for episode in range(0, EPISODES):
         elif -2 < lane_pose.angle_deg < 2:
             speed = 0.8
         elif -10 < lane_pose.angle_deg < 10:
+            k_p, k_d = 33, 8
             speed = 0.5
         else:
+            k_p, k_d, k_i = 33, 8, 0.05
             speed = 0.3
-
 
         prev_angles.append(abs(prev_angle - lane_pose.angle_deg))
         prev_angles.pop(0)
@@ -58,10 +45,6 @@ for episode in range(0, EPISODES):
 
         features = env.draw_features()
         env.render()
-
-        angle = lane_pose.angle_deg
-        if abs(angle) > 90:
-            print(angle, "\n\n")
 
         # cv2.imshow("obs", obs)
         # if cv2.waitKey() & 0xFF == ord('q'):
