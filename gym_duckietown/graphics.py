@@ -412,7 +412,7 @@ def rotate_translate(dir_vec, points, new_center):
     return new_points
 
 
-def compute_dist(cps, points, dir_vec, n=6, debug=False, red=False):
+def compute_dist(cps, points, dir_vec, n=12, debug=False, red=False):
 
     # Sample points from dir_line
     pts = [get_linear_bezier(cps, t) for t in np.linspace(0, 1, n)]
@@ -434,7 +434,7 @@ def compute_dist(cps, points, dir_vec, n=6, debug=False, red=False):
         # This means there's no intersection
         if len(y_pos) == 0 or len(y_neg) == 0:
             # For top 3 points, look for points in next_tile
-            if i < 3:
+            if i < (n/2):
                 # TODO:Transform points
                 transformed_points = rotate_translate(dir_vec, points[50:100], p)
             # For below 3 points, look for points in prev_tile
@@ -450,7 +450,7 @@ def compute_dist(cps, points, dir_vec, n=6, debug=False, red=False):
 
                 # TODO: ************ CHANGE THIS PART ************
                 # For top 3 points, look for points in next_tile
-                if i > 3:
+                if i > (n/2):
                     # TODO:Transform points
                     transformed_points = rotate_translate(dir_vec, points[50:100], p)
                 # For below 3 points, look for points in prev_tile
