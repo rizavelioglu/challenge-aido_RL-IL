@@ -336,13 +336,12 @@ def bezier_draw_points_curve(cps, n = 20, red=False):
     gl.glColor3f(1,1,1)
 
 
-def bezier_draw_line(cps, grid_coords=None, get_tile=None, n=6, perpendicular=False, red=False):
+def bezier_draw_line(cps, red=False):
     """
-    Draw directory vector line
-    :param draw_perpendicular:
-    :param n: # of points to be shown
+    Draw a line
+    :param red:
     :param cps: (x,y,z) coordinates of start&end points of the line
-    :return: None
+    :return: Draw line
     """
     from pyglet import gl
     gl.glBegin(gl.GL_LINES)
@@ -353,62 +352,6 @@ def bezier_draw_line(cps, grid_coords=None, get_tile=None, n=6, perpendicular=Fa
     gl.glVertex3f(*cps[0])
     gl.glVertex3f(*cps[1])
     gl.glEnd()
-
-    if perpendicular:
-        # Sample points from dir_line
-        pts = [get_linear_bezier(cps, t) for t in np.linspace(0, 1, n)]
-        # (y2-y1)/(x2-x1)
-        slope = (cps[0][2] - cps[1][2]) / (cps[0][0] - cps[1][0])
-        # For each point, draw the perpendicular line
-        for p in pts:
-            # k = y + x/slope
-            k = p[2] + p[0]/slope
-            p_1 = np.array([0, 0.01, k])
-            # get unit dir_vec of perpendicular line
-            x_, _, y_ = (p_1 - p)
-            norm = np.linalg.norm([x_, y_])
-            x_ /= norm
-            y_ /= norm
-
-            dir_start = [p[0] + 0.2 * x_, 0.01, p[2] + 0.2 * y_]
-            dir_end   = [p[0] - 0.2 * x_, 0.01, p[2] - 0.2 * y_]
-
-            # bezier_draw_line(np.vstack((dir_start, dir_end)))
-            # TODO: INCREASE n PARAMETER IN bezier_draw_points
-            points = bezier_draw_points(np.vstack((dir_start, dir_end)), red=True, draw=False, n=12)
-
-            prev_dist = 10
-            pt_line = [0]*3
-            pt_curve = [0]*3
-
-            k, m = grid_coords(p)
-            curves = get_tile(k, m)['curves']
-
-            for i in points:
-                # Find closest point and tangent to this curve
-                # TODO: INCREASE n PARAMETER IN bezier_closest
-                t = bezier_closest(curves[1], i, n=12)
-                point = bezier_point(curves[1], t)
-
-                dist = np.linalg.norm(i-point)
-                if dist < prev_dist:
-                    prev_dist = dist
-                    pt_line = i
-                    pt_curve = point
-
-            draw_intersection_point_curve(pt_curve)
-            draw_intersection_point_line(pt_line)
-
-            # Get distance from intersection point to directory vector line
-            # print("\n", np.linalg.norm(pt_curve - p))
-
-            gl.glBegin(gl.GL_LINES)
-            gl.glColor3f(1, 1, 1)
-            gl.glVertex3f(pt_curve[0], 0.01, pt_curve[2])
-            gl.glVertex3f(p[0], 0.01, p[2])
-            gl.glEnd()
-
-        # print("\n\n")
 
 
 def draw_intersection_point_curve(point):
