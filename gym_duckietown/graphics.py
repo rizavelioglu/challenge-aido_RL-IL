@@ -354,26 +354,15 @@ def bezier_draw_line(cps, red=False):
     gl.glEnd()
 
 
-def draw_intersection_point_curve(point):
+def draw_point(point):
     """
-    Draw intersection points one-by-one b/w bezier curve and perpendicular lines
+    Draw a point
     :param point: Coordinates of the point
     """
     from pyglet import gl
     gl.glPointSize(7)
     gl.glBegin(gl.GL_POINTS)
-    gl.glColor3f(1, 1, 1)
-    gl.glVertex3f(point[0], 0.1, point[2])
-    gl.glEnd()
-
-
-def draw_intersection_point_line(point):
-    """
-    :param point: Coordinates of points on perpendicular line that is the closest to intersection point
-    """
-    from pyglet import gl
-    gl.glBegin(gl.GL_POINTS)
-    gl.glColor3f(0, 1, 0)
+    gl.glColor3f(0, 0, 1)
     gl.glVertex3f(point[0], 0.1, point[2])
     gl.glEnd()
 

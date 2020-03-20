@@ -1828,6 +1828,8 @@ class Simulator(gym.Env):
             [bezier_point(curves_prev[ii], i / (n - 1)) for i in range(0, n)]))
 
         bezier_draw_line(get_dir_line(self.cur_angle, self.cur_pos))
+        # Draw the center of the robot
+        draw_point(_actual_center(self.cur_pos, self.cur_angle))
 
         return compute_dist(get_dir_line(self.cur_angle, self.cur_pos),
                      list(pts),
