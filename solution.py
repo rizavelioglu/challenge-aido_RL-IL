@@ -10,7 +10,7 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
                 randomize_maps_on_reset=False, draw_curve=False, draw_bbox=True)
 
 # Action wrapper
-env = ActionWrapper(env)
+# env = ActionWrapper(env)
 
 state_dim = env.get_features().shape[0]    # @riza: state_dim = env.observation_space.shape
 action_dim = env.action_space.shape[0]
