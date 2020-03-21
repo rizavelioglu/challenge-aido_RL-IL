@@ -10,7 +10,7 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
 
 obs = env.reset()
 env.render()
-EPISODES, STEPS = 100, 500
+EPISODES, STEPS = 100, 800
 
 for episode in range(0, EPISODES):
     prev_angles = [0] * 10
@@ -43,11 +43,11 @@ for episode in range(0, EPISODES):
         action = wrapper.convert([speed, steering])
         obs, reward, done, info = env.step(action)
 
-        features = env.draw_features()
+        features = env.get_features()
         env.render()
 
-        cv2.imshow("obs", obs)
-        if cv2.waitKey() & 0xFF == ord('q'):
-            break
+        # cv2.imshow("obs", obs)
+        # if cv2.waitKey() & 0xFF == ord('q'):
+        #     break
 
     env.reset()

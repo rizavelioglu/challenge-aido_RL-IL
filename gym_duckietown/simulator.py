@@ -330,7 +330,8 @@ class Simulator(gym.Env):
         self.wheelVels = np.array([0, 0])
 
         # @riza
-        self.last_state = np.zeros((1, 14))
+        # The state consists of sensor readings & wheel velocities
+        self.last_state = np.zeros((1, 26))
 
     def _init_vlists(self):
         import pyglet
