@@ -46,9 +46,11 @@ for episode in range(0, EPISODES):
         features = env.get_features()
         env.render()
 
-        # cv2.imshow("obs", obs)
-        # if cv2.waitKey() & 0xFF == ord('q'):
-        #     break
+        print(f"Reward: {reward:.2f} | Action: {action}")
+
+        cv2.imshow("obs", obs)
+        if cv2.waitKey() & 0xFF == ord('q'):
+            break
 
     env.reset()
 
