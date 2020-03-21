@@ -318,7 +318,7 @@ def bezier_draw_points(cps, n=6, red=True, draw=True):
     return pts
 
 
-def bezier_draw_points_curve(cps, n = 20, red=False):
+def bezier_draw_points_curve(cps, n=10, red=False):
     from pyglet import gl
     pts = [bezier_point(cps, i/(n-1)) for i in range(0,n)]
     gl.glPointSize(5)

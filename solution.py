@@ -33,12 +33,11 @@ with torch.no_grad():
             rewards.append(rew)
             env.render()
 
-            print(f"Reward: {rew:.2f}")
+            print(f"Reward: {rew:.2f} | Action: {action}")
             # cv2.imshow("obs", obs)
             # if cv2.waitKey() & 0xFF == ord('q'):
             #     break
 
             if done:
                 break
-        print("="*20)
         print("mean episode reward:", np.mean(rewards))
