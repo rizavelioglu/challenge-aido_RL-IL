@@ -1406,7 +1406,8 @@ class Simulator(gym.Env):
             reward = (
                     # self.wheelVels[0] + self.wheelVels[1]  -_> instead of self.speed
                     # Give more reward if moving with speed
-                    +2.0 * sum(self.wheelVels) +
+                    # +2.0 * sum(self.wheelVels) +
+                    + 4 * self.speed +
                     # Penalize if it's far away from center line: calculate distance from the middle-sensor line
                     -10 * self.dist_centerline_curve())
 
