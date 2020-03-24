@@ -578,6 +578,9 @@ class Simulator(gym.Env):
         # Generate the first camera image
         obs = self.render_obs()
 
+        # @riza: reset last_state's value
+        self.last_state = np.zeros((1, 26))
+
         # Return first observation
         return obs
 
@@ -1410,7 +1413,8 @@ class Simulator(gym.Env):
         return reward
 
     def step(self, action: np.ndarray):
-        action = np.clip(action, -1, 1)
+        # @riza: don't go backwards
+        action = np.clip(action, 0, 1)       # action = np.clip(action, -1, 1)
         # Actions could be a Python list
         action = np.array(action)
         for _ in range(self.frame_skip):
