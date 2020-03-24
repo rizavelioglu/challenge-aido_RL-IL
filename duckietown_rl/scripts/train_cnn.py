@@ -9,6 +9,7 @@ from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
 from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
     DtRewardWrapper, ActionWrapper, ResizeWrapper, SteeringToWheelVelWrapper
 from duckietown_rl.env import launch_env
+from duckietown_rl.ornstein_uhlenbeck import OrnsteinUhlenbeckActionNoise
 
 policy_name = "DDPG"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -59,6 +60,8 @@ evaluations_test = []
 evaluations_eval = []
 
 evaluations_test.append([episode_num, total_timesteps, rew_eval, 0])
+# Create OrnsteinUhlenbeckActionNoise instance
+action_noise = OrnsteinUhlenbeckActionNoise(mu=np.zeros(2), sigma=np.ones(2)*0.2, theta=0.7)
 
 while total_timesteps < args.max_timesteps:
 
@@ -88,18 +91,15 @@ while total_timesteps < args.max_timesteps:
         episode_reward = 0
         episode_timesteps = 0
         episode_num += 1
+        action_noise.reset()   # @riza: reset noise profile
 
     # Select action randomly or according to policy
     if total_timesteps < args.start_timesteps:
         action = abs(env.action_space.sample())
     else:
-        action = policy.predict(np.array(obs))
-        if args.expl_noise != 0:
-            action = (action + np.random.normal(
-                0,
-                args.expl_noise,
-                size=env.action_space.shape[0])
-                      ).clip(env.action_space.low, env.action_space.high)
+        action = policy.predict(obs)
+        # Add OU action noise to action
+        action = action + action_noise()
 
     # Perform action
     _, reward, done, _ = env.step(action)

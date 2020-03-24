@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 # TODO: use action_noise.reset in --> env.reset()
-class OrnsteinUhlenbeckActionNoise():
+class OrnsteinUhlenbeckActionNoise:
     def __init__(self, mu, sigma, theta=.15, dt=1e-2, x0=None):
         self.theta = theta   # (float) the rate of mean reversion
         self.mu = mu         # (float) the mean of the noise
@@ -42,15 +42,15 @@ def plot_graph(noise_right, noise_left, noise, timesteps, scatter=False):
     plt.show()
 
 
-action_noise = OrnsteinUhlenbeckActionNoise(mu=np.zeros(2), sigma=np.ones(2)*0.2, theta=0.7)
-noise_list = []
-timesteps = 500
-
-for i in range(timesteps):
-    noise_list.append(action_noise())
-
-noise = np.array(noise_list)
-noise_left = noise[:, 0]
-noise_right = noise[:, 1]
-
-plot_graph(noise_right, noise_left, action_noise, timesteps, scatter=False)
+# action_noise = OrnsteinUhlenbeckActionNoise(mu=np.zeros(2), sigma=np.ones(2)*0.2, theta=0.7)
+# noise_list = []
+# timesteps = 500
+#
+# for i in range(timesteps):
+#     noise_list.append(action_noise())
+#
+# noise = np.array(noise_list)
+# noise_left = noise[:, 0]
+# noise_right = noise[:, 1]
+#
+# plot_graph(noise_right, noise_left, action_noise, timesteps, scatter=False)
