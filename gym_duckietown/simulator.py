@@ -331,7 +331,7 @@ class Simulator(gym.Env):
 
         # @riza
         # The state consists of sensor readings & wheel velocities
-        self.last_state = np.zeros((1, 26))
+        self.last_state = [0]*104
 
     def _init_vlists(self):
         import pyglet
@@ -579,7 +579,7 @@ class Simulator(gym.Env):
         obs = self.render_obs()
 
         # @riza: reset last_state's value
-        self.last_state = np.zeros((1, 26))
+        self.last_state = [0]*104
 
         # Return first observation
         return obs
@@ -1406,8 +1406,7 @@ class Simulator(gym.Env):
             reward = (
                     # self.wheelVels[0] + self.wheelVels[1]  -_> instead of self.speed
                     # Give more reward if moving with speed
-                    # +2.0 * sum(self.wheelVels) +
-                    + 4 * self.speed +
+                    +2.0 * sum(self.wheelVels) +
                     # Penalize if it's far away from center line: calculate distance from the middle-sensor line
                     -10 * self.dist_centerline_curve())
 
@@ -1447,17 +1446,15 @@ class Simulator(gym.Env):
             done_code = 'max-steps-reached'
         # @riza :If duckie is turning around, doing circular motion
         elif abs(self.get_lane_pos2(self.cur_pos, self.cur_angle).angle_deg) > 100:
-            msg = 'Stopping the simulator because duckie is turning around!'
-            logger.info(msg)
-            done = True
-            reward = REWARD_INVALID_POSE
+            done = False
+            reward = -100
+            msg = ''
             done_code = 'doing a circular action'
         # @riza :If duckie is too far from center line (on the other lane, etc.)
         elif abs(self.get_lane_pos2(self.cur_pos, self.cur_angle).dist) > 0.12:
-            msg = 'Stopping the simulator because duckie is too far from center-line!'
-            logger.info(msg)
-            done = True
-            reward = REWARD_INVALID_POSE
+            done = False
+            reward = -100
+            msg = ''
             done_code = 'far from center line'
         else:
             done = False
@@ -1853,9 +1850,10 @@ class Simulator(gym.Env):
         # Get state representation
         state = np.concatenate((dists, wheelVels), axis=None)
         # Concatenate last state & current state
-        feature = np.concatenate((self.last_state, state), axis=None)
+        feature = np.concatenate((np.asarray(self.last_state), state), axis=None)
         # Store last state
-        self.last_state = state
+        self.last_state.append(state)
+        self.last_state.pop()
 
         return feature
 
