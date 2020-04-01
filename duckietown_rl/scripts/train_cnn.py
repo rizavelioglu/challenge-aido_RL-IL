@@ -98,8 +98,8 @@ while total_timesteps < args.max_timesteps:
         action = abs(env.action_space.sample())
     else:
         action = policy.predict(obs)
-        # Add OU action noise to action
-        action = action + action_noise()
+        # Add OU action noise with its effect decreasing over time
+        action = action + action_noise() * (1 - total_timesteps / args.max_timesteps)
 
     # Perform action
     _, reward, done, _ = env.step(action)
