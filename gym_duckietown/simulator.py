@@ -331,7 +331,7 @@ class Simulator(gym.Env):
 
         # @riza
         # The state consists of sensor readings & wheel velocities
-        self.last_state = [0]*104
+        self.last_state = np.zeros((1, 104))
 
     def _init_vlists(self):
         import pyglet
@@ -579,7 +579,7 @@ class Simulator(gym.Env):
         obs = self.render_obs()
 
         # @riza: reset last_state's value
-        self.last_state = [0]*104
+        self.last_state = np.zeros((1, 104))
 
         # Return first observation
         return obs
@@ -1850,10 +1850,11 @@ class Simulator(gym.Env):
         # Get state representation
         state = np.concatenate((dists, wheelVels), axis=None)
         # Concatenate last state & current state
-        feature = np.concatenate((np.asarray(self.last_state), state), axis=None)
+        feature = np.concatenate((self.last_state, state), axis=None)
         # Store last state
-        self.last_state.append(state)
-        self.last_state.pop(0)
+        self.last_state = np.append(self.last_state, state)
+        self.last_state = self.last_state[26:]
+        assert len(self.last_state) == 104
 
         return feature
 
