@@ -1853,7 +1853,7 @@ class Simulator(gym.Env):
         feature = np.concatenate((np.asarray(self.last_state), state), axis=None)
         # Store last state
         self.last_state.append(state)
-        self.last_state.pop()
+        self.last_state.pop(0)
 
         return feature
 
