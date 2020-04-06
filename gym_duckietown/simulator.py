@@ -1446,15 +1446,17 @@ class Simulator(gym.Env):
             done_code = 'max-steps-reached'
         # @riza :If duckie is turning around, doing circular motion
         elif abs(self.get_lane_pos2(self.cur_pos, self.cur_angle).angle_deg) > 100:
-            done = False
-            reward = -100
-            msg = ''
+            msg = 'Stopping the simulator because duckie is turning around!'
+            logger.info(msg)
+            done = True
+            reward = REWARD_INVALID_POSE
             done_code = 'doing a circular action'
         # @riza :If duckie is too far from center line (on the other lane, etc.)
         elif abs(self.get_lane_pos2(self.cur_pos, self.cur_angle).dist) > 0.12:
-            done = False
-            reward = -100
-            msg = ''
+            msg = 'Stopping the simulator because duckie is too far from center-line!'
+            logger.info(msg)
+            done = True
+            reward = REWARD_INVALID_POSE
             done_code = 'far from center line'
         else:
             done = False
