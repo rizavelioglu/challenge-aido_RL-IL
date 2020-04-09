@@ -331,7 +331,7 @@ class Simulator(gym.Env):
 
         # @riza
         # The state consists of sensor readings & wheel velocities
-        self.last_state = np.zeros((1, 104))
+        self.last_state = np.zeros((1, 26))
 
     def _init_vlists(self):
         import pyglet
@@ -504,10 +504,10 @@ class Simulator(gym.Env):
 
             logger.info('Using map pose start. \n Pose: %s, Angle: %s' %(propose_pos, propose_angle) )
 
-        elif self.map_name == "zigzag_dists":
-            # @riza: Start at a fixed position and angle (a very good-aligned pose)
-            propose_angle = 1.5
-            propose_pos = np.array([1., 0., 2.7])
+        # elif self.map_name == "zigzag_dists":
+        #     # @riza: Start at a fixed position and angle (a very good-aligned pose)
+        #     propose_angle = 1.5
+        #     propose_pos = np.array([1., 0., 2.7])
 
         else:
             # Keep trying to find a valid spawn position on this tile
@@ -546,6 +546,11 @@ class Simulator(gym.Env):
                     lp = self.get_lane_pos2(propose_pos, propose_angle)
                 except NotInLane:
                     continue
+
+                # @riza: start in a good pose
+                if abs(lp.dist) > 0.12:
+                    continue
+
                 M = self.accept_start_angle_deg
                 ok = -M < lp.angle_deg < +M
                 if not ok:
@@ -579,7 +584,7 @@ class Simulator(gym.Env):
         obs = self.render_obs()
 
         # @riza: reset last_state's value
-        self.last_state = np.zeros((1, 104))
+        self.last_state = np.zeros((1, 26))
 
         # Return first observation
         return obs
@@ -1854,9 +1859,7 @@ class Simulator(gym.Env):
         # Concatenate last state & current state
         feature = np.concatenate((self.last_state, state), axis=None)
         # Store last state
-        self.last_state = np.append(self.last_state, state)
-        self.last_state = self.last_state[26:]
-        assert len(self.last_state) == 104
+        self.last_state = state
 
         return feature
 

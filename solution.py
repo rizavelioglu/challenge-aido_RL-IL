@@ -1,6 +1,6 @@
 import numpy as np
 from duckietown_rl.ddpg import DDPG
-from gym_duckietown.simulator import Simulator
+from duckietown_rl.gym_duckietown.simulator import Simulator
 from duckietown_rl.wrappers import ActionWrapper
 import torch
 import cv2
