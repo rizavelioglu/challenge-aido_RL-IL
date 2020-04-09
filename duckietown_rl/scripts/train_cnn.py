@@ -3,13 +3,13 @@ import numpy as np
 import torch
 import os
 
-from duckietown_rl.args import get_ddpg_args_train
-from duckietown_rl.ddpg import DDPG
-from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
-from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
+from args import get_ddpg_args_train
+from ddpg import DDPG
+from utils import seed, evaluate_policy, ReplayBuffer
+from wrappers import NormalizeWrapper, ImgWrapper, \
     DtRewardWrapper, ActionWrapper, ResizeWrapper, SteeringToWheelVelWrapper
-from duckietown_rl.env import launch_env
-from duckietown_rl.ornstein_uhlenbeck import OrnsteinUhlenbeckActionNoise
+from env import launch_env
+from ornstein_uhlenbeck import OrnsteinUhlenbeckActionNoise
 
 policy_name = "DDPG"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -113,7 +113,7 @@ while total_timesteps < args.max_timesteps:
 
     # @riza
     if reward == -1000:
-        episode_reward = -500
+        episode_reward = -100
     else:
         episode_reward += reward
 
