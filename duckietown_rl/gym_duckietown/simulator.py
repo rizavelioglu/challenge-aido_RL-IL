@@ -331,7 +331,7 @@ class Simulator(gym.Env):
 
         # @riza
         # The state consists of sensor readings & wheel velocities
-        self.last_state = np.zeros((1, 26))
+        self.last_state = np.zeros((1, 14))
 
     def _init_vlists(self):
         import pyglet
@@ -504,10 +504,10 @@ class Simulator(gym.Env):
 
             logger.info('Using map pose start. \n Pose: %s, Angle: %s' %(propose_pos, propose_angle) )
 
-        # elif self.map_name == "zigzag_dists":
-        #     # @riza: Start at a fixed position and angle (a very good-aligned pose)
-        #     propose_angle = 1.5
-        #     propose_pos = np.array([1., 0., 2.7])
+        elif self.map_name == "zigzag_dists":
+            # @riza: Start at a fixed position and angle (a very good-aligned pose)
+            propose_angle = 1.5
+            propose_pos = np.array([1., 0., 2.7])
 
         else:
             # Keep trying to find a valid spawn position on this tile
@@ -584,7 +584,7 @@ class Simulator(gym.Env):
         obs = self.render_obs()
 
         # @riza: reset last_state's value
-        self.last_state = np.zeros((1, 26))
+        self.last_state = np.zeros((1, 14))
 
         # Return first observation
         return obs
@@ -1300,7 +1300,7 @@ class Simulator(gym.Env):
         if delta_time is None:
             delta_time = self.delta_time
         # @riza: Make the interval of these two the same
-        self.wheelVels = action             # self.wheelVels = action * self.robot_speed * 1
+        self.wheelVels = action * self.robot_speed * 1
         prev_pos = self.cur_pos
 
         # Update the robot's position
@@ -2003,8 +2003,8 @@ def get_dir_line(angle, pos):
     # This pos is the geometric center of robot(same as: _actual_center())
     pos = pos + (CAMERA_FORWARD_DIST - (ROBOT_LENGTH / 2)) * get_dir_vec(angle)
 
-    dir_start = [pos[0] + 0.25 * x_, 0.01, pos[2] + 0.25 * y_]
-    dir_end   = [pos[0] - 0.25 * x_, 0.01, pos[2] - 0.25 * y_]
+    dir_start = [pos[0] + 0.15 * x_, 0.01, pos[2] + 0.15 * y_]
+    dir_end   = [pos[0] - 0.15 * x_, 0.01, pos[2] - 0.15 * y_]
 
     return np.vstack((dir_start, dir_end))
 
