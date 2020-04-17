@@ -3,13 +3,13 @@ import numpy as np
 import torch
 import os
 
-from duckietown_rl.args import get_ddpg_args_train
-from duckietown_rl.ddpg import DDPG
-from duckietown_rl.utils import seed, evaluate_policy, ReplayBuffer
-from duckietown_rl.wrappers import NormalizeWrapper, ImgWrapper, \
+from args import get_ddpg_args_train
+from ddpg import DDPG
+from utils import seed, evaluate_policy, ReplayBuffer
+from wrappers import NormalizeWrapper, ImgWrapper, \
     DtRewardWrapper, ActionWrapper, ResizeWrapper, SteeringToWheelVelWrapper
-from duckietown_rl.env import launch_env
-from duckietown_rl.ornstein_uhlenbeck import OrnsteinUhlenbeckActionNoise
+from env import launch_env
+from ornstein_uhlenbeck import OrnsteinUhlenbeckActionNoise
 
 policy_name = "DDPG"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -110,12 +110,8 @@ while total_timesteps < args.max_timesteps:
         done = True
 
     done_bool = 0 if episode_timesteps + 1 == args.env_timesteps else float(done)
-
     # @riza
-    if reward == -1000:
-        episode_reward = -500
-    else:
-        episode_reward += reward
+    episode_reward += reward
 
     # Store data in replay buffer
     replay_buffer.add(obs, new_obs, action, reward, done_bool)
@@ -132,7 +128,6 @@ evaluations_eval.append([total_timesteps, rew_eval])
 
 if args.save_models:
     policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
-# np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
 
 """
 total_step: Global step

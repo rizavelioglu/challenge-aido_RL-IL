@@ -109,7 +109,7 @@ DEFAULT_FRAME_SKIP = 1
 
 DEFAULT_ACCEPT_START_ANGLE_DEG = 60
 
-REWARD_INVALID_POSE = -1000
+REWARD_INVALID_POSE = -100
 
 MAX_SPAWN_ATTEMPTS = 5000
 
@@ -331,7 +331,7 @@ class Simulator(gym.Env):
 
         # @riza
         # The state consists of sensor readings & wheel velocities
-        self.last_state = np.zeros((1, 104))
+        self.last_state = np.zeros((1, 81))
 
     def _init_vlists(self):
         import pyglet
@@ -504,10 +504,10 @@ class Simulator(gym.Env):
 
             logger.info('Using map pose start. \n Pose: %s, Angle: %s' %(propose_pos, propose_angle) )
 
-        elif self.map_name == "zigzag_dists":
-            # @riza: Start at a fixed position and angle (a very good-aligned pose)
-            propose_angle = 1.5
-            propose_pos = np.array([1., 0., 2.7])
+        # elif self.map_name == "zigzag_dists":
+        #     # @riza: Start at a fixed position and angle (a very good-aligned pose)
+        #     propose_angle = 1.5
+        #     propose_pos = np.array([1., 0., 2.7])
 
         else:
             # Keep trying to find a valid spawn position on this tile
@@ -546,6 +546,11 @@ class Simulator(gym.Env):
                     lp = self.get_lane_pos2(propose_pos, propose_angle)
                 except NotInLane:
                     continue
+
+                # @riza: start in a good pose
+                if abs(lp.dist) > 0.12:
+                    continue
+
                 M = self.accept_start_angle_deg
                 ok = -M < lp.angle_deg < +M
                 if not ok:
@@ -579,7 +584,7 @@ class Simulator(gym.Env):
         obs = self.render_obs()
 
         # @riza: reset last_state's value
-        self.last_state = np.zeros((1, 104))
+        self.last_state = np.zeros((1, 81))
 
         # Return first observation
         return obs
@@ -1295,7 +1300,7 @@ class Simulator(gym.Env):
         if delta_time is None:
             delta_time = self.delta_time
         # @riza: Make the interval of these two the same
-        self.wheelVels = action             # self.wheelVels = action * self.robot_speed * 1
+        self.wheelVels = action   # * self.robot_speed * 1
         prev_pos = self.cur_pos
 
         # Update the robot's position
@@ -1403,12 +1408,7 @@ class Simulator(gym.Env):
         else:
 
             # Compute the reward
-            reward = (
-                    # self.wheelVels[0] + self.wheelVels[1]  -_> instead of self.speed
-                    # Give more reward if moving with speed
-                    +2.0 * sum(self.wheelVels) +
-                    # Penalize if it's far away from center line: calculate distance from the middle-sensor line
-                    -10 * self.dist_centerline_curve())
+            reward = (-1.0 + self.speed / 0.6 - abs(lp.dist) / 0.18)
 
         return reward
 
@@ -1452,7 +1452,7 @@ class Simulator(gym.Env):
             reward = REWARD_INVALID_POSE
             done_code = 'doing a circular action'
         # @riza :If duckie is too far from center line (on the other lane, etc.)
-        elif abs(self.get_lane_pos2(self.cur_pos, self.cur_angle).dist) > 0.12:
+        elif abs(self.get_lane_pos2(self.cur_pos, self.cur_angle).dist) > 0.18:
             msg = 'Stopping the simulator because duckie is too far from center-line!'
             logger.info(msg)
             done = True
@@ -1847,16 +1847,22 @@ class Simulator(gym.Env):
         Feature vector for DDPG
         """
         dists = np.array(self.draw_features()).flatten()
+        # When using frame_skip, agent can get out of tile & bezier curve points can't be observed
+        # hence, sensor readings will be None
+        if None in dists:
+            dists = np.zeros((1, 24))
+
         wheelVels = np.array([self.wheelVels[0], self.wheelVels[1]])
+        speed = np.asarray(self.speed)
         # self.last_action
         # Get state representation
-        state = np.concatenate((dists, wheelVels), axis=None)
+        state = np.concatenate((dists, wheelVels, speed), axis=None)
         # Concatenate last state & current state
         feature = np.concatenate((self.last_state, state), axis=None)
         # Store last state
         self.last_state = np.append(self.last_state, state)
-        self.last_state = self.last_state[26:]
-        assert len(self.last_state) == 104
+        self.last_state = self.last_state[27:]
+        assert len(self.last_state) == 81
 
         return feature
 
@@ -1881,7 +1887,7 @@ class Simulator(gym.Env):
         Calculate the distance between the middle sensor line(center of robot actually) and the projected point
         on the curve.
         """
-        DIST_NOT_INTERSECT = 50
+        DIST_NOT_INTERSECT = 5
         # Get directory line
         cps = get_dir_line(self.cur_angle, self.cur_pos)
         # Get the center point of directory line
