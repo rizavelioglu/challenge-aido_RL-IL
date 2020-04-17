@@ -412,7 +412,7 @@ def rotate_translate(dir_vec, points, new_center):
     return new_points
 
 
-def compute_dist(cps, points, dir_vec, n=6, debug=False, red=False):
+def compute_dist(cps, points, dir_vec, n=12, debug=False, red=False):
 
     # Sample points from dir_line
     pts = [get_linear_bezier(cps, t) for t in np.linspace(0, 1, n)]
