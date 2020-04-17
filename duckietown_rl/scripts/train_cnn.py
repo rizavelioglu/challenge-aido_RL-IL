@@ -99,7 +99,7 @@ while total_timesteps < args.max_timesteps:
     else:
         action = policy.predict(obs)
         # Add OU action noise with its effect decreasing over time
-        # action = action + action_noise() * (1 - total_timesteps / args.max_timesteps) * [1 if episode_num % 2 == 0 else 0.5][0]
+        action = action + action_noise() * (1 - total_timesteps / args.max_timesteps) * [1 if episode_num % 2 == 0 else 0.5][0]
 
     # Perform action
     _, reward, done, _ = env.step(action)
@@ -110,12 +110,8 @@ while total_timesteps < args.max_timesteps:
         done = True
 
     done_bool = 0 if episode_timesteps + 1 == args.env_timesteps else float(done)
-
     # @riza
-    if reward == -1000:
-        episode_reward = -100
-    else:
-        episode_reward += reward
+    episode_reward += reward
 
     # Store data in replay buffer
     replay_buffer.add(obs, new_obs, action, reward, done_bool)
@@ -132,7 +128,6 @@ evaluations_eval.append([total_timesteps, rew_eval])
 
 if args.save_models:
     policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
-# np.savez("./results/{}-episode_reward:{}.npz".format(file_name, episode_reward), evaluations)
 
 """
 total_step: Global step

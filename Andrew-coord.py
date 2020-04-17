@@ -76,8 +76,6 @@ for episode in range(0, EPISODES):
         action = np.array([1, 1])
         obs, reward, done, info = env.step(action)
 
-        if reward == -1000:
-            reward = -100
         try:
             lane_pose = env.get_lane_pos2(env.cur_pos, env.cur_angle)
             dist_env = lane_pose.dist
@@ -87,12 +85,10 @@ for episode in range(0, EPISODES):
         features = env.get_features()
         env.render()
 
-        try:
-            d_env = env.dist_centerline_curve()
-        except:
-            d_env = 0.5
-
-        print(f"Reward: {reward:.2f} \t| Speed: {env.speed:.2f} \t| Dist: {d_env:.3f} \t | Dist_env: {abs(dist_env):.3f} \t | Action: {action}")
+        print(f"Reward: {reward:.2f}",
+              f"\t| Speed: {env.speed:.2f}",
+              f"\t| Dist.: {abs(dist_env):.3f}",
+              f"\t| Action: {action}")
 
         cv2.imshow("obs", obs)
         if cv2.waitKey() & 0xFF == ord('q'):
