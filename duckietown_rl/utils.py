@@ -71,7 +71,7 @@ def evaluate_policy(env, policy, eval_episodes=10, max_timesteps=500):
             avg_reward += reward
             step += 1
 
-        avg_time += env.get_agent_info()['timestamp']
+        avg_time += env.get_agent_info()['Simulator']['timestamp']
 
     avg_reward /= eval_episodes
     avg_time /= eval_episodes
