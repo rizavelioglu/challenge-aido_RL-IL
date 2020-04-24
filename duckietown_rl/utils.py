@@ -58,6 +58,7 @@ class ReplayBuffer(object):
 
 def evaluate_policy(env, policy, eval_episodes=10, max_timesteps=500):
     avg_reward = 0.
+    avg_time = 0.
     for _ in range(eval_episodes):
         env.reset()
         obs = env.get_features()  # @riza
@@ -70,6 +71,9 @@ def evaluate_policy(env, policy, eval_episodes=10, max_timesteps=500):
             avg_reward += reward
             step += 1
 
-    avg_reward /= eval_episodes
+        avg_time += env.get_agent_info()['timestamp']
 
-    return avg_reward
+    avg_reward /= eval_episodes
+    avg_time /= eval_episodes
+
+    return avg_reward, avg_time

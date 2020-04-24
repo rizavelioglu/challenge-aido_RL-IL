@@ -33,7 +33,13 @@ with torch.no_grad():
             rewards.append(rew)
             env.render()
 
-            print(f"Reward: {rew:.2f} | Action: {action}")
+            try:
+                lp = env.get_lane_pos2(env.cur_pos, env.cur_angle)
+                dist = abs(lp.dist)
+            except:
+                dist = 0
+
+            print(f"Reward: {rew:.2f} | Action: {action} | Speed: {env.speed:.2f} | Dist.: {dist:.3f}")
             # cv2.imshow("obs", obs)
             # if cv2.waitKey() & 0xFF == ord('q'):
             #     break

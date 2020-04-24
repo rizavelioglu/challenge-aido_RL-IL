@@ -45,7 +45,7 @@ policy = DDPG(state_dim, action_dim, max_action, net_type="dense")
 replay_buffer = ReplayBuffer(args.replay_buffer_max_size)
 
 # Evaluate untrained policy
-rew_eval = evaluate_policy(env, policy)
+rew_eval, time_eval = evaluate_policy(env, policy)
 
 total_timesteps = 0
 timesteps_since_eval = 0
@@ -76,9 +76,9 @@ while total_timesteps < args.max_timesteps:
         # Evaluate episode
         if timesteps_since_eval >= args.eval_freq:
             timesteps_since_eval %= args.eval_freq
-            rew_eval = evaluate_policy(env, policy)
+            rew_eval, time_eval = evaluate_policy(env, policy)
             # Append logs
-            evaluations_eval.append([total_timesteps, rew_eval])
+            evaluations_eval.append([total_timesteps, rew_eval, time_eval])
 
             if args.save_models:
                 policy.save("{}-episode:{}-reward:{}".format(file_name, episode_num, rew_eval), directory="./pytorch_models")
@@ -123,8 +123,8 @@ while total_timesteps < args.max_timesteps:
     timesteps_since_eval += 1
 
 # Final evaluation
-rew_eval = evaluate_policy(env, policy)
-evaluations_eval.append([total_timesteps, rew_eval])
+rew_eval, time_eval = evaluate_policy(env, policy)
+evaluations_eval.append([total_timesteps, rew_eval, time_eval])
 
 if args.save_models:
     policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
@@ -133,7 +133,7 @@ if args.save_models:
 total_step: Global step
 avg_reward: Average reward 
 """
-df_eval = pd.DataFrame(evaluations_eval, columns=["total_step", "avg_reward"])
+df_eval = pd.DataFrame(evaluations_eval, columns=["total_step", "avg_reward", "avg_time"])
 df_eval.to_csv("./results/df_eval.csv")
 
 """

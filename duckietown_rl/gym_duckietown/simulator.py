@@ -1408,7 +1408,7 @@ class Simulator(gym.Env):
         else:
 
             # Compute the reward
-            reward = (-1.0 + self.speed / 0.6 - abs(lp.dist) / 0.18)
+            reward = (-1.0 + self.speed / 0.6 - 3.0 * abs(lp.dist) / 0.18)
 
         return reward
 
