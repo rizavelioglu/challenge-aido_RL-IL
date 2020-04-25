@@ -330,8 +330,8 @@ class Simulator(gym.Env):
         self.wheelVels = np.array([0, 0])
 
         # @riza
-        # The state consists of sensor readings & wheel velocities
-        self.last_state = np.zeros((1, 81))
+        # The last_state consists of previous states, each storing sensor readings & wheel velocities & speed
+        self.last_state = np.zeros((1, 189))
 
     def _init_vlists(self):
         import pyglet
@@ -584,7 +584,7 @@ class Simulator(gym.Env):
         obs = self.render_obs()
 
         # @riza: reset last_state's value
-        self.last_state = np.zeros((1, 81))
+        self.last_state = np.zeros((1, 189))
 
         # Return first observation
         return obs
@@ -1408,7 +1408,7 @@ class Simulator(gym.Env):
         else:
 
             # Compute the reward
-            reward = (-1.0 + self.speed / 0.6 - 3.0 * abs(lp.dist) / 0.18)
+            reward = (-1.0 + self.speed / 0.6 - 5.0 * abs(lp.dist) / 0.18)
 
         return reward
 
@@ -1862,7 +1862,7 @@ class Simulator(gym.Env):
         # Store last state
         self.last_state = np.append(self.last_state, state)
         self.last_state = self.last_state[27:]
-        assert len(self.last_state) == 81
+        assert len(self.last_state) == 189
 
         return feature
 
