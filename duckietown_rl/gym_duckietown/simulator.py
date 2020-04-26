@@ -167,6 +167,7 @@ class Simulator(gym.Env):
             dynamics_rand=False,
             camera_rand=False,
             randomize_maps_on_reset=False,
+            evaluate=False,
     ):
         """
 
@@ -188,6 +189,7 @@ class Simulator(gym.Env):
         :param dynamics_rand: If true, perturbs the trim of the Duckiebot
         :param camera_rand: If true randomizes over camera miscalibration
         :param randomize_maps_on_reset: If true, randomizes the map on reset (Slows down training)
+        :param evaluate: If true, start at a specified point "zigzag_dists" map for evaluation purposes
         """
         # first initialize the RNG
         self.seed_value = seed
@@ -323,6 +325,11 @@ class Simulator(gym.Env):
             self.map_names = os.listdir('maps')
             self.map_names = [mapfile.replace('.yaml', '') for mapfile in self.map_names]
 
+        # Flag for evaluation over a map
+        self.evaluate = evaluate
+        # required for evalutaion
+        self.env_count = 0
+
         # Initialize the state
         self.reset()
 
@@ -332,6 +339,8 @@ class Simulator(gym.Env):
         # @riza
         # The last_state consists of previous states, each storing sensor readings & wheel velocities & speed
         self.last_state = np.zeros((1, 189))
+
+
 
     def _init_vlists(self):
         import pyglet
@@ -508,6 +517,13 @@ class Simulator(gym.Env):
         #     # @riza: Start at a fixed position and angle (a very good-aligned pose)
         #     propose_angle = 1.5
         #     propose_pos = np.array([1., 0., 2.7])
+
+        elif self.evaluate:
+            assert self.map_name == "zigzag_dists", "Evaluation can only be done on 'zigzag_dists' map!"
+            assert self.env_count < 6, "Evaluation can only be done for 5 episodes!"
+            propose_pos, propose_angle = get_start_pose(self.env_count)
+            self.env_count += 1
+
 
         else:
             # Keep trying to find a valid spawn position on this tile
@@ -2027,3 +2043,17 @@ def get_tiles(env_name):
 
     return tiles[env_name]
 
+def get_start_pose(env_count):
+    """
+    This function is called only when evaluation=True. While evaluating, 5 slightly different poses are set in
+    'zigzag_dists' map.
+    :param env_count: counts env. for returning corresponding pose
+    :return: the starting position & angle in the map
+    """
+    poses = [([1., 0., 4.], 1.5),
+             ([1., 0., 4.], 1.5),
+             ([1., 0., 4.], 1.7),
+             ([1.07, 0., 4.], 1.5),
+             ([1., 0., 4.1], 1.5),
+             ([1.07, 0., 4.1], 1.7)]
+    return poses[env_count][0], poses[env_count][1]
