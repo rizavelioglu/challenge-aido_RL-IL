@@ -1,16 +1,12 @@
 import numpy as np
 from duckietown_rl.ddpg import DDPG
 from duckietown_rl.gym_duckietown.simulator import Simulator
-from duckietown_rl.wrappers import ActionWrapper
 import torch
 import cv2
 
 env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_rand=True, camera_width=640,
                 camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
-                randomize_maps_on_reset=False, draw_curve=False, draw_bbox=True)
-
-# Action wrapper
-# env = ActionWrapper(env)
+                randomize_maps_on_reset=True, draw_curve=False, draw_bbox=True, frame_skip=4)
 
 state_dim = env.get_features().shape[0]    # @riza: state_dim = env.observation_space.shape
 action_dim = env.action_space.shape[0]
@@ -39,10 +35,14 @@ with torch.no_grad():
             except:
                 dist = 0
 
-            print(f"Reward: {rew:.2f} | Action: {action} | Speed: {env.speed:.2f} | Dist.: {dist:.3f}")
-            # cv2.imshow("obs", obs)
-            # if cv2.waitKey() & 0xFF == ord('q'):
-            #     break
+            print(f"Reward: {rew:.2f}",
+                  f"\t| Action: [{action[0]:.3f}, {action[1]:.3f}]",
+                  f"\t| Speed: {env.speed:.2f}",
+                  f"\t| Dist.: {dist:.3f}")
+
+            cv2.imshow("obs", obs)
+            if cv2.waitKey() & 0xFF == ord('q'):
+                break
 
             if done:
                 break
