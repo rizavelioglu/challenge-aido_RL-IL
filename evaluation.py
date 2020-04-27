@@ -20,7 +20,7 @@ policy.load("model", directory="models", for_inference=True)
 env.reset()  # obs = env.reset()
 obs = env.get_features()  # @riza
 env.render()
-EPISODES, STEPS = 5, 200  # in simulation 200*frame_skip = 800 timesteps
+EPISODES, STEPS = 1, 200  # in simulation 200*frame_skip = 800 timesteps
 log = {}
 for i in range(EPISODES):
     log["episode#" + str(i)] = {}
@@ -34,7 +34,7 @@ with torch.no_grad():
             _, rew, done, misc = env.step(action)
             obs = env.get_features()  # @riza
             rewards.append(rew)
-            dists.append(env.delta_time * env.speed)
+            dists.append(env.delta_time * env.speed * env.frame_skip)
             env.render()
 
             if done:
@@ -56,24 +56,25 @@ for step in range(STEPS):
         median_list.append(log["episode#" + str(ep)]["rewards"][step])
     median_reward.append(median(median_list))
 
-# Show the plot
-plt.figure(1, figsize=(50,7))
-plt.subplot(1, 2, 1)
+plt.figure(1, figsize=(35, 20))
+plt.subplot(2, 1, 1)
 for i in range(EPISODES):
     plt.plot(range(STEPS), log["episode#" + str(i)]["rewards"], "--", label="episode#" + str(i))
 plt.plot(range(STEPS), median_reward, '-', label="median")
-plt.title("Evaluation on 'zigzag_dists' map for 5 episodes, 200 timesteps each with frame_skip=4")
-plt.xlabel("Timesteps")
-plt.ylabel("Rewards")
-plt.legend(loc="best")
-
-plt.subplot(1, 2, 2)
-plt.plot(range(STEPS), np.cumsum(np.abs(median_reward)))
-plt.title("Cumulative sum of the median reward")
+plt.title(f"Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with frame_skip=4")
 plt.xlabel("Timesteps")
 plt.ylabel("Reward")
-plt.grid(True)
-plt.savefig("reward.png")
+plt.legend(loc="best")
+
+plt.subplot(2, 1, 2)
+for i in range(EPISODES):
+    plt.plot(range(STEPS), np.cumsum(np.abs(log["episode#" + str(i)]["rewards"])), "--", label="episode#" + str(i))
+plt.plot(range(STEPS), np.cumsum(np.abs(median_reward)), '-', label="median")
+plt.title("Cumulative sum of the abs(reward)")
+plt.xlabel("Timesteps")
+plt.ylabel("Reward")
+plt.legend(loc="best")
+plt.savefig("plot_reward.png")
 plt.show()
 
 
@@ -85,22 +86,35 @@ for step in range(STEPS):
         dists_list.append(log["episode#" + str(ep)]["dists"][step])
     median_dists.append(median(dists_list))
 
-plt.figure(2, figsize=(50,7))
-plt.subplot(1, 2, 1)
-# Show the plot
+plt.figure(2, figsize=(35, 20))
+plt.subplot(2, 1, 1)
 for i in range(EPISODES):
     plt.plot(range(STEPS), log["episode#" + str(i)]["dists"], "--", label="episode#" + str(i))
 plt.plot(range(STEPS), median_dists, '-', label="median")
-plt.title("Evaluation on 'zigzag_dists' map for 5 episodes, 200 timesteps each with frame_skip=4")
+plt.title(f"Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with frame_skip=4")
 plt.xlabel("Timesteps")
 plt.ylabel("Distance in meters")
 plt.legend(loc="best")
 
-plt.subplot(1, 2, 2)
-plt.plot(range(STEPS), np.cumsum(np.abs(median_reward)))
-plt.title("Cumulative sum of the median distance traveled")
+plt.subplot(2, 1, 2)
+for i in range(EPISODES):
+    plt.plot(range(STEPS), np.cumsum(log["episode#" + str(i)]["dists"]), "--", label="episode#" + str(i))
+plt.plot(range(STEPS), np.cumsum(median_dists), '-', label="median")
+plt.title("Cumulative sum of the distance traveled")
 plt.xlabel("Timesteps")
 plt.ylabel("Distance in meters")
-plt.grid(True)
-plt.savefig("dist.png")
+plt.legend(loc="best")
+plt.savefig("plot_dist.png")
+plt.show()
+
+
+plt.figure(2, figsize=(35, 20))
+for i in range(EPISODES):
+    plt.plot(np.cumsum(log["episode#" + str(i)]["dists"]), range(STEPS), "--", label="episode#" + str(i))
+plt.plot(np.cumsum(median_dists), range(STEPS), '-', label="median")
+plt.title(f"Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with frame_skip=4")
+plt.xlabel("Distance in meters")
+plt.ylabel("Timesteps")
+plt.legend(loc="best")
+plt.savefig("plot_DistvsTime.png")
 plt.show()
