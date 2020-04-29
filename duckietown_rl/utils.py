@@ -35,7 +35,6 @@ class ReplayBuffer(object):
             state, next_state, action, reward, done = self.storage[i]
 
             if flat:
-                # TODO: try,except if error occurs OR remove flatten
                 states.append(np.array(state, copy=False).flatten())
                 next_states.append(np.array(next_state, copy=False).flatten())
 

@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# TODO: use action_noise.reset in --> env.reset()
 class OrnsteinUhlenbeckActionNoise:
     def __init__(self, mu, sigma, theta=.15, dt=1e-2, x0=None):
         self.theta = theta   # (float) the rate of mean reversion

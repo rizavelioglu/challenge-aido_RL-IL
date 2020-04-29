@@ -1,3 +1,9 @@
+"""
+This script outputs a 'good' starting position and angle for an agent, given a map. That means, agent starts at a point
+that is close to the center of a lane and starts at an angle that is close to zero, which means agent is aligned with
+the lane.
+"""
+
 from duckietown_world.world_duckietown.sampling_poses import sample_good_starting_pose
 import duckietown_world as dw
 import geometry as geo
@@ -12,5 +18,5 @@ translation, angle = geo.translation_angle_from_SE2(q)
 propose_pos = np.array([translation[0], 0, translation[1]])
 propose_angle = angle
 
-print(f"pose: {propose_pos}",
-      f"\nangle: {propose_angle}")
+print(f"Pose: {propose_pos}",
+      f"\t|\tAngle: {propose_angle}")

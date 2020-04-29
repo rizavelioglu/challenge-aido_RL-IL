@@ -424,9 +424,9 @@ def compute_dist(cps, points, dir_vec, n=12, debug=False, red=False):
     # For each point, draw the perpendicular line
     for i, p in enumerate(pts):
 
-        # TODO:Transform points
+        # Transform points
         transformed_points = rotate_translate(dir_vec, points[:50], p)
-        # TODO:Find 2 closest points to y=0
+        # Find 2 closest points to y=0
         y = transformed_points[:, 2]
         y_pos = y[y > 0]
         y_neg = y[y < 0]
@@ -435,14 +435,14 @@ def compute_dist(cps, points, dir_vec, n=12, debug=False, red=False):
         if len(y_pos) == 0 or len(y_neg) == 0:
             # For top 3 points, look for points in next_tile
             if i < (n/2):
-                # TODO:Transform points
+                # Transform points
                 transformed_points = rotate_translate(dir_vec, points[50:100], p)
             # For below 3 points, look for points in prev_tile
             else:
-                # TODO:Transform points
+                # Transform points
                 transformed_points = rotate_translate(dir_vec, points[100:], p)
 
-            # TODO:Find 2 closest points to y=0
+            # Find 2 closest points to y=0
             y = transformed_points[:, 2]
             y_pos = y[y > 0]
             y_neg = y[y < 0]
@@ -451,13 +451,13 @@ def compute_dist(cps, points, dir_vec, n=12, debug=False, red=False):
                 # TODO: ************ CHANGE THIS PART ************
                 # For top 3 points, look for points in next_tile
                 if i > (n/2):
-                    # TODO:Transform points
+                    # Transform points
                     transformed_points = rotate_translate(dir_vec, points[50:100], p)
                 # For below 3 points, look for points in prev_tile
                 else:
-                    # TODO:Transform points
+                    # Transform points
                     transformed_points = rotate_translate(dir_vec, points[100:], p)
-                # TODO:Find 2 closest points to y=0
+                # Find 2 closest points to y=0
                 y = transformed_points[:, 2]
                 y_pos = y[y > 0]
                 y_neg = y[y < 0]
@@ -474,21 +474,21 @@ def compute_dist(cps, points, dir_vec, n=12, debug=False, red=False):
         p1 = transformed_points[p1_idx]
         p2 = transformed_points[p2_idx]
 
-        # TODO:Find intersection between that line & y=0
+        # Find intersection between that line & y=0
         # Get the slope of the line that connects p1 & p2
         slope_2 = (p1[2] - p2[2]) / (p1[0] - p2[0])
         # Get the line equation
         k2 = p1[2] - slope_2 * p1[0]
         # Get the intersection
         x_intersection = -k2 / slope_2
-        # TODO:Compute distance between intersection point to origin
+        # Compute distance between intersection point to origin
         dist = np.linalg.norm(x_intersection)
         # Check where intersection is, right or left side of center line
         # Left --> -dist,   Right --> dist
         if x_intersection < 0:
             dist *= -1
 
-        # TODO: Draw line from origin to x_intersect
+        # Draw line from origin to x_intersect
         # Origin in old-frame
         start = p
         # Inverse rotate x_intersect to get old-frame coords.
@@ -496,7 +496,7 @@ def compute_dist(cps, points, dir_vec, n=12, debug=False, red=False):
         # Draw line from origin the x_intersect
         bezier_draw_line(np.vstack((start, end)), red=red)
 
-        # TODO:Draw it (DEBUG)
+        # Draw it (DEBUG)
         if debug:
             # Draw intersection point
             # from pyglet import gl
