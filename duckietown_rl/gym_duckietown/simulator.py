@@ -2030,9 +2030,10 @@ def get_dir_line(angle, pos):
 
 def get_tiles(env_name):
     """
-    These values are taken from 'tile_coordinates.py'
+    Get the tile information/map of one of the following maps(currently only 4 maps).
+    These values are taken from 'tutorials/get_tile_coordinates.py'
     :param env_name:
-    :return:
+    :return: Tile coordinates in a chronological order
     """
     zigzag_dists = [(2, 1), (2, 2), (3, 2), (4, 2), (4, 1), (5, 1), (6, 1), (7, 1), (7, 2), (6, 2), (6, 3), (6, 4), (5, 4), (4, 4), (4, 5), (3, 5), (3, 6), (3, 7), (2, 7), (1, 7), (1, 6), (1, 5), (1, 4), (1, 3), (1, 2), (1, 1)]
     way = [(4, 2), (4, 1), (4, 0), (3, 0), (2, 0), (1, 0), (0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (1, 4), (2, 4), (3, 4), (4, 4), (4, 3)]

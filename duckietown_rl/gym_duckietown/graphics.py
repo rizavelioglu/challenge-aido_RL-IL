@@ -289,35 +289,6 @@ def bezier_draw(cps, n = 20, red=False):
 ############################################################################################################
 # @riza
 
-
-def bezier_draw_points(cps, n=6, red=True, draw=True):
-    """
-    Draw points on the directory vector line
-    :param cps: Control points, (x,y,z) coordinates of start&end points of the line
-    :param n: # of points to be shown
-    :return: None
-    """
-    # Draw the points on the dir_vec
-    from pyglet import gl
-    pts = [get_linear_bezier(cps, t) for t in np.linspace(0, 1, n)]
-
-    if draw:
-        gl.glPointSize(5)
-        gl.glBegin(gl.GL_POINTS)
-        if red:
-            gl.glColor3f(0, 0, 1)
-        else:
-            gl.glColor3f(1, 0, 0)
-
-        for i, p in enumerate(pts):
-            gl.glVertex3f(*p)
-
-        gl.glEnd()
-        gl.glColor3f(1,1,1)
-
-    return pts
-
-
 def bezier_draw_points_curve(cps, n=10, red=False):
     from pyglet import gl
     pts = [bezier_point(cps, i/(n-1)) for i in range(0,n)]
