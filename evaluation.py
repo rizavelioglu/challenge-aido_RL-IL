@@ -48,6 +48,8 @@ with torch.no_grad():
 
         env.reset()
 
+# TODO: remove abs for reward plot
+SOLUTIONBY = "Approach#1"
 # Calculate median of the episode rewards
 median_reward = []
 for step in range(STEPS):
@@ -61,7 +63,7 @@ plt.subplot(2, 1, 1)
 for i in range(EPISODES):
     plt.plot(range(STEPS), log["episode#" + str(i)]["rewards"], "--", label="episode#" + str(i))
 plt.plot(range(STEPS), median_reward, '-', label="median")
-plt.title(f"Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with frame_skip={env.frame_skip}")
+plt.title(f"[{SOLUTIONBY}]Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with {env.frame_rate}FPS & frame_skip={env.frame_skip}", {'fontsize': 15, 'color' : 'red'})
 plt.xlabel("Timesteps")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
 plt.ylabel("Reward")
@@ -71,12 +73,12 @@ plt.subplot(2, 1, 2)
 for i in range(EPISODES):
     plt.plot(range(STEPS), np.cumsum(np.abs(log["episode#" + str(i)]["rewards"])), "--", label="episode#" + str(i))
 plt.plot(range(STEPS), np.cumsum(np.abs(median_reward)), '-', label="median")
-plt.title("Cumulative sum of the abs(reward)")
+plt.title(f"Cumulative sum of the abs(reward) \nsum(median)={np.sum(median_reward):.2f}", {'fontsize': 15, 'color' : 'red'})
 plt.xlabel("Timesteps")
 plt.ylabel("Reward")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
 plt.legend(loc="best")
-plt.savefig("plot_reward.png")
+plt.savefig(SOLUTIONBY+"_plot_reward.png")
 plt.show()
 
 
@@ -93,7 +95,7 @@ plt.subplot(2, 1, 1)
 for i in range(EPISODES):
     plt.plot(range(STEPS), log["episode#" + str(i)]["dists"], "--", label="episode#" + str(i))
 plt.plot(range(STEPS), median_dists, '-', label="median")
-plt.title(f"Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with frame_skip={env.frame_skip}")
+plt.title(f"[{SOLUTIONBY}]Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with {env.frame_rate}FPS & frame_skip={env.frame_skip}", {'fontsize': 15, 'color' : 'red'})
 plt.xlabel("Timesteps")
 plt.ylabel("Distance in meters")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
@@ -103,23 +105,24 @@ plt.subplot(2, 1, 2)
 for i in range(EPISODES):
     plt.plot(range(STEPS), np.cumsum(log["episode#" + str(i)]["dists"]), "--", label="episode#" + str(i))
 plt.plot(range(STEPS), np.cumsum(median_dists), '-', label="median")
-plt.title("Cumulative sum of the distance traveled")
+plt.title(f"Cumulative sum of the distance traveled \nsum(median)={np.sum(median_dists):.2f}", {'fontsize': 15, 'color' : 'red'})
 plt.xlabel("Timesteps")
 plt.ylabel("Distance in meters")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
 plt.legend(loc="best")
-plt.savefig("plot_dist.png")
+plt.savefig(SOLUTIONBY+"_plot_dist.png")
 plt.show()
 
 
-plt.figure(2, figsize=(35, 20))
+
+plt.figure(2, figsize=(35, 10))
 for i in range(EPISODES):
     plt.plot(np.cumsum(log["episode#" + str(i)]["dists"]), range(STEPS), "--", label="episode#" + str(i))
 plt.plot(np.cumsum(median_dists), range(STEPS), '-', label="median")
-plt.title(f"Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with frame_skip={env.frame_skip}")
+plt.title(f"[{SOLUTIONBY}]Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with {env.frame_rate}FPS & frame_skip={env.frame_skip}", {'fontsize': 15, 'color' : 'red'})
 plt.xlabel("Distance in meters")
 plt.ylabel("Timesteps")
 plt.yticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip))
 plt.legend(loc="best")
-plt.savefig("plot_DistvsTime.png")
+plt.savefig(SOLUTIONBY+"_plot_DistvsTime.png")
 plt.show()
