@@ -168,6 +168,7 @@ class Simulator(gym.Env):
             camera_rand=False,
             randomize_maps_on_reset=False,
             evaluate=False,
+            draw_DDPG_features=False,
     ):
         """
 
@@ -190,6 +191,7 @@ class Simulator(gym.Env):
         :param camera_rand: If true randomizes over camera miscalibration
         :param randomize_maps_on_reset: If true, randomizes the map on reset (Slows down training)
         :param evaluate: If true, start at a specified point "zigzag_dists" map for evaluation purposes
+        :param draw_DDPG_features: If true, draws the features used in DDPG
         """
         # first initialize the RNG
         self.seed_value = seed
@@ -329,6 +331,8 @@ class Simulator(gym.Env):
         self.evaluate = evaluate
         # required for evalutaion
         self.env_count = 0
+        # Flag for drawing features
+        self.draw_DDPG_features = draw_DDPG_features
 
         # Initialize the state
         self.reset()
@@ -1645,8 +1649,9 @@ class Simulator(gym.Env):
             gl.glVertex3f(corners[3, 0], 0.01, corners[3, 1])
             gl.glEnd()
 
-            # @riza: Uncomment to draw features (sensing lines)
-            self.draw_features()
+            # Draw DDPG features (sensor lines)
+            if self.draw_DDPG_features:
+                self.draw_features()
             # @riza: Uncomment to draw the line b/w closest curve point & center of robot
             # self.get_distance()
             # @riza: Uncomment to draw the line b/w closest curve point & center of robot (perpendicular line)
