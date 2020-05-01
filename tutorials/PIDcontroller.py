@@ -1,6 +1,7 @@
+import sys
+sys.path.append("../")
 from duckietown_rl.gym_duckietown.simulator import Simulator
-from utils.helpers import SteeringToWheelVelWrapper
-import cv2
+from tutorials.helpers import SteeringToWheelVelWrapper
 
 # To convert [speed, steering] to wheel velocities: [leftWheelV, rightWheelV]
 wrapper = SteeringToWheelVelWrapper()

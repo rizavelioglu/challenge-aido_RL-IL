@@ -28,7 +28,7 @@ def on_key_press(symbol, modifiers):
         sys.exit(0)
     elif symbol == key.ENTER:
         df_test = pd.DataFrame(data, columns=["step", "speed", "vel_left", "vel_right"])
-        df_test.to_csv("df_data.csv")
+        df_test.to_csv("get_dynamics_raw.csv")
 
 
 # Register a keyboard handler

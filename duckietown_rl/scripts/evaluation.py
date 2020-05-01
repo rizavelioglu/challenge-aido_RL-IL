@@ -1,6 +1,6 @@
 import numpy as np
-from duckietown_rl.ddpg import DDPG
-from duckietown_rl.gym_duckietown.simulator import Simulator
+from ddpg import DDPG
+from gym_duckietown.simulator import Simulator
 import torch
 from statistics import median
 import matplotlib.pyplot as plt
@@ -10,18 +10,18 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
                 randomize_maps_on_reset=False, draw_curve=False, draw_bbox=True, frame_skip=4, evaluate=True,
                 draw_DDPG_features=True)
 
-state_dim = env.get_features().shape[0]    # @riza: state_dim = env.observation_space.shape
+state_dim = env.get_features().shape[0]
 action_dim = env.action_space.shape[0]
 max_action = float(env.action_space.high[0])
 
 # Initialize policy
 policy = DDPG(state_dim, action_dim, max_action, net_type="dense")
-policy.load("model", directory="models", for_inference=True)
+policy.load("model", directory="../models", for_inference=True)
 
 env.reset()  # obs = env.reset()
 obs = env.get_features()  # @riza
 env.render()
-EPISODES, STEPS = 5, 200  # in simulation 200*frame_skip = 800 timesteps
+EPISODES, STEPS = 5, 200  # in simulation: (STEPS*frame_skip) time-steps
 log = {}
 for i in range(EPISODES):
     log["episode#" + str(i)] = {}
@@ -51,6 +51,7 @@ with torch.no_grad():
 
 # TODO: remove abs for reward plot
 SOLUTIONBY = "Approach#1"
+PATHTOSAVE = "scripts/"
 # Calculate median of the episode rewards
 median_reward = []
 for step in range(STEPS):
@@ -79,7 +80,7 @@ plt.xlabel("Timesteps")
 plt.ylabel("Reward")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
 plt.legend(loc="best")
-plt.savefig(SOLUTIONBY+"_plot_reward.png")
+plt.savefig(PATHTOSAVE + SOLUTIONBY + "_plot_reward.png")
 plt.show()
 
 
@@ -111,7 +112,7 @@ plt.xlabel("Timesteps")
 plt.ylabel("Distance in meters")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
 plt.legend(loc="best")
-plt.savefig(SOLUTIONBY+"_plot_dist.png")
+plt.savefig(PATHTOSAVE + SOLUTIONBY + "_plot_dist.png")
 plt.show()
 
 
@@ -125,5 +126,5 @@ plt.xlabel("Distance in meters")
 plt.ylabel("Timesteps")
 plt.yticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip))
 plt.legend(loc="best")
-plt.savefig(SOLUTIONBY+"_plot_DistvsTime.png")
+plt.savefig(PATHTOSAVE + SOLUTIONBY + "_plot_DistvsTime.png")
 plt.show()

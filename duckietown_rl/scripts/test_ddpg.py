@@ -1,6 +1,6 @@
 import numpy as np
-from duckietown_rl.ddpg import DDPG
-from duckietown_rl.gym_duckietown.simulator import Simulator
+from ddpg import DDPG
+from gym_duckietown.simulator import Simulator
 import torch
 import cv2
 
@@ -14,7 +14,7 @@ max_action = float(env.action_space.high[0])
 
 # Initialize policy
 policy = DDPG(state_dim, action_dim, max_action, net_type="dense")
-policy.load("model", directory="models", for_inference=True)
+policy.load("model", directory="../models", for_inference=True)
 
 with torch.no_grad():
     while True:
