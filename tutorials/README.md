@@ -18,7 +18,7 @@ This folder includes a bunch of Python scripts for you to get yourself familiari
 
 ---
 <details>
-    <summary>get_good_sample_pose.py</summary>
+    <summary>**get_good_sample_pose.py**</summary>
 
 ##### yes, even hidden code blocks!
 ```python
