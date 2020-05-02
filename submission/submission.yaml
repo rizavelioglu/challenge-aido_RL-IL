@@ -1,0 +1,11 @@
+# challenge name(s); defaults to all compatible challenges
+# challenge: [c1,c2]
+
+# conventions + format
+protocol: aido2_db18_agent-z2
+
+user-label: "baseline-IL-sim-tensorflow"
+description: |
+    This is a simple template for an agent that uses Tensorflow for inference.
+
+    [This code is documented here](https://docs.duckietown.org/DT18/AIDO/out/tensorflow_template.html).
