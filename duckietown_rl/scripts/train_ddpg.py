@@ -30,7 +30,7 @@ env = launch_env()
 # Set seeds
 seed(args.seed)
 
-state_dim = env.get_features().shape[0]    # @riza: state_dim = env.observation_space.shape
+state_dim = env.get_features().shape[0]
 action_dim = env.action_space.shape[0]
 max_action = float(env.action_space.high[0])
 
@@ -79,13 +79,14 @@ while total_timesteps < args.max_timesteps:
 
         # Reset environment
         env_counter += 1
-        env.reset()        # @riza: obs = env.reset()
-        obs = env.get_features()  # @riza
+        env.reset()
+        obs = env.get_features()
         done = False
         episode_reward = 0
         episode_timesteps = 0
         episode_num += 1
-        action_noise.reset()   # @riza: reset noise profile
+        # Reset noise profile
+        action_noise.reset()
 
     # Select action randomly or according to policy
     if total_timesteps < args.start_timesteps:
@@ -97,13 +98,12 @@ while total_timesteps < args.max_timesteps:
 
     # Perform action
     _, reward, done, _ = env.step(action)
-    new_obs = env.get_features()    # @riza
+    new_obs = env.get_features()
 
     if episode_timesteps >= args.env_timesteps:
         done = True
 
     done_bool = 0 if episode_timesteps + 1 == args.env_timesteps else float(done)
-    # @riza
     episode_reward += reward
 
     # Store data in replay buffer

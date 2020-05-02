@@ -10,16 +10,20 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
                 randomize_maps_on_reset=False, draw_curve=False, draw_bbox=True, frame_skip=4, evaluate=True,
                 draw_DDPG_features=True)
 
+# Create folders within the same folder
+if not os.path.exists("./evaluation_results"):
+    os.makedirs("./evaluation_results")
+
 state_dim = env.get_features().shape[0]
 action_dim = env.action_space.shape[0]
 max_action = float(env.action_space.high[0])
 
 # Initialize policy
 policy = DDPG(state_dim, action_dim, max_action, net_type="dense")
-policy.load("model", directory="../models", for_inference=True)
+policy.load("model", directory="./models", for_inference=True)
 
-env.reset()  # obs = env.reset()
-obs = env.get_features()  # @riza
+env.reset()
+obs = env.get_features()
 env.render()
 EPISODES, STEPS = 5, 200  # in simulation: (STEPS*frame_skip) time-steps
 log = {}
@@ -33,7 +37,7 @@ with torch.no_grad():
         for steps in range(0, STEPS):
             action = policy.predict(np.array(obs))
             _, rew, done, misc = env.step(action)
-            obs = env.get_features()  # @riza
+            obs = env.get_features()
             rewards.append(rew)
             dists.append(env.delta_time * env.speed * env.frame_skip)
             env.render()
@@ -50,8 +54,8 @@ with torch.no_grad():
         env.reset()
 
 # TODO: remove abs for reward plot
-SOLUTIONBY = "Approach#1"
-PATHTOSAVE = "scripts/"
+SOLUTION_BY = "Approach#1"
+PATH_TO_SAVE = "scripts/evaluation_results/"
 # Calculate median of the episode rewards
 median_reward = []
 for step in range(STEPS):
@@ -65,7 +69,7 @@ plt.subplot(2, 1, 1)
 for i in range(EPISODES):
     plt.plot(range(STEPS), log["episode#" + str(i)]["rewards"], "--", label="episode#" + str(i))
 plt.plot(range(STEPS), median_reward, '-', label="median")
-plt.title(f"[{SOLUTIONBY}]Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with {env.frame_rate}FPS & frame_skip={env.frame_skip}", {'fontsize': 15, 'color' : 'red'})
+plt.title(f"[{SOLUTION_BY}]Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with {env.frame_rate}FPS & frame_skip={env.frame_skip}", {'fontsize': 15, 'color' : 'red'})
 plt.xlabel("Timesteps")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
 plt.ylabel("Reward")
@@ -80,7 +84,7 @@ plt.xlabel("Timesteps")
 plt.ylabel("Reward")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
 plt.legend(loc="best")
-plt.savefig(PATHTOSAVE + SOLUTIONBY + "_plot_reward.png")
+plt.savefig(PATH_TO_SAVE + SOLUTION_BY + "_plot_reward.png")
 plt.show()
 
 
@@ -97,7 +101,7 @@ plt.subplot(2, 1, 1)
 for i in range(EPISODES):
     plt.plot(range(STEPS), log["episode#" + str(i)]["dists"], "--", label="episode#" + str(i))
 plt.plot(range(STEPS), median_dists, '-', label="median")
-plt.title(f"[{SOLUTIONBY}]Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with {env.frame_rate}FPS & frame_skip={env.frame_skip}", {'fontsize': 15, 'color' : 'red'})
+plt.title(f"[{SOLUTION_BY}]Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with {env.frame_rate}FPS & frame_skip={env.frame_skip}", {'fontsize': 15, 'color' : 'red'})
 plt.xlabel("Timesteps")
 plt.ylabel("Distance in meters")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
@@ -112,19 +116,18 @@ plt.xlabel("Timesteps")
 plt.ylabel("Distance in meters")
 plt.xticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip), rotation=90)
 plt.legend(loc="best")
-plt.savefig(PATHTOSAVE + SOLUTIONBY + "_plot_dist.png")
+plt.savefig(PATH_TO_SAVE + SOLUTION_BY + "_plot_dist.png")
 plt.show()
-
 
 
 plt.figure(2, figsize=(35, 10))
 for i in range(EPISODES):
     plt.plot(np.cumsum(log["episode#" + str(i)]["dists"]), range(STEPS), "--", label="episode#" + str(i))
 plt.plot(np.cumsum(median_dists), range(STEPS), '-', label="median")
-plt.title(f"[{SOLUTIONBY}]Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with {env.frame_rate}FPS & frame_skip={env.frame_skip}", {'fontsize': 15, 'color' : 'red'})
+plt.title(f"[{SOLUTION_BY}]Evaluation on 'zigzag_dists' map for {EPISODES} episodes, {STEPS} timesteps each with {env.frame_rate}FPS & frame_skip={env.frame_skip}", {'fontsize': 15, 'color' : 'red'})
 plt.xlabel("Distance in meters")
 plt.ylabel("Timesteps")
 plt.yticks(list(range(STEPS)), np.arange(0, env.frame_skip*STEPS, env.frame_skip))
 plt.legend(loc="best")
-plt.savefig(PATHTOSAVE + SOLUTIONBY + "_plot_DistvsTime.png")
+plt.savefig(PATH_TO_SAVE + SOLUTION_BY + "_plot_DistvsTime.png")
 plt.show()

@@ -2,18 +2,17 @@
  
 # AI Driving Olympics
 
-<a href="http://aido.duckietown.org"><img width="200" src="https://www.duckietown.org/wp-content/uploads/2018/12/AIDO_no_text-e1544555660271.png"/></a>
+<a href="http://aido.duckietown.org"><img width="200" src="https://camo.githubusercontent.com/ca7a25420906820b4e601ec37a7481b07650a255/68747470733a2f2f7777772e6475636b6965746f776e2e6f72672f77702d636f6e74656e742f75706c6f6164732f323031382f30372f4149444f2d373638783531322e706e67"/></a>
 
 
 ## "Reinforcement Learning" based approach for challenge [`aido_LF`][lf]
 
 This is a Reinforcement Learning based approach, more specifically **DDPG**, for one of the challenges in the [the AI Driving Olympics](http://aido.duckietown.org/).
 
- 
 [lf]: http://docs.duckietown.org/daffy/AIDO/out/lf.html
 
 
 ## Description
 
-This is a solution baseline using Reinforcement Learning and PyTorch.
+This is a solution baseline using Reinforcement Learning and **PyTorch** as well as Tensorflow's **Keras**.
 
