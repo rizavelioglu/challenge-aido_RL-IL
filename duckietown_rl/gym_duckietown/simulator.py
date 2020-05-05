@@ -568,7 +568,7 @@ class Simulator(gym.Env):
                     continue
 
                 # @riza: start in a good pose
-                if abs(lp.dist) > 0.12:
+                if abs(lp.dist) > 0.18 or abs(lp.angle_deg) > 100:
                     continue
 
                 M = self.accept_start_angle_deg
