@@ -10,9 +10,9 @@ from _loggers import Logger
 
 env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_rand=True, camera_width=640,
                 camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
-                randomize_maps_on_reset=False, draw_curve=False, draw_bbox=False, frame_skip=4, draw_DDPG_features=False)
+                randomize_maps_on_reset=True, draw_curve=False, draw_bbox=False, frame_skip=4, draw_DDPG_features=False)
 
-state_dim = env.get_features().shape[0]    # @riza: state_dim = env.observation_space.shape
+state_dim = env.get_features().shape[0]
 action_dim = env.action_space.shape[0]
 max_action = float(env.action_space.high[0])
 
@@ -20,7 +20,9 @@ max_action = float(env.action_space.high[0])
 expert = DDPG(state_dim, action_dim, max_action, net_type="dense")
 expert.load("model", directory="../duckietown_rl/models", for_inference=True)
 
+# Initialize the environment
 env.reset()
+# Get features(state representation) for RL agent
 obs = env.get_features()
 EPISODES, STEPS = 200, 512
 DEBUG = False
@@ -36,7 +38,9 @@ with torch.no_grad():
         for steps in range(0, STEPS):
             # we use our 'expert' to predict the next action.
             action = expert.predict(np.array(obs))
+            # Apply the action
             observation, reward, done, info = env.step(action)
+            # Get features(state representation) for RL agent
             obs = env.get_features()
 
             if done:
