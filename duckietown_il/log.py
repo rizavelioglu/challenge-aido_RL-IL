@@ -1,5 +1,6 @@
 import sys
 sys.path.append("../")
+import time
 import cv2
 import torch
 import numpy as np
@@ -9,7 +10,7 @@ from _loggers import Logger
 
 env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_rand=True, camera_width=640,
                 camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
-                randomize_maps_on_reset=True, draw_curve=False, draw_bbox=False, frame_skip=4, draw_DDPG_features=False)
+                randomize_maps_on_reset=False, draw_curve=False, draw_bbox=False, frame_skip=4, draw_DDPG_features=False)
 
 state_dim = env.get_features().shape[0]    # @riza: state_dim = env.observation_space.shape
 action_dim = env.action_space.shape[0]
@@ -21,12 +22,14 @@ expert.load("model", directory="../duckietown_rl/models", for_inference=True)
 
 env.reset()
 obs = env.get_features()
-EPISODES, STEPS = 10, 512
-DEBUG = True
+EPISODES, STEPS = 200, 512
+DEBUG = False
 
 # please notice
-logger = Logger(env, log_file='train.log')
+logger = Logger(env, log_file=f'train-{int(EPISODES*STEPS/1000)}k.log')
 
+start_time = time.time()
+print(f"[INFO]Starting to get logs for {EPISODES} episodes each {STEPS} steps..")
 with torch.no_grad():
     # let's collect our samples
     for episode in range(0, EPISODES):
@@ -35,6 +38,9 @@ with torch.no_grad():
             action = expert.predict(np.array(obs))
             observation, reward, done, info = env.step(action)
             obs = env.get_features()
+
+            if done:
+                print(f"#Episode: {episode}\t | #Step: {steps}")
 
             closest_point, _ = env.closest_curve_point(env.cur_pos, env.cur_angle)
             if closest_point is None:
@@ -59,3 +65,6 @@ with torch.no_grad():
 
 logger.close()
 env.close()
+
+end_time = time.time()
+print(f"Process finished. It took {(end_time - start_time) / (60*60):.2f} hours!")
