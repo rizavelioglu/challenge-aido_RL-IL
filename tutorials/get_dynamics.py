@@ -1,4 +1,6 @@
-from gym_duckietown.simulator import Simulator
+import sys
+sys.path.append("../")
+from duckietown_rl.gym_duckietown.simulator import Simulator
 import sys
 import pyglet
 from pyglet.window import key

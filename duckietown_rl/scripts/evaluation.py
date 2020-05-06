@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from ddpg import DDPG
 from gym_duckietown.simulator import Simulator
@@ -11,8 +12,8 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
                 draw_DDPG_features=True)
 
 # Create folders within the same folder
-if not os.path.exists("./evaluation_results"):
-    os.makedirs("./evaluation_results")
+if not os.path.exists("scripts/evaluation_results"):
+    os.makedirs("scripts/evaluation_results")
 
 state_dim = env.get_features().shape[0]
 action_dim = env.action_space.shape[0]
