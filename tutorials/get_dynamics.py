@@ -1,3 +1,6 @@
+"""
+Based on: https://github.com/duckietown/gym-duckietown/blob/master/manual_control.py
+"""
 import sys
 sys.path.append("../")
 from duckietown_rl.gym_duckietown.simulator import Simulator
