@@ -7,6 +7,14 @@ This folder includes a bunch of Python scripts for you to get yourself familiari
 
 ---
 <details>
+<summary><b><i>cartpole/</i></b></summary>
+
+##TODO:explain cartpole (put a better model in cartpole/models)
+
+</details>
+
+---
+<details>
 <summary><b><i>maps/</i></b></summary>
 
 By the time this code is published, these are all the available maps we have in Duckietown:
@@ -64,7 +72,7 @@ collect some data.
 Here's the processed version of the data collected from my test: ![get_dynamics_processed](images/get_dynamics_processed.png)
 > Please see the raw data and the graph [here](https://docs.google.com/spreadsheets/d/1Z7T850Boy9YJm9lRytTkmAFld-AV8DBCbTb3Lo4PRIM/edit?usp=sharing) for more information.
 
-##### Take-aways:
+#### Take-aways:
 
 - The full-speed is: `0.6 m/s` 
 - It takes `≈0.858 seconds` or `≈26 time-steps` to reach to full-speed from `0 m/s`
@@ -72,7 +80,11 @@ Here's the processed version of the data collected from my test: ![get_dynamics_
 
 These details will become important when building/training algorithms!
 <details>
+
+---
 <summary><i><b>***</b> Click to see the <b>spoiler</b> where this will be important! <b>***</b></i></summary>
+
+---
 
 When training a reinforcement learning algorithm (the one we use is called DDPG) we let the agent apply the same action
 for a fixed number of times, because it takes some time to achieve speed! That fixed number will be called `frame_skip`
@@ -82,7 +94,7 @@ which you will encounter when creating the simulator instance [as in here](https
 ##### Important Note:
 
 As soon as the script is executed, the data is getting aggregated. And once
-"ENTER" is hit, then the data is saved to a file: `get_dynamics_raw.csv`  
+"ENTER" is hit from the keyboard, then the data is saved to a file: `get_dynamics_raw.csv`  
 Here the data collection is done manually, but it can also be done automatically, obviously:
 - Initialize an environment in `straight_road` map 
 - Generate a good sampling position to start in the map using `get_good_sample_pose.py`
@@ -95,11 +107,13 @@ Here the data collection is done manually, but it can also be done automatically
 <details>
 <summary><b><i>PIDcontroller.py</i></b></summary>
 
-This script implements a PID controller[, see Wiki for more info,](https://en.wikipedia.org/wiki/PID_controller) for the car to drive and
+This script implements a PID controller[, see Wikipedia for more info,](https://en.wikipedia.org/wiki/PID_controller) for the car to drive and
 navigate itself within an environment. Go check out the code cause every line of code is explained!
 
-##### Take-aways:
+#### Take-aways:
 
+- The action space is in 2-d. That means an action is a 2-dimensional vector which corresponds to the left & right wheel
+velocities.
 - The structure of running an agent in a simulation shown in a pseudocode-ish way:
 ```python
 Initialize the environment                                // Line [9]
@@ -136,6 +150,35 @@ approach to self-driving car. You can see that these maps are inside the `duckie
 ---
 <details>
 <summary><b><i>OU_action_noise.py</i></b></summary>
+
+<i>"In Reinforcement learning for discrete action spaces, exploration is done via probabilistically selecting a random action
+(such as epsilon-greedy or Boltzmann exploration). For continuous action spaces, exploration is done via adding noise to
+the action itself. In the DDPG paper, the authors use Ornstein-Uhlenbeck Process to add noise to the action output
+(Uhlenbeck & Ornstein, 1930)"</i> [[Source]](https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b)
+
+<i>"The Ornstein-Uhlenbeck Process generates noise that is correlated with the previous noise, as to prevent the noise from
+canceling out or “freezing” the overall dynamics"</i> [[Source]](https://www.quora.com/Why-do-we-use-the-Ornstein-Uhlenbeck-Process-in-the-exploration-of-DDPG/answer/Edouard-Leurent?ch=10&share=4b79f94f&srid=udNQP)
+
+We will see OU noise in detail when we train a Reinforcement Learning agent using DDPG algorithm in `duckietown_rl/`. The purpose of this
+script is just to get the user familiarized with OU noise. What this script does is that it generates an OU noise profile
+and visualizes it. 
+
+Example usage #1: Scatter plot & save the plot: `--save-img = 1`
+```python
+python OU_action_noise.py --mu 0 --sigma 0.2 --timesteps 1000 --reset-after 500 --save-img 1
+```
+Example usage #2: Line chart: `--line = 1` & don't save the image(default):
+```python
+python OU_action_noise.py --mu 0 --sigma 0.5 --timesteps 500 --reset-after 0 --line 1
+```
+
+You can find 2 saved plots in `images/` folder.
+
+#### Take-aways:
+
+- OU noise generates a noise that is correlated with the previous noise, until you reset it.
+- Since we only have 2 wheels, hence 2 wheel velocities, 2 noise profile is generated: one for left wheel, and another
+one for right wheel.
 
 </details>
 
