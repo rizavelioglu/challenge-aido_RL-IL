@@ -96,6 +96,7 @@ while total_timesteps < args.max_timesteps:
 
     # Perform action
     _, reward, done, _ = env.step(action)
+    # Get features
     new_obs = env.get_features()
 
     if episode_timesteps >= args.env_timesteps:
@@ -122,16 +123,21 @@ if args.save_models:
 
 """
 total_step: Global step
-avg_reward: Average reward 
+avg_reward: Average reward per episode
+avg_time  : Average time spent per episode (in seconds)  
 """
+# Store evaluation logs in a data-frame
 df_eval = pd.DataFrame(evaluations_eval, columns=["total_step", "avg_reward", "avg_time"])
+# Export it to a .csv
 df_eval.to_csv("./results/df_eval.csv")
 
 """
-n_episode : Episode Id
-total_step: Global step
+n_episode   : Episode Id
+total_step  : Global step
 e_reward    : Episode reward
-n_step    : #of steps done per episode
+n_step      : #of actions/steps taken per episode
 """
+# Store testing logs in a data-frame
 df_test = pd.DataFrame(evaluations_test, columns=["n_episode", "total_step", "e_reward", "n_step"])
+# Export it to a .csv
 df_test.to_csv("./results/df_test.csv")

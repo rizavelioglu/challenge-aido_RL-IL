@@ -17,7 +17,7 @@ For submitting, please follow [the instructions available in the book][book].
 
 ## Description
 
-This repository contains a baseline implementation of Imiation Learning via Supervised Learning (a.k.a Behavioral Cloning).
+This repository contains a baseline implementation of Imitation Learning via Supervised Learning (a.k.a Behavioral Cloning).
 
 To achieve our goal to directly estimate a policy for the Lane Following problem, we divided this baseline into three parts:
 Logging, Training, and Evaluation.

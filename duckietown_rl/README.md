@@ -2,7 +2,7 @@
 
 - gym_duckietown: My version of gym_duckietown package
 - maps: the folder where the map info are stored 
-- scipts: 
+- scripts: 
 --------------------------------------------------
 <details>
 <summary><b><i>gym_duckietown/</i></b></summary>

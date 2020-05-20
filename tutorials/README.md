@@ -11,7 +11,7 @@ This folder includes a bunch of Python scripts for you to get yourself familiari
 <summary><b><i>maps/</i></b></summary>
 
 By the time this code is published, these are all the available maps we have in Duckietown:
-```python
+```shell script
 cd challenge-aido_RL-IL
 tree tutorials/maps
 ``` 
@@ -35,7 +35,7 @@ This script outputs a 'good' starting position and angle for an agent, given a m
 that is close to the center of a lane and starts at an angle that is close to zero, which means agent is aligned with
 the lane. Example usage:
 
-```python
+```shell script
 cd challenge-aido_RL-IL/tutorials
 python get_good_sample_pose.py -m "zigzag_dists"
 ```
@@ -108,7 +108,7 @@ navigate itself within an environment. Go check out the code cause every line of
 - The action space is in 2-d. That means an action is a 2-dimensional vector which corresponds to the left & right wheel
 velocities.
 - The structure of running an agent in a simulation shown in a pseudocode-ish way:
-```python
+```shell script
 Initialize the environment                                // Line [9]
 Reset the environment and store observation               // Line [23]
 Render the environment                                    // Line [25]
@@ -157,11 +157,11 @@ script is just to get the user familiarized with OU noise. What this script does
 and visualizes it. 
 
 Example usage #1: Scatter plot & save the plot: `--save-img = 1`
-```python
+```shell script
 python OU_action_noise.py --mu 0 --sigma 0.2 --timesteps 1000 --reset-after 500 --save-img 1
 ```
 Example usage #2: Line chart: `--line = 1` & don't save the image(default):
-```python
+```shell script
 python OU_action_noise.py --mu 0 --sigma 0.5 --timesteps 500 --reset-after 0 --line 1
 ```
 

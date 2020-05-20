@@ -8,7 +8,7 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
                 camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
                 randomize_maps_on_reset=True, draw_curve=False, draw_bbox=True, frame_skip=4, draw_DDPG_features=True)
 
-state_dim = env.get_features().shape[0]    # @riza: state_dim = env.observation_space.shape
+state_dim = env.get_features().shape[0]
 action_dim = env.action_space.shape[0]
 max_action = float(env.action_space.high[0])
 
@@ -18,14 +18,14 @@ policy.load("model", directory="./models", for_inference=True)
 
 with torch.no_grad():
     while True:
-        env.reset()        # obs = env.reset()
-        obs = env.get_features()  # @riza
+        env.reset()
+        obs = env.get_features()
         env.render()
         rewards = []
         while True:
             action = policy.predict(np.array(obs))
             _, rew, done, misc = env.step(action)
-            obs = env.get_features()  # @riza
+            obs = env.get_features()
             rewards.append(rew)
             env.render()
 
