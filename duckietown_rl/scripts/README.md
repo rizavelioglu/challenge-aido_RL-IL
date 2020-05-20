@@ -1,5 +1,4 @@
-### This folder contains the scripts that trains, tests & compares the Reinforcement Learning (DDPG) approach with other approaches 
-
+### This folder contains the scripts that trains, tests & compares the Reinforcement Learning (DDPG) approach with other approach 
 
 --------------------------------------------------
 <details>

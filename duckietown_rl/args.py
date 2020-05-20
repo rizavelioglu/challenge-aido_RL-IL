@@ -15,7 +15,7 @@ def get_ddpg_args_train():
     parser.add_argument("--policy_noise", default=0.2, type=float)  # Noise added to target policy during critic update
     parser.add_argument("--noise_clip", default=0.5, type=float)  # Range to clip target policy noise
     parser.add_argument("--policy_freq", default=2, type=int)  # Frequency of delayed policy updates
-    parser.add_argument("--env_timesteps", default=50, type=int)  # Frequency of delayed policy updates
+    parser.add_argument("--env_timesteps", default=50, type=int)  # How many timesteps each episode should run for
     parser.add_argument("--replay_buffer_max_size", default=10000, type=int)  # Maximum number of steps to keep in the replay buffer
 
     return parser.parse_args()

@@ -4,14 +4,7 @@ This folder includes a bunch of Python scripts for you to get yourself familiari
 - Simulation and it's dynamics
 - An agent/expert that drives itself (PID controller)
 - A noise profile that's used in Reinforcement Learning training (DDPG)
-
----
-<details>
-<summary><b><i>cartpole/</i></b></summary>
-
-##TODO:explain cartpole (put a better model in cartpole/models)
-
-</details>
+- Train DDPG on [OpenAI's Cartpole](https://gym.openai.com/envs/CartPole-v0/)!
 
 ---
 <details>
@@ -179,6 +172,14 @@ You can find 2 saved plots in `images/` folder.
 - OU noise generates a noise that is correlated with the previous noise, until you reset it.
 - Since we only have 2 wheels, hence 2 wheel velocities, 2 noise profile is generated: one for left wheel, and another
 one for right wheel.
+
+</details>
+
+---
+<details>
+<summary><b><i>cartpole/</i></b></summary>
+
+##TODO:explain cartpole (put a better model in cartpole/models)
 
 </details>
 

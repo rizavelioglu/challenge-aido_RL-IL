@@ -5,51 +5,26 @@
 - scipts: 
 --------------------------------------------------
 <details>
-<summary><b><i>gym_duckietown</i></b></summary>
+<summary><b><i>gym_duckietown/</i></b></summary>
 
 </details>
 
 --------------------------------------------------
 <details>
-<summary><b><i>maps</i></b></summary>
+<summary><b><i>maps/</i></b></summary>
 
 </details>
 
 --------------------------------------------------
 <details>
-<summary><b><i>scripts</i></b></summary>
+<summary><b><i>models/</i></b></summary>
 
-#### This folder contains the scripts that trains, tests & compares the Reinforcement Learning (DDPG) approach with other approaches 
-
----
-<details>
-<summary><b><i>train_ddpg.py</i></b></summary>
-
-```
-cd duckietown_rl
-python -m scripts.train_ddpg
-```
+This is where we store our trained (final)model! The model in this folder is used by `scripts/test_ddpg.py` & `scripts/evaluation.py`
 </details>
 
----
+--------------------------------------------------
 <details>
-<summary><b><i>test_ddpg.py</i></b></summary>
-
-```
-cd duckietown_rl
-python -m scripts.test_ddpg
-```
-</details>
-
----
-<details>
-<summary><b><i>evalutation.py</i></b></summary>
-
-```
-cd duckietown_rl
-python -m scripts.evaluation
-```
-</details>
+<summary><b><i>scripts/</i></b></summary>
 
 </details>
 
@@ -70,9 +45,3 @@ OU explanations:
 </details>
 
 --------------------------------------------------
-<details>
-<summary><b><i>PIDcontroller.py</i></b></summary>
-
-</details>
-
----

@@ -6,8 +6,6 @@ import os
 from args import get_ddpg_args_train
 from ddpg import DDPG
 from utils import seed, evaluate_policy, ReplayBuffer
-from wrappers import NormalizeWrapper, ImgWrapper, \
-    DtRewardWrapper, ActionWrapper, ResizeWrapper, SteeringToWheelVelWrapper
 from env import launch_env
 from ornstein_uhlenbeck import OrnsteinUhlenbeckActionNoise
 
