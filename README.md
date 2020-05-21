@@ -5,7 +5,7 @@
 <a href="http://aido.duckietown.org"><img width="200" src="https://camo.githubusercontent.com/ca7a25420906820b4e601ec37a7481b07650a255/68747470733a2f2f7777772e6475636b6965746f776e2e6f72672f77702d636f6e74656e742f75706c6f6164732f323031382f30372f4149444f2d373638783531322e706e67"/></a>
 
 
-## "Reinforcement Learning" based approach for challenge [`aido_LF`][lf]
+## Reinforcement & Imitation Learning based approach for challenge [`aido_LF`][lf]
 
 This is a Reinforcement Learning based approach, more specifically **DDPG**, for one of the challenges in the [the AI Driving Olympics](http://aido.duckietown.org/).
 
@@ -14,7 +14,35 @@ This is a Reinforcement Learning based approach, more specifically **DDPG**, for
 
 ## Description
 
-This is a solution baseline using Reinforcement Learning and **PyTorch** as well as Tensorflow's **Keras**.
+This is a solution baseline for the AI Driving Olympics competition using Reinforcement Learning & Imitation Learning in **PyTorch**, **Tensorflow**, and Tensorflow's **Keras**.
+Most of the code is explained within its script as well as in the corresponding folder's README.
+
+#### This repository can be used by anyone who would like to ground his/her knowledge in `Reinforcement Learning`, `Imitation Learning`, `PyTorch`, `Tensorflow`, `Keras`, and `Self-Driving Cars`
+#### What you will learn & and get yourself familiarized with:
+- Simulations in general and how to use them
+- Image processing methods, use-cases  for Self-Driving Cars
+- Reinforcement Learning and one method of RL, namely `DDPG` and its implementation in `PyTorch`
+- Applying `DDPG` to: 
+    - the "Hello World" of RL, namely [CartPole Problem](https://gym.openai.com/envs/CartPole-v0/) a.k.a. Inverted Pendulum
+    
+    ![cartpole-gif](./tutorials/images/cartpole.gif)
+    
+    - a Self-Driving Car that learns itself how to drive well in different environments
+    
+    ![duckie-gif](./tutorials/images/duckie.gif)
+        
+- How Imitation Learning can be applied to Self-Driving Cars by training neural network models with both `Tensorflow` and `Keras`
+- Submission to a world-wide competition using `Docker` 
+
+
+## Getting Started
+Go ahead and run all the scripts on Google Colab. You can train a reinforcement learning agent (expert) that learns to drive perfectly
+within an environment. Then you can run the agent on a bunch of different maps/environments to collect data (observation &
+action pairs) to imitate the expert's behaviour, a.k.a. Imitation Learning, Behaviour Cloning. Finally, you have an agent that
+navigates within an environment using only one single sensor, the camera.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tyflwuXsalvPCuam-wfQdMSVZwTbaoX4?usp=sharing)
+
 
 
 ## TODO:

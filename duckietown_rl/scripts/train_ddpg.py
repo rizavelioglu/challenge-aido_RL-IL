@@ -119,7 +119,7 @@ rew_eval, time_eval = evaluate_policy(env, policy)
 evaluations_eval.append([total_timesteps, rew_eval, time_eval])
 
 if args.save_models:
-    policy.save("{}-episode_reward:{}".format(file_name, episode_reward), directory="./pytorch_models")
+    policy.save("{}".format(file_name), directory="./pytorch_models")
 
 """
 total_step: Global step

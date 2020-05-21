@@ -62,16 +62,6 @@ Three things are done when this script is executed:
     - reward achieved per action & cumulative reward
     - distance in meters vs. timesteps taken
 
-![plot_dist](../../tutorials/images/Approach%231_plot_dist.png)
-
-![plot reward](../../tutorials/images/Approach%231_plot_reward.png)
-
-![plot distvstime](../../tutorials/images/Approach%231_plot_DistvsTime.png)
-
-# TODO: 
-Add images
-
-
 This script can be used to evaluate a trained model/agent, in other words, it can be used to see how good/bad a model is
  doing. Additionaly, it can be used to compare different models/approaches.
 
@@ -80,6 +70,34 @@ This script can be used to evaluate a trained model/agent, in other words, it ca
 cd challenge-aido_RL-IL/duckietown_rl      # cd into the directory
 python -m scripts.evaluation               # run the script as a module (-m parameter)
 ```
+
+#### More detail on evaluation
+We do the evaluation only on one map for now, to be specific in `zigzag_dists`, which is one of the hardest map that includes
+bunch of zigzags. We run the agent for 5 episodes and some number of timesteps (whose values can be changed). In each of the 5
+episodes, the agent starts in a slightly changed/shifted position and angle in the map. This is done to check whether the agent is sensitive
+to the starting position and angle. 
+
+> Here are aforementioned figures generated using a trained agent:
+
+![plot_dist](../../tutorials/images/Approach%231_plot_dist.png)
+> The oscillations seen in the upper graph is where the agent slows down to take a turn, hence the distance is less. For instance, between
+timesteps 50-150 there are no turns and the agent is going full speed, hence there's a straight line in the graph.
+
+![plot reward](../../tutorials/images/Approach%231_plot_reward.png)
+> Similarly, we see the rewards achieved by the agent. Again, the big oscillations exist because of turns.
+
+<details>
+<summary><b>Important Note about reward</b></summary>
+
+> Since the baseline reward function is in the interval (-∞, 0] (so the maximum reward that can be achieved is 0), the rewards
+are negative on the graphs. On the contrary, in order to see an "increasing" line, the absolute values are taken into consideration
+while plotting the cumulative reward.
+
+</details>
+
+![plot distvstime](../../tutorials/images/Approach%231_plot_DistvsTime.png)
+> Here we can see how many timesteps does an agent require to travel some distance in meters (it's helpful when comparing
+with other approaches).
 
 </details>
 
