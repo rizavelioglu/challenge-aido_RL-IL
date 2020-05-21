@@ -1,3 +1,5 @@
+import sys
+sys.path.append("../../")
 from duckietown_rl.gym_duckietown.simulator import Simulator
 from keras.models import load_model
 import cv2

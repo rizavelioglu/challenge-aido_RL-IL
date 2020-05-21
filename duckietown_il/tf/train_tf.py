@@ -1,3 +1,5 @@
+import sys
+sys.path.append("../")
 import numpy as np
 from tqdm import tqdm
 from _loggers import Reader
@@ -6,6 +8,12 @@ import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 tf.compat.v1.disable_eager_execution()
 
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("-d", "--data", required=True, type=str, help="name of the data to learn from (without .log)")
+args = vars(ap.parse_args())
+DATA = args["data"]
+
 # configuration zone
 BATCH_SIZE = 32                           # define the batch size
 EPOCHS = 10                               # how many times we iterate through our data
@@ -13,7 +21,7 @@ OBSERVATIONS_SHAPE = (None, 60, 80, 3)    # here we assume the observations have
 ACTIONS_SHAPE = (None, 2)                 # actions have a shape of 2: [leftWheelVelocity, rightWheelVelocity]
 SEED = 1234
 STORAGE_LOCATION = "trained_models/"      # where we store our trained models
-reader = Reader('train.log')              # where our data lies
+reader = Reader(f'../{DATA}.log')         # where our data lies
 
 observations, actions = reader.read()     # read the observations from data
 actions = np.array(actions)

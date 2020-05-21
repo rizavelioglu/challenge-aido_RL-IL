@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+import sys
+sys.path.append("../../")
 import numpy as np
-from keras.models import load_model
+from keras.models import load_model as lm
 from cv2 import resize, cvtColor, COLOR_BGR2RGB
 
 from aido_schemas import EpisodeStart, protocol_agent_duckiebot1, PWMCommands, Duckiebot1Commands, LEDSCommands, RGB, \
@@ -11,7 +13,7 @@ expect_shape = (480, 640, 3)
 
 class TensorflowTemplateAgent:
     def __init__(self, load_model=False, model_path=None):
-        self.model = load_model('keras_models/VGG16#1.h5')
+        self.model = lm('duckietown_il/keras/trained_models/.h5')
         self.current_image = np.zeros(expect_shape)
 
     def init(self, context: Context):

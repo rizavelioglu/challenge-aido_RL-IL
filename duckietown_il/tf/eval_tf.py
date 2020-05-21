@@ -1,11 +1,12 @@
 import sys
-sys.path.append("../")
+sys.path.append("../../")
 from duckietown_rl.gym_duckietown.simulator import Simulator
 import cv2
 import numpy as np
 from model_tf import one_residual
 from submission.tf.model import TfInference
 import tensorflow.compat.v1 as tf
+
 tf.disable_v2_behavior()
 tf.compat.v1.disable_eager_execution()
 

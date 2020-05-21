@@ -167,6 +167,11 @@ python OU_action_noise.py --mu 0 --sigma 0.5 --timesteps 500 --reset-after 0 --l
 
 You can find 2 saved plots in `images/` folder.
 
+See the following links to get more info on OU Noise:
+- [Wikipedia](https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process)
+- [Blogpost](https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b)
+
+
 #### Take-aways:
 
 - OU noise generates a noise that is correlated with the previous noise, until you reset it.

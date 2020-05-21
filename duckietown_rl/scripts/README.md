@@ -1,8 +1,8 @@
-### Train, Test & Evaluate a Reinforcement Learning (DDPG) agent 
+# Train, Test & Evaluate a Reinforcement Learning (DDPG) agent 
 This folder contains the scripts that train, test & compare the Reinforcement Learning (DDPG) approach with other approaches.
 
 
-<b>Note:</b> All of the scripts has to be run as a module. In that way, we could import the scripts that are in `scripts` folder (e.g. `args.py`) to
+**Note:** All of the scripts has to be run as a module. In that way, we could import the scripts that are in `scripts` folder (e.g. `args.py`) to
 our original script (e.g. `train_ddpg.py`) easily. 
 
 --------------------------------------------------
