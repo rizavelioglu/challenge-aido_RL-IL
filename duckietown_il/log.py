@@ -50,9 +50,10 @@ with torch.no_grad():
             if closest_point is None:
                 done = True
                 break
+            # Cut the horizon: obs.shape = (480,640,3) --> (300,640,3)
+            observation = observation[150:450, :]
             # we can resize the image here
-            # TODO: maybe cut the horizon as in canny examples?
-            observation = cv2.resize(observation, (80, 60))
+            observation = cv2.resize(observation, (90, 60))
             # NOTICE: OpenCV changes the order of the channels !!!
             observation = cv2.cvtColor(observation, cv2.COLOR_BGR2RGB)
 
