@@ -24,7 +24,7 @@ expert.load("model", directory="../duckietown_rl/models", for_inference=True)
 env.reset()
 # Get features(state representation) for RL agent
 obs = env.get_features()
-EPISODES, STEPS = 200, 512
+EPISODES, STEPS = 400, 256
 DEBUG = False
 
 # please notice
@@ -54,7 +54,7 @@ with torch.no_grad():
             # Cut the horizon: obs.shape = (480,640,3) --> (300,640,3)
             observation = observation[150:450, :]
             # we can resize the image here
-            observation = cv2.resize(observation, (200, 100))
+            observation = cv2.resize(observation, (120, 80))
             # NOTICE: OpenCV changes the order of the channels !!!
             observation = cv2.cvtColor(observation, cv2.COLOR_BGR2RGB)
 

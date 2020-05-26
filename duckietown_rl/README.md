@@ -27,7 +27,25 @@ But in this folder I edited some scripts for my approach: `simulator.py` & `grap
     the car and the center of the lane. Please refer to the following figure:
     ![](../tutorials/images/sensors.png)
     
-    
+    - The red dots seen on the right-lane shows the *center of the right-lane*, which can be assumed as the optimal trajectory. 
+    Set the parameter `draw_curve=True` while constructing the environment. (e.g. see this)
+    - The red square in the middle of the image is the car (duckie-bot), in other words the *car's corners*. Set the parameter
+    `draw_bbox=True` while constructing the environment. (e.g. see this)
+    - The blue dot in the red square is *the center of the car*.
+    - The vertical green line that passes through the center of the car is *the directory line* which is aligned with the direction of the car.
+    - The other green lines, which we call ***sensor lines***, correspond to the sensor readings. 
+
+#### Note
+If you would like to render the above information such as; rendering the sensor lines, you need to set the corresponding
+parameter of the simulator while constructing the environment. For example, the image above was taken from the simulator
+which was constructed as follow:
+```python
+env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_rand=True, camera_width=640,
+                camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
+                randomize_maps_on_reset=True, draw_curve=False, draw_bbox=True, frame_skip=4, draw_DDPG_features=True)
+```
+See [this script in tutorials](../tutorials/PIDcontroller.py) or  for explanations of the other parameters
+
 
 - **Reward Function:**
 

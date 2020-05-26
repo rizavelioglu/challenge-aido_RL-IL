@@ -23,7 +23,7 @@ def NVIDIA_model():
     # Source:  https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf
     model = Sequential()
 
-    model.add(Lambda(lambda x: x/255.0, input_shape=(100, 200, 3)))
+    model.add(Lambda(lambda x: x/255.0, input_shape=(80, 120, 3)))
     # Conv_1
     model.add(Conv2D(24, (5, 5), activation="relu", padding="same", strides=(2, 2)))
     # Conv_2

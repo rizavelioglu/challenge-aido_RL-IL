@@ -21,11 +21,11 @@ for episode in range(0, EPISODES):
         # Cut the horizon: obs.shape = (480,640,3) --> (300,640,3)
         observation = observation[150:450, :]
         # we can resize the image here
-        observation = cv2.resize(observation, (200, 100))
+        observation = cv2.resize(observation, (120, 80))
         # NOTICE: OpenCV changes the order of the channels !!!
         observation = cv2.cvtColor(observation, cv2.COLOR_BGR2RGB)
 
-        action = model.predict(observation.reshape(1, 90, 60, 3))[0]
+        action = model.predict(observation.reshape(1, 80, 120, 3))[0]
         observation, reward, done, info = env.step(action)
         cumulative_reward += reward
         if done:
