@@ -25,7 +25,7 @@ env.reset()
 # Get features(state representation) for RL agent
 obs = env.get_features()
 EPISODES, STEPS = 200, 512
-DEBUG = False
+DEBUG = True
 
 # please notice
 logger = Logger(env, log_file=f'train-{int(EPISODES*STEPS/1000)}k.log')
@@ -45,6 +45,7 @@ with torch.no_grad():
 
             if done:
                 print(f"#Episode: {episode}\t | #Step: {steps}")
+                break
 
             closest_point, _ = env.closest_curve_point(env.cur_pos, env.cur_angle)
             if closest_point is None:
@@ -53,7 +54,7 @@ with torch.no_grad():
             # Cut the horizon: obs.shape = (480,640,3) --> (300,640,3)
             observation = observation[150:450, :]
             # we can resize the image here
-            observation = cv2.resize(observation, (90, 60))
+            observation = cv2.resize(observation, (150, 200))
             # NOTICE: OpenCV changes the order of the channels !!!
             observation = cv2.cvtColor(observation, cv2.COLOR_BGR2RGB)
 
