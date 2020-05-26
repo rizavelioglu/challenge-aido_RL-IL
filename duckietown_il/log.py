@@ -25,7 +25,7 @@ env.reset()
 # Get features(state representation) for RL agent
 obs = env.get_features()
 EPISODES, STEPS = 200, 512
-DEBUG = True
+DEBUG = False
 
 # please notice
 logger = Logger(env, log_file=f'train-{int(EPISODES*STEPS/1000)}k.log')
@@ -54,7 +54,7 @@ with torch.no_grad():
             # Cut the horizon: obs.shape = (480,640,3) --> (300,640,3)
             observation = observation[150:450, :]
             # we can resize the image here
-            observation = cv2.resize(observation, (150, 200))
+            observation = cv2.resize(observation, (200, 100))
             # NOTICE: OpenCV changes the order of the channels !!!
             observation = cv2.cvtColor(observation, cv2.COLOR_BGR2RGB)
 

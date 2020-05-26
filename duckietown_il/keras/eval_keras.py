@@ -8,7 +8,7 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
                 camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
                 randomize_maps_on_reset=False, draw_curve=False, draw_bbox=False, frame_skip=1, draw_DDPG_features=False)
 
-model = load_model("trained_models/01_VGG16.h5")
+model = load_model("trained_models/01_NVIDIA.h5")
 
 observation = env.reset()
 env.render()
@@ -18,9 +18,14 @@ STEPS = 1000
 
 for episode in range(0, EPISODES):
     for steps in range(0, STEPS):
-        observation = cv2.resize(observation, (80, 60))
+        # Cut the horizon: obs.shape = (480,640,3) --> (300,640,3)
+        observation = observation[150:450, :]
+        # we can resize the image here
+        observation = cv2.resize(observation, (200, 100))
+        # NOTICE: OpenCV changes the order of the channels !!!
         observation = cv2.cvtColor(observation, cv2.COLOR_BGR2RGB)
-        action = model.predict(observation.reshape(1, 60, 80, 3))[0]
+
+        action = model.predict(observation.reshape(1, 90, 60, 3))[0]
         observation, reward, done, info = env.step(action)
         cumulative_reward += reward
         if done:
