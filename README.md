@@ -21,14 +21,16 @@ For submitting, please follow [the instructions available in the book][book].
 Most of the code is explained within its script as well as in the corresponding folder's README.
 
 ## Getting Started
-Go ahead and run all the scripts on Google Colab. You can train a reinforcement learning agent (expert) that learns to drive perfectly
-within an environment. Then you can run the agent on a bunch of different maps/environments to collect data (observation &
-action pairs) to imitate the expert's behaviour, a.k.a. Imitation Learning, Behaviour Cloning. Finally, you have an agent that
-navigates within an environment using only one single sensor, the camera.
+Go ahead and [![Open In Cdolab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tyflwuXsalvPCuam-wfQdMSVZwTbaoX4?usp=sharing)
+You can train a reinforcement learning agent (expert) that learns to drive perfectly within an environment. Then you can
+run the agent on a bunch of different maps/environments to collect data (observation & action pairs) to imitate the expert's
+behaviour, a.k.a. Imitation Learning, Behaviour Cloning. Finally, you have an agent that navigates within an environment
+using only one single sensor, the camera.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tyflwuXsalvPCuam-wfQdMSVZwTbaoX4?usp=sharing)
 
+![](tutorials/images/resized.png)
 
+![](tutorials/images/resized2.png)
 
 
 ## Installation/Requirements
