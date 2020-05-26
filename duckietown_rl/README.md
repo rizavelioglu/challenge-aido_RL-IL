@@ -21,8 +21,17 @@ scripts that creates the simulator; its physics, maps, objects, etc. This simula
 The latest version of `gym_duckietown` can be found [on this link](https://github.com/duckietown/gym-duckietown/tree/daffy).
  
 But in this folder I edited some scripts for my approach: `simulator.py` & `graphics.py`, to be specific. Here's my approach:
-- Sensor lines
-- Reward Function
+- **Sensor lines:** 
+
+    The idea is to 'attach' distance sensors to the car where the sensor readings will correspond to the distance between
+    the car and the center of the lane. Please refer to the following figure:
+    ![](../tutorials/images/sensors.png)
+    
+    
+
+- **Reward Function:**
+
+
 
 
 </details>
