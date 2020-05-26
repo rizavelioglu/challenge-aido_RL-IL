@@ -22,16 +22,13 @@ Most of the code is explained within its script as well as in the corresponding 
 
 ## Getting Started
 Go ahead and [![Open In Cdolab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tyflwuXsalvPCuam-wfQdMSVZwTbaoX4?usp=sharing)
+
 You can train a reinforcement learning agent (expert) that learns to drive perfectly within an environment. Then you can
 run the agent on a bunch of different maps/environments to collect data (observation & action pairs) to imitate the expert's
 behaviour, a.k.a. Imitation Learning, Behaviour Cloning. Finally, you have an agent that navigates within an environment
 using only one single sensor, the camera.
 
-
-![](tutorials/images/resized.png)
-
-![](tutorials/images/resized2.png)
-
+![](tutorials/images/diagram.png)
 
 ## Installation/Requirements
 
@@ -55,9 +52,3 @@ This repository can be used by anyone who would like to ground his/her knowledge
 
 - How Imitation Learning can be applied to Self-Driving Cars by training neural network models with both `Tensorflow` and `Keras`
 - Submission to a world-wide competition using `Docker` 
-
-
-
-## TODO:
-
-add figures from poster(drive)
