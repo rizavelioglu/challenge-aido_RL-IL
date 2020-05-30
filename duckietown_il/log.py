@@ -54,7 +54,7 @@ with torch.no_grad():
             # Cut the horizon: obs.shape = (480,640,3) --> (300,640,3)
             observation = observation[150:450, :]
             # we can resize the image here
-            observation = cv2.resize(observation, (120, 80))
+            observation = cv2.resize(observation, (120, 60))
             # NOTICE: OpenCV changes the order of the channels !!!
             observation = cv2.cvtColor(observation, cv2.COLOR_BGR2RGB)
 
@@ -64,8 +64,7 @@ with torch.no_grad():
                 cv2.waitKey(1)
 
             logger.log(observation, action, reward, done, info)
-            # [optional] env.render() to watch the expert interaction with the environment
-            # we log here
+
         logger.on_episode_done()  # speed up logging by flushing the file
         env.reset()
 
