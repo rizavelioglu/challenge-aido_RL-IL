@@ -20,12 +20,12 @@ class ActorDense(nn.Module):
         self.l3 = nn.Linear(300, action_dim)
 
         self.max_action = max_action
-        self.tanh = nn.Sigmoid()   # self.tanh = nn.Tanh()
+        self.sgd = nn.Sigmoid()
 
     def forward(self, x):
         x = F.relu(self.l1(x))
         x = F.relu(self.l2(x))
-        x = self.max_action * self.tanh(self.l3(x))
+        x = self.max_action * self.sgd(self.l3(x))
         return x
 
 
