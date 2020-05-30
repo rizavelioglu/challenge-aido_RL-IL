@@ -22,8 +22,6 @@ static & non-static Duckiebots, pedestrians, traffic lights, etc. Please see [th
 new map or want to get more information. In addition, check out this [great notebook](https://github.com/duckietown/duckietown-world/blob/daffy/notebooks/30-DuckietownWorld-maps.ipynb)
 for a better and broader perspective on the maps available!
 
-#### TODO: add "zigzag_dists" info image
-
 
 </details>
 
@@ -44,6 +42,8 @@ for the map `zigzag_dists`. e.g. Angle `0` means the car is perfectly aligned wi
 aligned with the  right-lane's center line.
 
 Keep it in mind that a map name has to be given as an argument(`-m` which stands for 'map')
+
+#### TODO: add "zigzag_dists" info image
 
 </details>
 
@@ -72,17 +72,16 @@ Here's the processed version of the data collected from my test: ![get_dynamics_
 - It takes `≈0.858 seconds` or `≈26 time-steps` to reach to `0 m/s` from full-speed(`0.6 m/s`)
 
 These details will become important when building/training algorithms!
+
 <details>
-
----
 <summary><i><b>***</b> Click to see the <b>spoiler</b> where this will be important! <b>***</b></i></summary>
-
----
 
 When training a reinforcement learning algorithm (the one we use is called DDPG) we let the agent apply the same action
 for a fixed number of times, because it takes some time to achieve speed! That fixed number will be called `frame_skip`
 which you will encounter when creating the simulator instance [as in here](https://github.com/rizavelioglu/challenge-aido_RL-IL/blob/82f84a31ce46585b97498ed56ee6d794e8bd0038/duckietown_rl/env.py#L5)! 
 </details>
+
+---
 
 ##### Important Note:
 
@@ -156,16 +155,33 @@ We will see OU noise in detail when we train a Reinforcement Learning agent usin
 script is just to get the user familiarized with OU noise. What this script does is that it generates an OU noise profile
 and visualizes it. 
 
-Example usage #1: Scatter plot & save the plot: `--save-img = 1`
+**Example usage #1:** Scatter plot & save the plot: `--save-img = 1`
 ```shell script
 python OU_action_noise.py --mu 0 --sigma 0.2 --timesteps 1000 --reset-after 500 --save-img 1
 ```
-Example usage #2: Line chart: `--line = 1` & don't save the image(default):
+![OU_1](images/OrnsteinUhlenbeckActionNoise(mu=%5B0.%200.%5D,%20sigma=%5B0.2%200.2%5D)-1000%20steps%20-%20resets%20after%20500%20steps.png)
+>-  As the action is a 2-D vector (left & right wheel velocities) 2 noise profiles are generated where the blue dots belong
+    to the left wheel velocity's noise profile and the orange ones to the right wheel velocity's noise profile.
+>- As the arguments:
+>>   - `--mu` & `--sigma` are set to 0 and 0.2, respectively, both of the two noise profiles have mean 0
+    and standard deviation 0.2.
+>>   - `--timesteps` is set to 1000, both profiles are generated for 1000 timesteps (x-axis).
+>>   - `--reset-after` is set to 500, both profiles are reset after 500 timesteps: they start from 0 again.
+>>   - `--save-img` is set to 1, the plot is saved.
+
+**Example usage #2:** Line chart: `--line = 1` & don't save the image(default):
 ```shell script
 python OU_action_noise.py --mu 0 --sigma 0.5 --timesteps 500 --reset-after 0 --line 1
 ```
-
-You can find 2 saved plots in `images/` folder.
+![OU_2](images/OrnsteinUhlenbeckActionNoise(mu=%5B0.%200.%5D,%20sigma=%5B0.5%200.5%5D)-500%20steps%20-%20resets%20after%200%20steps.png)
+>-  This is another plot with minor differences explained below.
+>- As the arguments:
+>>   - `--mu` & `--sigma` are set to 0 and 0.5, respectively, both of the two noise profiles have mean 0
+    and standard deviation 0.5.
+>>   - `--timesteps` is set to 500, both profiles are generated for 500 timesteps (x-axis).
+>>   - `--reset-after` is set to 0, both profiles are reset after 0 timesteps: so, they are never reset.
+>>   - `--line` is set to 1, the plot is a line plot, instead of a scatter plot.
+>>   - `--save-img` is not given, the plot is not saved.
 
 See the following links to get more info on OU Noise:
 - [Wikipedia](https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process)
@@ -175,6 +191,7 @@ See the following links to get more info on OU Noise:
 #### Take-aways:
 
 - OU noise generates a noise that is correlated with the previous noise, until you reset it.
+- Every reset OU noise is unique!
 - Since we only have 2 wheels, hence 2 wheel velocities, 2 noise profile is generated: one for left wheel, and another
 one for right wheel.
 
