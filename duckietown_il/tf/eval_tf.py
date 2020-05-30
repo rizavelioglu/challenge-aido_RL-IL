@@ -11,7 +11,7 @@ tf.disable_v2_behavior()
 tf.compat.v1.disable_eager_execution()
 
 # Load model
-OBSERVATIONS_SHAPE = (None, 480, 640, 3)   # here we assume the observations have been resized to 60x80
+OBSERVATIONS_SHAPE = (None, 60, 120, 3)    # here we assume the observations have been resized to 60x120
 ACTIONS_SHAPE = (None, 2)                  # actions have a shape of 2: [leftWheelVelocity, rightWheelVelocity]
 SEED = 1234
 STORAGE_LOCATION = "trained_models/"       # where we store our trained models

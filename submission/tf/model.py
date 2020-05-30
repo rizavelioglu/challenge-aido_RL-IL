@@ -50,7 +50,7 @@ class TfInference:
             self._storing(storage_location)
 
     def _pre_process(self):
-        resize = tf.map_fn(lambda frame: tf.image.resize_images(frame, (60, 80)), self._observation)
+        resize = tf.map_fn(lambda frame: tf.image.resize_images(frame, (60, 120)), self._observation)
         and_standardize = tf.map_fn(lambda frame: tf.image.per_image_standardization(frame), resize)
         self._preprocessed_state = and_standardize
 
