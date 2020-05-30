@@ -41,12 +41,14 @@ def plot_model_history(model_history, path_to_save, model_name):
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
 ap.add_argument("-d", "--data", required=True, type=str, help="name of the data to learn from (without .log)")
+ap.add_argument("-e", "--epoch", required=True, type=int, help="number of epochs")
+ap.add_argument("-b", "--batch-size", required=True, type=int, help="batch size")
 args = vars(ap.parse_args())
 DATA = args["data"]
 
 # configuration zone
-BATCH_SIZE = 32                        # define the batch size
-EPOCHS = 50                            # how many times we iterate through our data
+BATCH_SIZE = args["batch_size"]        # define the batch size
+EPOCHS     = args["epoch"]             # how many times we iterate through our data
 STORAGE_LOCATION = "trained_models/"   # where we store our trained models
 reader = Reader(f'../{DATA}.log')      # where our data lies
 MODEL_NAME = "01_NVIDIA"
