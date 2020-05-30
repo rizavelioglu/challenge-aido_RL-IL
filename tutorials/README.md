@@ -179,7 +179,7 @@ python OU_action_noise.py --mu 0 --sigma 0.5 --timesteps 500 --reset-after 0 --l
 >>   - `--mu` & `--sigma` are set to 0 and 0.5, respectively, both of the two noise profiles have mean 0
     and standard deviation 0.5.
 >>   - `--timesteps` is set to 500, both profiles are generated for 500 timesteps (x-axis).
->>   - `--reset-after` is set to 0, both profiles are reset after 0 timesteps: so, they are never reset.
+>>   - `--reset-after` is set to 0, both profiles are reset after 0 timesteps: so, they are never reset after time step 0.
 >>   - `--line` is set to 1, the plot is a line plot, instead of a scatter plot.
 >>   - `--save-img` is not given, the plot is not saved.
 
