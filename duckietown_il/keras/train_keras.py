@@ -2,13 +2,14 @@ import sys
 sys.path.append("../")
 import numpy as np
 from tqdm import tqdm
+import datetime
 import matplotlib.pyplot as plt
 import argparse
 from _loggers import Reader
 from model_keras import VGG16_model, NVIDIA_model
 from keras.optimizers import SGD, Adam
 from keras.losses import mean_squared_error as MSE
-from keras.callbacks import EarlyStopping, ModelCheckpoint
+from keras.callbacks import EarlyStopping, ModelCheckpoint, TensorBoard
 from keras.preprocessing.image import ImageDataGenerator
 from sklearn.model_selection import train_test_split
 
@@ -57,12 +58,12 @@ observations, actions = reader.read()  # read the observations from data
 actions = np.array(actions)
 observations = np.array(observations)
 
-# Split the data
-x_train, x_validate, y_train, y_validate = train_test_split(observations, actions, test_size=0.2, random_state=2)
-
-test_size = int(len(x_train) * 0.1)
-x_test,  y_test  = x_train[:test_size], y_train[:test_size]
-x_train, y_train = x_train[test_size:], y_train[test_size:]
+# Split the data: Train and Test
+x_train, x_test, y_train, y_test = train_test_split(observations, actions, test_size=0.2, random_state=2)
+# Split Train data once more for Validation data
+val_size = int(len(x_train) * 0.1)
+x_validate, y_validate = x_train[:val_size], y_train[:val_size]
+x_train, y_train       = x_train[val_size:], y_train[val_size:]
 
 train_datagen = ImageDataGenerator()
 train_datagen.fit(x_train)
@@ -81,15 +82,18 @@ model.compile(optimizer=optimizer,
               loss=MSE,
               metrics=["accuracy"])
 
+# Create Keras callbacks
 es = EarlyStopping(monitor='val_loss', verbose=1, patience=30)
 mc = ModelCheckpoint(STORAGE_LOCATION + MODEL_NAME + '.h5', monitor='val_loss', save_best_only=True)
+log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+tb = TensorBoard(log_dir=log_dir, histogram_freq=1)
 
 history = model.fit_generator(train_datagen.flow(x_train, y_train, batch_size=BATCH_SIZE),
                               validation_data=validation_datagen.flow(x_validate, y_validate, batch_size=BATCH_SIZE),
                               epochs=EPOCHS,
-                              verbose=2,  # for hiding print statements
+                              verbose=2,
                               steps_per_epoch=observations.shape[0] // BATCH_SIZE,
-                              callbacks=[es, mc],
+                              callbacks=[es, mc, tb],
                               shuffle=True)
 
 # Plot & save the plots

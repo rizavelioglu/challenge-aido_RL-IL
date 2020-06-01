@@ -40,11 +40,8 @@ def NVIDIA_model():
     model.add(Flatten())
     # Next, five fully connected layers
     model.add(Dense(1164, activation="relu"))
-    model.add(Dropout(0.2))
     model.add(Dense(100, activation="relu"))
-    model.add(Dropout(0.2))
     model.add(Dense(50, activation="relu"))
-    model.add(Dropout(0.2))
     model.add(Dense(10, activation="relu"))
     model.add(Dense(2, activation="sigmoid"))
 
