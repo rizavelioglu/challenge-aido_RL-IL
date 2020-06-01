@@ -24,6 +24,8 @@ for episode in range(0, EPISODES):
         observation = cv2.resize(observation, (120, 60))
         # NOTICE: OpenCV changes the order of the channels !!!
         observation = cv2.cvtColor(observation, cv2.COLOR_BGR2RGB)
+        # Rescale the image
+        observation = observation * 1.0/255
 
         action = model.predict(observation.reshape(1, 60, 120, 3))[0]
         observation, reward, done, info = env.step(action)

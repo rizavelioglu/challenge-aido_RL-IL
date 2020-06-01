@@ -65,11 +65,20 @@ val_size = int(len(x_train) * 0.1)
 x_validate, y_validate = x_train[:val_size], y_train[:val_size]
 x_train, y_train       = x_train[val_size:], y_train[val_size:]
 
-train_datagen = ImageDataGenerator()
+# prepare data augmentation configuration
+train_datagen = ImageDataGenerator(rescale=1./255,              # rescaling factor
+                                   width_shift_range=0.2,       # float: fraction of total width, if < 1
+                                   height_shift_range=0.2,      # float: fraction of total height, if < 1
+                                   brightness_range=None,       # Range for picking a brightness shift value from
+                                   zoom_range=0.0,              # Float or [lower, upper]. Range for random zoom
+                                   )
 train_datagen.fit(x_train)
-
-validation_datagen = ImageDataGenerator()
+# this is the augmentation configuration we will use for validating: only rescaling
+validation_datagen = ImageDataGenerator(rescale=1./255)
 validation_datagen.fit(x_validate)
+# this is the augmentation configuration we will use for testing: only rescaling
+test_datagen = ImageDataGenerator(rescale=1./255)
+test_datagen.fit(x_test)
 
 # Build the model
 # model = VGG16_model()
@@ -98,6 +107,6 @@ history = model.fit_generator(train_datagen.flow(x_train, y_train, batch_size=BA
 
 # Plot & save the plots
 plot_model_history(history, path_to_save=STORAGE_LOCATION, model_name=MODEL_NAME)
-# Evaluate the model on the test set
-test_result = model.evaluate(x_test, y_test)
+# Test the model on the test set
+test_result = model.evaluate(test_datagen.flow(x_test, y_test, batch_size=BATCH_SIZE))
 print(f"Test loss: {test_result[0]:.3f}\t | Test accuracy: %{test_result[1]:.2f}")
