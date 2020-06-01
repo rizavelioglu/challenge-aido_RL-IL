@@ -117,27 +117,29 @@ while total_timesteps < args.max_timesteps:
 # Final evaluation
 rew_eval, time_eval = evaluate_policy(env, policy)
 evaluations_eval.append([total_timesteps, rew_eval, time_eval])
-
+# Save the final evaluation
 if args.save_models:
     policy.save("{}".format(file_name), directory="./pytorch_models")
 
-"""
-total_step: Global step
-avg_reward: Average reward per episode
-avg_time  : Average time spent per episode (in seconds)  
-"""
 # Store evaluation logs in a data-frame
-df_eval = pd.DataFrame(evaluations_eval, columns=["total_step", "avg_reward", "avg_time"])
-# Export it to a .csv
-df_eval.to_csv("./results/df_eval.csv")
+df_eval = pd.DataFrame(evaluations_eval,
+                       columns=["total_step",   # Global step
+                                "avg_reward",   # Average reward per episode
+                                "avg_time"])    # Average time spent per episode (in seconds)
 
-"""
-n_episode   : Episode Id
-total_step  : Global step
-e_reward    : Episode reward
-n_step      : #of actions/steps taken per episode
-"""
 # Store testing logs in a data-frame
-df_test = pd.DataFrame(evaluations_test, columns=["n_episode", "total_step", "e_reward", "n_step"])
-# Export it to a .csv
-df_test.to_csv("./results/df_test.csv")
+df_test = pd.DataFrame(evaluations_test,
+                       columns=["n_episode",    # Episode ID
+                                "total_step",   # Global step
+                                "e_reward",     # Episode reward
+                                "n_step"])      # number of actions/steps taken per episode
+
+# If training on Colab, save .npz because Colab gives a weird error for saving .csv
+if args.train_on_colab:
+    # Export to .npz file
+    np.savez("./results/eval.npz", evaluations_eval)
+    np.savez("./results/test.npz", evaluations_test)
+else:
+    # Export to .csv file
+    df_eval.to_csv("./results/df_eval.csv")
+    df_test.to_csv("./results/df_test.csv")
