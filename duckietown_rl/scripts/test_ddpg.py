@@ -1,5 +1,7 @@
 import numpy as np
 from ddpg import DDPG
+from utils import seed
+from args import get_ddpg_args_test
 from gym_duckietown.simulator import Simulator
 import torch
 import cv2
@@ -7,6 +9,10 @@ import cv2
 env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_rand=True, camera_width=640,
                 camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
                 randomize_maps_on_reset=True, draw_curve=False, draw_bbox=True, frame_skip=4, draw_DDPG_features=True)
+
+# Set seeds
+args = get_ddpg_args_test()
+seed(args.seed)
 
 state_dim = env.get_features().shape[0]
 action_dim = env.action_space.shape[0]
