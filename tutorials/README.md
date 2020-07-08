@@ -130,12 +130,21 @@ The reason why we store only last 10 angle errors [[Line 31]](https://github.com
 This script runs the PID agent to get each of the tile coordinates in some of the maps available in `maps/` folder.
 For simplicity, only some of the maps' tile data is collected,not all. In addition, some maps are preffered amongst
 others due to simplifications in the chosen maps such as; there's no obstacle or no other car in the chosen maps, which
-make things easier for us.
+make things easier for us. 
 
-#### Why do we need this script?
+After the following code is run, `tile_coordinates.csv` file is created inside `tutorials/`
+folder: 
+
+```shell script
+python get_tile_coordinates.py
+```
+
+> #### Why do we need this script?
 We will need the tile coordinates data for constructing the feature vector which will be given to Reinforcement Learning
 algorithm (DDPG) as input. Therefore, it is essential to have the tile coordinates of the maps where we are building our
-approach to self-driving car. You can see that these maps are inside the `duckietown_rl/maps` folder.        
+approach to self-driving car. You can see that these maps are inside the `duckietown_rl/maps` folder, for which we stored
+the tile coordinates. And you can see that we copied the data from `tile_coordinates.csv` and pasted inside [this function](https://github.com/rizavelioglu/challenge-aido_RL-IL/blob/362feae4f058c6db897021c47c98759c79ea1ed2/duckietown_rl/gym_duckietown/simulator.py#L2036)
+in `duckietown_rl/gym_duckietown/simulator.py`
 
 </details>
 
@@ -201,8 +210,25 @@ one for right wheel.
 <details>
 <summary><b><i>cartpole/</i></b></summary>
 
-##TODO:explain cartpole (put a better model in cartpole/models)
+[CartPole Problem](https://gym.openai.com/envs/CartPole-v0/) a.k.a. Inverted Pendulum, is the "Hello World" of Reinforcement
+Learning. Here's the official explanation on CartPole by the creators: 
+> <i>"A pole is attached by an un-actuated joint to a cart, which moves
+along a frictionless track. The system is controlled by applying a force of +1 or -1 to the cart. The pendulum starts upright,
+and the goal is to prevent it from falling over. A reward of +1 is provided for every timestep that the pole remains upright.
+The episode ends when the pole is more than 15 degrees from vertical, or the cart moves more than 2.4 units from the center."</i>
 
+While there are much simpler algorithms that solve this problem, we would like to use DDPG just to double-check that the
+implementation of DDPG is correct and that it actually works on this simple problem. 
+
+Here's what's inside the `cartpole` folder:
+
+- **<i>models/</i>**: This is where we store our trained (final)model! The model in this folder is used by `train_ddpg.py` & `test_ddpg.py`
+- `args.py`: where we set parameters related to training (e.g. batch size, ddpg parameters)
+- `ddpg.py`: the implementation of DDPG
+- `test_ddpg.py`: where we test the trained agent and visualize it
+- `train_ddpg.py`: where the training loop lies
+- `utils.py`: the implementation of Replay Buffer & the evaluation done during training
+ 
 </details>
 
 ---

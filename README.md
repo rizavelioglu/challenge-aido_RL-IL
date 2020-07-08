@@ -31,8 +31,14 @@ using only one single sensor, the camera.
 ![](tutorials/images/diagram.png)
 
 ## Installation/Requirements
+Follow the installation steps explained in [this GitHub repository](https://github.com/duckietown/gym-duckietown#installation),
+which is the official repository of the simulator used at the competition.
 
+**Note:** You do not need to install anything on your local PC to use the notebook on Colab! That means, without any installation
+you can train both networks: The RL agent and the IL agent, which at the end yields a self-driving agent! Therefore, you would
+only need to install the required packages to your local PC if you want to evaluate, visualize how the trained agents work.
 
+## More info on the repository
 #### Who can use this repository?
 This repository can be used by anyone who would like to ground his/her knowledge in `Reinforcement Learning`,
 `Imitation Learning`, `PyTorch`, `Tensorflow`, `Keras`, and `Self-Driving Cars`.
@@ -52,3 +58,8 @@ This repository can be used by anyone who would like to ground his/her knowledge
 
 - How Imitation Learning can be applied to Self-Driving Cars by training neural network models with both `Tensorflow` and `Keras`
 - Submission to a world-wide competition using `Docker` 
+
+
+## Contact Details
+This is a project within the curriculum of MSc. Intelligent Systems and supervised by [Dr.Andrew Melnik](https://ni.www.techfak.uni-bielefeld.de/people/anmelnik)
+at University Bielefeld. If you are a student at University Bielefeld and interested in this project, Dr.Melnik would be happy to work with you! 
