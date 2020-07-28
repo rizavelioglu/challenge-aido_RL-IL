@@ -1,3 +1,6 @@
+"""
+This script implements various types of neural network models: e.g. VGG16.
+"""
 from keras.applications.vgg16 import VGG16
 from keras.layers import GlobalAveragePooling2D, Dense, Flatten, Lambda, MaxPooling2D, Conv2D, Lambda, Dropout
 from keras.models import Model, load_model, Sequential

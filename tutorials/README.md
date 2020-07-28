@@ -43,7 +43,6 @@ aligned with the  right-lane's center line.
 
 Keep it in mind that a map name has to be given as an argument(`-m` which stands for 'map')
 
-#### TODO: add "zigzag_dists" info image
 
 </details>
 
@@ -145,6 +144,30 @@ algorithm (DDPG) as input. Therefore, it is essential to have the tile coordinat
 approach to self-driving car. You can see that these maps are inside the `duckietown_rl/maps` folder, for which we stored
 the tile coordinates. And you can see that we copied the data from `tile_coordinates.csv` and pasted inside [this function](https://github.com/rizavelioglu/challenge-aido_RL-IL/blob/362feae4f058c6db897021c47c98759c79ea1ed2/duckietown_rl/gym_duckietown/simulator.py#L2036)
 in `duckietown_rl/gym_duckietown/simulator.py`
+
+> #### Tile coordinates of the map "zigzag_dists"
+
+In the following figure, the tile coordinates of the map **"zigzag_dists"** are given:
+
+![show maps](images/tile_coordinates_zigzag_dists.png)
+
+- The coordinates assigned to each tile are the `tile coordinates` . So you can see that the origin is the left-most
+bottom part of the map. 
+
+> Another important fact about tile coordinates is the relation it has with the **position of the car**. We can reach the
+current position of the car through the environment: `env.cur_pos` gives the `(x,y,z)` coordinates of the car. 
+
+- On the right-hand-side of the figure, we calculate the `env.cur_pos`--> `tile_coordinates` is multiplied with the `road_tile_size`.
+
+    - Say that the car is in the middle of the tile `(3,6)`. Then the car's position is calculated to be `[2.0475, 3.8025]`.
+    Therefore the `env.cur_pos` variable in that point would be `[2.0475, 0, 3.8025]`. 
+
+    - Another example: The mid-point of the tile `(2,7)` is `[1.4625, 4.3875]`. Therefore the `env.cur_pos` variable in that
+    point would be `[1.4625, 0, 4.3875]`. 
+
+    - y value is always 0, because that's how the environment is built (2-D map), see
+    the coordinate axis in the middle of the image.
+
 
 </details>
 

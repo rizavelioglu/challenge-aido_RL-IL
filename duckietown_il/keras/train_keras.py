@@ -54,9 +54,9 @@ STORAGE_LOCATION = "trained_models/"   # where we store our trained models
 reader = Reader(f'../{DATA}.log')      # where our data lies
 MODEL_NAME = "01_NVIDIA"
 
-observations, actions = reader.read()  # read the observations from data
-actions = np.array(actions)
-observations = np.array(observations)
+observations, actions = reader.read()  # read the observations & actions from data
+actions = np.array(actions)            # convert actions to a np array
+observations = np.array(observations)  # convert observations to a np array
 
 # Split the data: Train and Test
 x_train, x_test, y_train, y_test = train_test_split(observations, actions, test_size=0.2, random_state=2)
@@ -94,7 +94,7 @@ model.compile(optimizer=optimizer,
 # Create Keras callbacks
 es = EarlyStopping(monitor='val_loss', verbose=1, patience=30)
 mc = ModelCheckpoint(STORAGE_LOCATION + MODEL_NAME + '.h5', monitor='val_loss', save_best_only=True)
-log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+log_dir = "logs/fit/" + datetime.datetime.now().strftime("%Y.%m.%d-") + MODEL_NAME
 tb = TensorBoard(log_dir=log_dir, histogram_freq=1)
 
 history = model.fit_generator(train_datagen.flow(x_train, y_train, batch_size=BATCH_SIZE),
