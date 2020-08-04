@@ -151,21 +151,22 @@ In the following figure, the tile coordinates of the map **"zigzag_dists"** are 
 
 ![show maps](images/tile_coordinates_zigzag_dists.png)
 
-- The coordinates assigned to each tile are the `tile coordinates` . So you can see that the origin is the left-most
-bottom part of the map. 
+- The coordinates assigned to each tile are the `tile coordinates` . So you can see that the origin is the tile that is
+on left-most bottom part of the map. 
 
 > Another important fact about tile coordinates is the relation it has with the **position of the car**. We can reach the
-current position of the car through the environment: `env.cur_pos` gives the `(x,y,z)` coordinates of the car. 
+current position of the car through the environment: `env.cur_pos` gives the `(x,y,z)` coordinates of the car. That
+returned position tells where the car is, see the following examples:
 
 - On the right-hand-side of the figure, we calculate the `env.cur_pos`--> `tile_coordinates` is multiplied with the `road_tile_size`.
 
-    - Say that the car is in the middle of the tile `(3,6)`. Then the car's position is calculated to be `[2.0475, 3.8025]`.
+    - Say that the car is in the middle of the tile `(3,6)`. Then the car's position is calculated to be `[2.0475, 3.8025]`(see figure above).
     Therefore the `env.cur_pos` variable in that point would be `[2.0475, 0, 3.8025]`. 
 
     - Another example: The mid-point of the tile `(2,7)` is `[1.4625, 4.3875]`. Therefore the `env.cur_pos` variable in that
     point would be `[1.4625, 0, 4.3875]`. 
 
-    - y value is always 0, because that's how the environment is built (2-D map), see
+    - `y` coordinate is always 0, because that's how the environment is built (2-D map), see
     the coordinate axis in the middle of the image.
 
 

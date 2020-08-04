@@ -3,7 +3,7 @@
 # AI Driving Olympics
 <a href="http://aido.duckietown.org"><img width="200" src="https://camo.githubusercontent.com/ca7a25420906820b4e601ec37a7481b07650a255/68747470733a2f2f7777772e6475636b6965746f776e2e6f72672f77702d636f6e74656e742f75706c6f6164732f323031382f30372f4149444f2d373638783531322e706e67"/></a>
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tyflwuXsalvPCuam-wfQdMSVZwTbaoX4?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1zh3bKPrbMA4UmGqwe6OsT1wXDZ193xqS?usp=sharing)
 
 
 ## Description
@@ -21,7 +21,7 @@ For submitting, please follow [the instructions available in the book][book].
 Most of the code is explained within its script as well as in the corresponding folder's README.
 
 ## Getting Started
-Go ahead and [![Open In Cdolab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tyflwuXsalvPCuam-wfQdMSVZwTbaoX4?usp=sharing)
+Go ahead and [![Open In Cdolab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1zh3bKPrbMA4UmGqwe6OsT1wXDZ193xqS?usp=sharing)
 
 You can train a reinforcement learning agent (expert) that learns to drive perfectly within an environment. Then you can
 run the agent on a bunch of different maps/environments to collect data (observation & action pairs) to imitate the expert's
