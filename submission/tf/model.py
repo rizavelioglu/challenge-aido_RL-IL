@@ -1,6 +1,6 @@
 import sys
 sys.path.append("../../")
-from duckietown_il.model_tf import one_residual
+from duckietown_il.tf.model_tf import one_residual
 import numpy as np
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
