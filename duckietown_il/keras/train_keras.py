@@ -67,10 +67,10 @@ x_train, y_train       = x_train[val_size:], y_train[val_size:]
 
 # prepare data augmentation configuration
 train_datagen = ImageDataGenerator(rescale=1./255,              # rescaling factor
-                                   width_shift_range=0.2,       # float: fraction of total width, if < 1
-                                   height_shift_range=0.2,      # float: fraction of total height, if < 1
-                                   brightness_range=None,       # Range for picking a brightness shift value from
-                                   zoom_range=0.0,              # Float or [lower, upper]. Range for random zoom
+                                   # width_shift_range=0.2,       # float: fraction of total width, if < 1
+                                   # height_shift_range=0.2,      # float: fraction of total height, if < 1
+                                   # brightness_range=None,       # Range for picking a brightness shift value from
+                                   # zoom_range=0.0,              # Float or [lower, upper]. Range for random zoom
                                    )
 train_datagen.fit(x_train)
 # this is the augmentation configuration we will use for validating: only rescaling
@@ -101,7 +101,7 @@ history = model.fit_generator(train_datagen.flow(x_train, y_train, batch_size=BA
                               validation_data=validation_datagen.flow(x_validate, y_validate, batch_size=BATCH_SIZE),
                               epochs=EPOCHS,
                               verbose=2,
-                              steps_per_epoch=observations.shape[0] // BATCH_SIZE,
+                              # steps_per_epoch=observations.shape[0] // BATCH_SIZE,
                               callbacks=[es, mc, tb],
                               shuffle=True)
 

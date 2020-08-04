@@ -8,7 +8,7 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
                 camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
                 randomize_maps_on_reset=False, draw_curve=False, draw_bbox=False, frame_skip=1, draw_DDPG_features=False)
 
-model = load_model("trained_models/01_NVIDIA.h5")
+model = load_model("trained_models/01_NVIDIA_colab.h5")
 
 observation = env.reset()
 env.render()
@@ -32,14 +32,16 @@ for episode in range(0, EPISODES):
         cumulative_reward += reward
         if done:
             env.reset()
-
-        print(f"Reward: {reward:.2f}",
-              f"\t| Action: [{action[0]:.3f}, {action[1]:.3f}]",
-              f"\t| Speed: {env.speed:.2f}")
-
-        cv2.imshow("obs", observation)
-        if cv2.waitKey() & 0xFF == ord('q'):
+            print(f"DONE! after {steps}/{STEPS} steps!")
             break
+
+        # print(f"Reward: {reward:.2f}",
+        #       f"\t| Action: [{action[0]:.3f}, {action[1]:.3f}]",
+        #       f"\t| Speed: {env.speed:.2f}")
+        #
+        # cv2.imshow("obs", observation)
+        # if cv2.waitKey() & 0xFF == ord('q'):
+        #     break
 
         env.render()
     env.reset()
@@ -47,4 +49,3 @@ for episode in range(0, EPISODES):
 print('total reward: {}, mean reward: {}'.format(cumulative_reward, cumulative_reward // EPISODES))
 
 env.close()
-model.close()
