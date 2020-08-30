@@ -269,7 +269,7 @@ This is the folder where we get familiar with some of the techniques used in Com
 Here's what's inside the `image_processing` folder:
 
 <details>
-<summary><i>process_image.py</i></summary>
+<summary><b><i>process_image.py</i></b></summary>
 
 We load an image taken from the environment and, using OpenCV, apply some image processing techniques including:
 - Masking
@@ -286,7 +286,7 @@ We will use these techniques in the environment in real-time!
 
 
 <details>
-<summary><i>hough_lines.py</i></summary>
+<summary><b><i>hough_lines.py</i></b></summary>
 
 This is where we get familiar with Hough Lines algorithm which is used for detecting lanes on the roads.
 
@@ -297,7 +297,7 @@ This is where we get familiar with Hough Lines algorithm which is used for detec
 
 
 <details>
-<summary><i>process_env_simple.py</i></summary>
+<summary><b><i>process_env_simple.py</i></b></summary>
     
 Until now, we used Image Processing techniques in static-images. Now, we will use them in dynamic images, meaning, within the environment in real-time!
 
@@ -330,7 +330,7 @@ Feel free to play with the parameters of each of the techniques and see the diff
 
 
 <details>
-<summary><i>process_env_advanced.py</i></summary>
+<summary><b><i>process_env_advanced.py</i></b></summary>
 
 This script enriches `process_env_simple.py` by using Hough Lines Algorithm to detect the lane lines.
 Make sure to check out [this blogpost](https://towardsdatascience.com/tutorial-build-a-lane-detector-679fd8953132) where
@@ -340,7 +340,7 @@ the code is taken from.
 
 
 <details>
-<summary><i>process_env_advanced_HLS.py</i></summary>
+<summary><b><i>process_env_advanced_HLS.py</i></b></summary>
 
 This script is similar to `process_env_advanced.py` but it uses a different strategy to draw the lane lines detected by
 Hough Lines Algorithm. Moreover, it converts the images/observations to a different colour space, HLS, where masking works
@@ -351,7 +351,7 @@ better.
 
 
 <details>
-<summary><i>get_controller_params.py</i></summary>
+<summary><b><i>get_controller_params.py</i></b></summary>
 
 This script sets up a PID controller and its parameters (very similar to the one in `/tutorials/PIDcontroller.py`) and
 returns the action to be taken by the environment.
