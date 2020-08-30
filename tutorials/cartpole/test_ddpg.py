@@ -12,7 +12,7 @@ max_action = 1
 policy = DDPG(state_dim, action_dim, max_action)
 policy.load("model", directory="models")
 
-EPISODES, STEPS = 1, 300
+EPISODES, STEPS = 5, 300
 for e in range(EPISODES):
     obs = env.reset()
     env.render()

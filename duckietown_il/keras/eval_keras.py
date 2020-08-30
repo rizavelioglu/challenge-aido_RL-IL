@@ -8,7 +8,8 @@ env = Simulator(seed=123, map_name="zigzag_dists", max_steps=5000001, domain_ran
                 camera_height=480, accept_start_angle_deg=4, full_transparency=True, distortion=True,
                 randomize_maps_on_reset=False, draw_curve=False, draw_bbox=False, frame_skip=1, draw_DDPG_features=False)
 
-model = load_model("trained_models/01_NVIDIA_colab.h5")
+# TODO: Put your model name here!
+model = load_model("trained_models/#YOUR_MODEL_NAME.h5")
 
 observation = env.reset()
 env.render()

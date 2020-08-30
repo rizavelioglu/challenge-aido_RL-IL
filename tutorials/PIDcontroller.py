@@ -45,8 +45,6 @@ for episode in range(0, EPISODES):
         # Change how fast the agent should drive(speed) & PID parameters when the following conditions occur
         if -0.5 < lane_pose.angle_deg < 0.5:
             speed = 1
-        if -0.5 < lane_pose.angle_deg < 0.5:
-            speed = 1
         elif -1 < lane_pose.angle_deg < 1:
             speed = 0.9
         elif -2 < lane_pose.angle_deg < 2:

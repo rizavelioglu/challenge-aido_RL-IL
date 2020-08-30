@@ -45,7 +45,7 @@ This repository can be used by anyone who would like to ground his/her knowledge
 
 #### What you will learn & and get yourself familiarized with:
 - Simulations in general and how to use them
-- Image processing methods, use-cases  for Self-Driving Cars
+- Image processing methods, use-cases for Self-Driving Cars such as; Canny Edge Detection, Lane Line Detection with Hough Lines, etc.
 - Reinforcement Learning and one method of RL, namely `DDPG` and its implementation in `PyTorch`
 - Applying `DDPG` to: 
     - the "Hello World" of RL, namely [CartPole Problem](https://gym.openai.com/envs/CartPole-v0/) a.k.a. Inverted Pendulum
@@ -57,7 +57,9 @@ This repository can be used by anyone who would like to ground his/her knowledge
     ![duckie-gif](./tutorials/images/duckie.gif)
 
 - How Imitation Learning can be applied to Self-Driving Cars by training neural network models with both `Tensorflow` and `Keras`
+- 
 - Submission to a world-wide competition using `Docker` 
+
 
 
 ## Contact Details
