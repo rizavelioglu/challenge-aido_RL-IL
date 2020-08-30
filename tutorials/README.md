@@ -268,8 +268,8 @@ This is the folder where we get familiar with some of the techniques used in Com
 
 Here's what's inside the `image_processing` folder:
 
-<details><summary>
-<i>process_image.py</i>
+<details>
+<summary><i>process_image.py</i></summary>
 
 We load an image taken from the environment and, using OpenCV, apply some image processing techniques including:
 - Masking
@@ -282,22 +282,22 @@ We will use these techniques in the environment in real-time!
 
 > Watch [this great video](https://www.youtube.com/watch?v=5dL7FvL-oy0) for an explanation of Canny Edge Detection!
 
-</summary></details>
+</details>
 
 
-<details><summary>
-<i>hough_lines.py</i>
+<details>
+<summary><i>hough_lines.py</i></summary>
 
 This is where we get familiar with Hough Lines algorithm which is used for detecting lanes on the roads.
 
 > Check out [this tutorial](https://docs.opencv.org/4.1.0/d9/db0/tutorial_hough_lines.html) from OpenCV on Hough Lines
 > to get more information.
 
-</summary></details>
+</details>
 
 
-<details><summary>
-<i>process_env_simple.py</i>
+<details>
+<summary><i>process_env_simple.py</i></summary>
     
 Until now, we used Image Processing techniques in static-images. Now, we will use them in dynamic images, meaning, within the environment in real-time!
 
@@ -312,47 +312,51 @@ Feel free to play with the parameters of each of the techniques and see the diff
 > **Note:**
 >
 > The script runs for `3000 steps`, in other words, the environment lasts for: **3000 steps / 30 Frames Per Second = 10 seconds**.
-> Feel free to change the number of steps in Line 14 where the environment is constructed.
+> Feel free to change the number of steps in [Line 14](https://github.com/rizavelioglu/challenge-aido_RL-IL/blob/b5cc357b10c62b3e41d46c7ed49a8e450c5f0008/tutorials/image_processing/process_env_simple.py#L14) 
+> where the environment is constructed.
 
 > **Note#2:**
 >
 > The script takes an image/observation from the environment and shows the processed image. In order to proceed, the user has to press
 > a button on the keyboard (e.g. ENTER). This is useful for debugging purposes; one could see the observations at each time step, one-by-one.
-> But if you want to change that, simply change Line 110, by passing a number inside `waitKey()` as a parameter: 
+> But if you want to change that, simply change [Line 100](https://github.com/rizavelioglu/challenge-aido_RL-IL/blob/b5cc357b10c62b3e41d46c7ed49a8e450c5f0008/tutorials/image_processing/process_env_simple.py#L100)
+>, by passing a number inside `waitKey()` as a parameter: 
 >
 >`if cv2.waitKey(1) & 0xFF == ord('q'):`
 >
 > What this does is that the computer waits `1 millisecond` for the user to press a button. If no action is taken, the program continues working. 
     
-</summary></details>
+</details>
 
 
-<details><summary>
-<i>process_env_advanced.py</i>
+<details>
+<summary><i>process_env_advanced.py</i></summary>
 
 This script enriches `process_env_simple.py` by using Hough Lines Algorithm to detect the lane lines.
 Make sure to check out [this blogpost](https://towardsdatascience.com/tutorial-build-a-lane-detector-679fd8953132) where
 the code is taken from.
 
-</summary></details>
+</details>
 
-<details><summary>
-<i>process_env_advanced_HLS.py</i>
+
+<details>
+<summary><i>process_env_advanced_HLS.py</i></summary>
 
 This script is similar to `process_env_advanced.py` but it uses a different strategy to draw the lane lines detected by
 Hough Lines Algorithm. Moreover, it converts the images/observations to a different colour space, HLS, where masking works
 better.
 
-</summary></details>
+</details>
 
 
-<details><summary>
-<i>get_controller_params.py</i>
+
+<details>
+<summary><i>get_controller_params.py</i></summary>
 
 This script sets up a PID controller and its parameters (very similar to the one in `/tutorials/PIDcontroller.py`) and
 returns the action to be taken by the environment.
 
-</summary></details>
+</details>
 
 
 
