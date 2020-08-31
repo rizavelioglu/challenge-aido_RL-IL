@@ -5,18 +5,6 @@ Explanation on how Canny Edge Detector works:
 import cv2
 from matplotlib import pyplot as plt
 import numpy as np
-import argparse
-
-# construct the argument parser and parse the arguments
-ap = argparse.ArgumentParser()
-ap.add_argument("-c", "--colab", type=int, help="1 if script is executed on Colab, 0 otherwise")
-args = vars(ap.parse_args())
-
-if args["colab"]:
-  from google.colab.patches import cv2_imshow as imshow
-else:
-  from cv2 import imshow
-
 
 # Load an RGB image on a gray scale
 img = cv2.imread("../images/road.png", 0)
@@ -31,8 +19,8 @@ edges = cv2.Canny(img,
                                     # image grad magnitude or whether the default L1 norm
 
 # Show all the images
-imshow("Original Image-Grayscaled", img)
-imshow("Edge Image", edges)
+cv2.imshow("Original Image-Grayscaled", img)
+cv2.imshow("Edge Image", edges)
 
 # Close all the windows when "q" is pressed on keyboard
 if cv2.waitKey() & 0xFF == ord('q'):
@@ -70,9 +58,9 @@ target = cv2.bitwise_and(img, img, mask=final_mask)
 blur = cv2.GaussianBlur(target, (7, 7), 0)
 
 # Show all the images
-imshow("Original Image", img)
-imshow("Mixed", target)
-imshow("Blurred", blur)
+cv2.imshow("Original Image", img)
+cv2.imshow("Mixed", target)
+cv2.imshow("Blurred", blur)
 
 # Close all the windows when "q" is pressed on keyboard
 if cv2.waitKey() & 0xFF == ord('q'):
@@ -116,9 +104,9 @@ tight = cv2.Canny(gray_target, 225, 250)
 auto = auto_canny(gray_target)
 
 # show both images
-imshow("Original", target)
-imshow("Edges w/ Blurred Image", np.hstack([wide_blur, tight_blur, auto_blur]))
-imshow("Edges w/o Blurred Image", np.hstack([wide, tight, auto]))
+cv2.imshow("Original", target)
+cv2.imshow("Edges w/ Blurred Image", np.hstack([wide_blur, tight_blur, auto_blur]))
+cv2.imshow("Edges w/o Blurred Image", np.hstack([wide, tight, auto]))
 
 # Close all the windows when "q" is pressed on keyboard
 if cv2.waitKey() & 0xFF == ord('q'):
@@ -136,8 +124,8 @@ beta = 50     # Simple brightness control [0-100]
 
 new_image = cv2.convertScaleAbs(img, alpha=alpha, beta=beta)
 
-imshow('Original Image', img)
-imshow('New Image', new_image)
+cv2.imshow('Original Image', img)
+cv2.imshow('New Image', new_image)
 # Wait until user press some key
 cv2.waitKey()
 
@@ -161,8 +149,8 @@ tight = cv2.Canny(im, 225, 250)
 auto = auto_canny(im)
 
 # Show both images
-imshow("Edges w/ Blurred Image", np.hstack([wide_blur, tight_blur, auto_blur]))
-imshow("Edges w/o Blurred Image", np.hstack([wide, tight, auto]))
+cv2.imshow("Edges w/ Blurred Image", np.hstack([wide_blur, tight_blur, auto_blur]))
+cv2.imshow("Edges w/o Blurred Image", np.hstack([wide, tight, auto]))
 
 # Close all the windows when "q" is pressed on keyboard
 if cv2.waitKey() & 0xFF == ord('q'):
@@ -185,10 +173,10 @@ for i in range(256):
 res_br = cv2.LUT(new_image, lookUpTable)
 
 
-imshow("Original Image", img)
-imshow("Brightened Image", new_image)
-imshow("Org. Image w/ Gamma Correction (gamma=0.4)", res_org)
-imshow("Brightened Image w/ Gamma Correction (gamma=0.4)", res_br)
+cv2.imshow("Original Image", img)
+cv2.imshow("Brightened Image", new_image)
+cv2.imshow("Org. Image w/ Gamma Correction (gamma=0.4)", res_org)
+cv2.imshow("Brightened Image w/ Gamma Correction (gamma=0.4)", res_br)
 
 # Close all the windows when "q" is pressed on keyboard
 if cv2.waitKey() & 0xFF == ord('q'):
