@@ -4,4 +4,4 @@ aido-protocols-daffy>=5.0.18
 duckietown-world-daffy>=5.0.8
 duckietown-challenges-daffy>=5.0.7
 keras==2.3.1
-opencv-python==3.3.0.9
+opencv-python==4.1.1.26
