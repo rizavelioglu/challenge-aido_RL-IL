@@ -10,6 +10,6 @@ piglet==1.0.0
 
 
 pandas==1.1.5
-torch==1.10.1
+torch==1.13.1
 ipykernel==5.5.6
 Pillow==10.0.1
