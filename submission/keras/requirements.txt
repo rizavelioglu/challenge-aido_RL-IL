@@ -1,7 +1,7 @@
-opencv-python==4.2.0.32
+opencv-python==4.8.1.78
 numpy==1.22.0
 aido-protocols-daffy>=5.0.18
 duckietown-world-daffy>=5.0.8
 duckietown-challenges-daffy>=5.0.7
 keras==2.13.1
-opencv-python==4.2.0.32
+opencv-python==4.8.1.78
